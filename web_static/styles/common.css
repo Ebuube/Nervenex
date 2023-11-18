@@ -17,3 +17,13 @@ body .container {
     font-weight: bolder;
     font-size: larger;
 }
+
+.hyperlink {
+    text-decoration: underline;
+    color: rgb(208, 153, 58);
+}
+
+.hyperlink:hover {
+    font-weight: bolder;
+    color: black;
+}
