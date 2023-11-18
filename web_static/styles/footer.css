@@ -14,7 +14,55 @@ footer p {
     line-height:30px;
 }
 
+footer li {
+    display: inline;
+}
+
+footer .info {
+    float: left;
+}
+footer .social_media {
+    float: right;
+    background-color: green;
+}
+footer .info::before,
+footer .info::after,
+footer .social_media::before,
+footer .social_media::after {
+    clear:both;
+}
+
+footer .info li {
+    margin-right: 3px;
+    border-right: 1px rgb(208, 153, 58) solid;
+    padding-right: 8px;
+}
+
+
 .pagefooter {
     /* Prevent hiding items beneath the fixed and remove footer */
     margin-top:80px;    /* same as footer height */
+}
+footer .social_media .logo {
+    height: 100%;
+    width: 100px;
+    margin-left: 20px;
+    background-repeat: no-repeat;
+    background-position:left;
+}
+footer .facebook {
+    background-image:url('../images/facebook.png');
+    background-color: yellow;
+}
+
+
+/* */
+
+.header_logo div {
+    height:100%;
+    width:140px;
+    margin-left:20px;
+    background-image:url('../images/logo.png');
+    background-repeat:no-repeat;
+    background-position:left;
 }
