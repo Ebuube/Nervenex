@@ -13,9 +13,14 @@ body .container {
     margin-right: 7%;
 }
 
+.button {
+    transition: 0.17s font-size;
+}
 .button:hover {
-    font-weight: bolder;
+    /*font-weight: bolder;*/
     font-size: larger;
+    font-weight: bolder;
+    transition-delay: 0s;
 }
 
 .hyperlink {

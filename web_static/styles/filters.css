@@ -31,3 +31,56 @@
 .filters button:focus-within {
     font-weight: bolder;
 }
+
+/* Add additional search menus e.g.
+.filters .quizzes,
+.filters .posts {...*/
+.filters .quizzes,
+.filters .posts
+{
+    height: 100%;
+    width: 30%;
+    float: left;
+    padding-left: 5%;
+    border-right: 1px #DDDDDD solid;
+}
+
+/* TYPOGRAPHY */
+.filters h3 {
+    font-weight:600;
+    margin-bottom:-16px;
+}
+
+.filters h4 {
+    font-weight:400;
+    font-size:14px;;
+}
+
+/* POPOVERS */
+.filters ul.popover {
+    position:relative;  /* Make it display on top of other elements */
+    display:none;   /* a popover is always invisible unless hovered */
+    background:#FAFAFA;
+    width:100%;
+    border:1px #DDDDDD solid;
+    border-radius:4px;
+    list-style:none;
+    margin-left:-20%;
+    /*margin-top:-2px;*/
+    padding-top:30px;
+    padding-bottom:30px;
+    z-index:1;
+    box-shadow:0px 5px 12px 0px rgba(0, 0, 0, 0.112);
+}
+
+ul.popover li {
+    list-style:none;
+    margin-left:-9px;
+    padding: 4px;
+}
+
+
+.filters .quizzes:hover .popover,
+.filters .posts:hover .popover {
+    display: block;
+}
