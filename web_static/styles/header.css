@@ -1,0 +1,39 @@
+header {
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px #CCCCCC solid;
+}
+
+.header_logo {
+    height: 100%;
+    width: 50%;
+    float: left;
+}
+
+.header_logo div {
+    height:100%;
+    width:140px;
+    margin-left:20px;
+    background-image:url('../images/logo.png');
+    background-repeat:no-repeat;
+    background-position:left;
+}
+
+.sign_up {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    line-height: 270%;
+    float: right;
+    width: 50%;
+}
+
+.sign_up div {
+    border: 1px rgb(216, 143, 17) solid;
+    border-radius: 4px;
+    padding: 5px;
+    width: 50%;
+    float: right;
+}
