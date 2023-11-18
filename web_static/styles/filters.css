@@ -1,0 +1,33 @@
+.filters {
+    height: 70px;
+    width: 100%;
+    border: 1px #DDDDDD solid;
+    border-radius: 4px;
+    clear: both;
+}
+
+.filters:before,
+.filters:after {
+    clear:both;
+}
+
+.filters button {
+    height: 48px;
+    font-size: 18px;
+    background-color: rgb(208, 153, 58);
+    color: white;
+    width: 20%;
+    border-radius: 4px;
+    border: none;
+    margin-right: 30px;
+    margin-top: 11px;
+    float: right;
+}
+
+.filters button:hover {
+    opacity: 90%;
+}
+
+.filters button:focus-within {
+    font-weight: bolder;
+}

@@ -15,4 +15,5 @@ body .container {
 
 .button:hover {
     font-weight: bolder;
+    font-size: larger;
 }
