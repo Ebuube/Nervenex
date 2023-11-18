@@ -12,3 +12,7 @@ body .container {
     margin-left: 7%;
     margin-right: 7%;
 }
+
+.button:hover {
+    font-weight: bolder;
+}

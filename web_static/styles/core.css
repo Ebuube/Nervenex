@@ -1,0 +1,23 @@
+.tabs {
+    height: 30px;
+    text-align: left;
+}
+.tabs ul {
+    margin-left: -1.7%;
+}
+.tabs li {
+    display: inline;
+    background-color: rgb(208, 153, 58);
+    padding: 8px;
+    padding-right: 15px;
+    margin-right: 2px;
+    color: white;
+    border-radius: 2px;
+    border-top-right-radius: 25px;
+}
+.container .contents {
+    border: 1px #CCCCCC solid;
+    border-radius: 4px;
+    padding: 5%;
+    margin-top: -8px;
+}
