@@ -14,21 +14,26 @@ body .container {
 }
 
 .button {
-    transition: 0.17s font-size;
+    transition: all 0.17s ease-out;
 }
 .button:hover {
     /*font-weight: bolder;*/
     font-size: larger;
     font-weight: bolder;
-    transition-delay: 0s;
+    transition-delay: all 0s ease-out;
+    cursor: pointer;
 }
 
 .hyperlink {
     text-decoration: underline;
     color: rgb(208, 153, 58);
+    transition: all 0.3s ease-out;
+    font-weight: normal;
 }
 
 .hyperlink:hover {
     font-weight: bolder;
     color: black;
+    cursor: pointer;
+    transition-delay: all 0s;
 }
