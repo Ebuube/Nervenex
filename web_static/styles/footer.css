@@ -23,7 +23,9 @@ footer .info {
 }
 footer .social_media {
     float: right;
-    background-color: green;
+    border: 1px green solid;
+    height: 100%;
+    width: 50%;
 }
 footer .info::before,
 footer .info::after,
@@ -43,20 +45,49 @@ footer .info li {
     /* Prevent hiding items beneath the fixed and remove footer */
     margin-top:80px;    /* same as footer height */
 }
-footer .social_media .logo {
-    height: 100%;
-    width: 100px;
-    margin-left: 20px;
-    background-repeat: no-repeat;
-    background-position:left;
+
+footer .social_media {
+    position: relative;
 }
-footer .facebook {
+
+footer .social_media ul {
+    width: 60%;
+    border: 1px black solid;
+    height: 50%;
+    position: absolute;
+}
+
+footer .facebook div {
     background-image:url('../images/facebook.png');
-    background-color: yellow;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30%;
+    height: 100%;
+    margin-top: -10px;
+    float:left;
 }
 
+footer .twitter div {
+    background-image:url('../images/twitter.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30%;
+    height: 110%;
+    margin-top: -13px;
+    float: left;
+}
 
-/* */
+footer .github div {
+    background-image:url('../images/github_white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30%;
+    height: 110%;
+    margin-top: -13.3px;
+    float: right;
+    margin-right: 0;
+}
+/*
 
 .header_logo div {
     height:100%;
@@ -66,3 +97,4 @@ footer .facebook {
     background-repeat:no-repeat;
     background-position:left;
 }
+*/
