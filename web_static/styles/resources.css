@@ -1,3 +1,7 @@
+.resources {
+    width: 100%;
+    margin-left: -28px;
+}
 .resources h1 {
     font-size: 30px;
     padding-left: 30px;
@@ -6,4 +10,80 @@
 
 .resources ul {
     text-align: center;
+}
+
+.resources li {
+    list-style: none;
+    display: inline-block;
+}
+
+.resources article {
+    position: relative; /* necessary for price by night */
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px rgb(231, 111, 13) solid;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.resources article h2 {
+    font-size: 30px;
+    margin-top: 5px;
+    margin-bottom: 50px;
+}
+
+.resources .user {
+    text-align: left;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.resources .description {
+    text-align: left;
+}
+
+.resources .information {
+    text-align: left;
+    border: 1px #CCCCCC solid;
+    border-left: none;
+    border-right: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.resources .reviews {
+    margin-top: 40px;
+}
+.resources .reviews h2 {
+    font-size: 16px;
+    border-bottom: 1px #DDDDDD solid;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.resources .reviews ul {
+    margin-top: -50px;
+    margin-left: -35px;
+    text-align: left;
+}
+
+.resources .reviews li {
+    margin-bottom: -10px;
+}
+
+.resources .reviews p {
+    margin-top: -12px;
+    font-size: 12px;
+}
+
+/* Improving the flexible boxes */
+.resources .flex_list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.flex_list .flex_list_item {
+    display: flex;
 }
