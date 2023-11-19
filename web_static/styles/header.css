@@ -34,7 +34,7 @@ header {
 
 .sign_up div {
     border: 1px;
-    background-color: rgb(208, 153, 58);
+    background-color: rgb(231, 111, 13);
     border-radius: 4px;
     padding: 5px;
     width: 50%;
@@ -58,7 +58,7 @@ header {
     width: 40px;
     height: 40px;
     border: none;
-    background-color: rgb(208, 153, 58);
+    background-color: rgb(231, 111, 13);
     border-radius: 50%;
     margin-right: auto;
     margin-left: auto;
