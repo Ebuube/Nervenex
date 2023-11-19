@@ -1,6 +1,6 @@
 /* STYLING FOR FOOTER */
 footer {
-    position:fixed;
+    position: relative;
     bottom:0;
     background-color:white;
     height:60px;
@@ -23,9 +23,11 @@ footer .info {
 }
 footer .social_media {
     float: right;
-    border: 1px green solid;
+    /* border: 1px green solid; */
     height: 100%;
-    width: 200px;
+    width: 170px;
+    position: relative;
+    padding-top: 4px;
 }
 footer .info::before,
 footer .info::after,
@@ -36,7 +38,6 @@ footer .social_media::after {
 
 footer .info li {
     margin-right: 3px;
-    border-right: 1px rgb(208, 153, 58) solid;
     padding-right: 8px;
 }
 
@@ -46,13 +47,9 @@ footer .info li {
     margin-top:80px;    /* same as footer height */
 }
 
-footer .social_media {
-    position: relative;
-}
-
 footer .social_media ul {
     width: 60%;
-    border: 1px black solid;
+    /* border: 1px black solid; */
     height: 50%;
     position: absolute;
 }
