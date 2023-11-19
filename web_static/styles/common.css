@@ -22,6 +22,7 @@ body .container {
     font-weight: bolder;
     transition-delay: all 0s ease-out;
     cursor: pointer;
+    opacity: 90%;
 }
 
 .hyperlink {
