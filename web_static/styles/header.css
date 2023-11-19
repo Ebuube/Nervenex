@@ -5,6 +5,7 @@ header {
     border-bottom: 1px #CCCCCC solid;
     position: fixed;
     top:0;
+    z-index: 100;
 }
 
 .header_logo {
