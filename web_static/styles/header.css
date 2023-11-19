@@ -9,7 +9,7 @@ header {
 
 .header_logo {
     height: 100%;
-    width: 50%;
+    width: 40%;
     float: left;
 }
 
@@ -40,4 +40,40 @@ header {
     width: 50%;
     float: right;
     color: white;
+}
+
+.navigation {
+    float: left;
+    width: 60px;
+    height: 100%;;
+    /*border: 1px rgb(208, 153, 58) solid; */
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation .circle {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: rgb(208, 153, 58);
+    border-radius: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.circle .bar {
+    width: 15px;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    height: 4px;
+    align-self: center;
+    /* border: 2px black solid; */
 }
