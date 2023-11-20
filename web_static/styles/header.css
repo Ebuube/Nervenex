@@ -31,17 +31,11 @@ header {
     line-height: 270%;
     float: right;
     width: 50%;
+
+    /* test */
+    border: 1px green solid;
 }
 
-.sign_up div {
-    border: 1px;
-    background-color: rgb(231, 111, 13);
-    border-radius: 4px;
-    padding: 5px;
-    width: 50%;
-    float: right;
-    color: white;
-}
 
 .navigation {
     float: left;
@@ -77,4 +71,73 @@ header {
     height: 4px;
     align-self: center;
     /* border: 2px black solid; */
+}
+
+/* User info */
+
+header .user_info
+{ 
+    display:inline-block;
+    margin-top:0.32%;
+    height:100%;
+    text-align:right;
+    width:70%;
+    /* background-color:yellow; */
+    padding-right:5px;
+    clear:both; /* for the floats */
+
+    /* test */
+    border: 1px black solid;
+}
+
+header .user_info::before,
+header .user_info::after {
+    clear:both;
+}
+
+header .user_info * {
+    display:inline-block;
+}
+
+header .user_info .profile:hover {
+    margin-top:4px;
+    box-shadow:0px 4px 8px 4px rgba(0, 0, 0, 0.100);
+    font-weight:bolder;
+}
+header .user_info .profile {
+    border:1px #CCCCCC solid;
+    border-radius:50px;
+    background-color:#FFFFFF;
+    margin-top:5px;
+    margin-right: -40px;
+    padding:10px;
+    float:right;
+    box-shadow:0px 1px 2px 0px rgba(0, 0, 0, 0.100);
+
+    line-height:50%;
+    width:60%;
+    height:45.6%;
+    background-image:url("../images/user-profile-svgrepo-com.svg");
+    background-repeat:no-repeat;
+    background-position:right;
+    text-align:left;
+}
+
+.hoverable_block {
+    transition: all 0.18s ease-out;
+}
+
+.hoverable_block:hover{
+    cursor: pointer;
+}
+
+.profile p {
+    border: 1px red solid;
+    height: 100%;
+    padding-bottom: 10px;
+    margin-top: -30px;
+    padding-top: 38px;
+    margin-right: -40px;
+    padding-right:10%;
+    padding-left: 10%;
 }
