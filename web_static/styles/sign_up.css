@@ -21,7 +21,7 @@
     height: auto;
     
 }
-.pg_container section.nervenex_description {
+.nervenex_description {
     float: left;
     width: 50%;
     margin-right: 5px;
@@ -30,19 +30,22 @@
     background-color: #EEEEEE;
 }
 
-.pg_container section.sign_up_details {
+.sign_up_details {
     float: right;
     width: 50%;
     height: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
 
     /* test */
     border: 1px green solid;
 }
 
-.pg_container section.nervenex_description::before,
-.pg_container section.nervenex_description::after,
-.pg_container section.sign_up_details::before,
-.pg_container section.sign_up_details::after {
+.nervenex_description::before,
+.nervenex_description::after,
+.sign_up_details::before,
+.sign_up_details::after {
     clear: both;
 }
 
@@ -52,4 +55,32 @@
     font-size: 45px;
     margin-left: 10%;
     color:  rgb(231, 111, 13);
+}
+
+.nervenex_description li {
+    margin-left: -4%;
+    width: 50px;
+    /* test */
+    /* border: 1px black solid; */
+}
+
+.sign_up_details h2 {
+    border-bottom: 1px #DDDDDD solid;
+    padding-bottom: 5px;
+    font-size: 30px;
+}
+
+.sign_up_details input {
+    height: 30px;
+    width: 80%;
+    padding-left: 5%;
+    margin-bottom: 20px;
+    border: 1px #DDDDDD solid;
+    border-radius: 4px;
+    transition: 0.5s ease-out;
+    outline: none;
+}
+
+.sign_up_details input:focus {
+    box-shadow: 0 0 8px rgb(231, 111, 13);
 }
