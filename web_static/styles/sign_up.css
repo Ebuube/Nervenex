@@ -1,0 +1,55 @@
+.pg_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: -90px;
+    min-height: 500px;
+    width: auto;
+}
+
+/* test */
+.container {
+    max-width: 10000px;
+    min-height: 360px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+/* test */
+.pg_container section {
+    height: auto;
+    
+}
+.pg_container section.nervenex_description {
+    float: left;
+    width: 50%;
+    margin-right: 5px;
+    border-right: 1px white solid;
+    border-bottom-right-radius: 100px;
+    background-color: #EEEEEE;
+}
+
+.pg_container section.sign_up_details {
+    float: right;
+    width: 50%;
+    height: 100%;
+
+    /* test */
+    border: 1px green solid;
+}
+
+.pg_container section.nervenex_description::before,
+.pg_container section.nervenex_description::after,
+.pg_container section.sign_up_details::before,
+.pg_container section.sign_up_details::after {
+    clear: both;
+}
+
+.nervenex_description ul {
+    list-style: none;
+    border-left: rgb(231, 111, 13) solid;
+    font-size: 45px;
+    margin-left: 10%;
+    color:  rgb(231, 111, 13);
+}
