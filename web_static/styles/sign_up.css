@@ -97,6 +97,9 @@
     width: 20px;
     height: auto;
 }
+#terms_of_service:focus {
+    box-shadow: none;
+}
 
 .alt_sign_up {
     text-align: center;
