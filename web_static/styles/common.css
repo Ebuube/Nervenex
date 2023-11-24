@@ -41,3 +41,20 @@ body .container {
     cursor: pointer;
     transition-delay: all 0s;
 }
+
+/* input buttons */
+
+input {
+    height: 30px;
+    width: 100%;
+    padding-left: 5%;
+    margin-bottom: 20px;
+    border: 1px #DDDDDD solid;
+    border-radius: 4px;
+    transition: 0.5s ease-out;
+    outline: none;
+}
+
+input:focus {
+    box-shadow: 0 0 8px rgb(231, 111, 13);
+}
