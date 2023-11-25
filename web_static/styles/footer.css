@@ -1,13 +1,24 @@
 /* STYLING FOR FOOTER */
-footer {
+.pagefooter {
+    /* Prevent hiding items beneath the fixed and remove footer */
+    bottom: 0;
     position: relative;
-    bottom:0;
-    background-color:white;
+    z-index: 100;
     height: 45px;
+    width: 100%; /* change it to 100% */
+    margin-bottom: -15px;
+    background-color: white;
+    /**
+    border: 1px red solid;
+    **/
+}
+
+footer {
+    background-color:white;
+    height: 100%;
     width:100%;
     border-top:1px #CCCCCC solid;
     color: rgb(231, 111, 13);
-    z-index: 100;
 }
 
 footer p {
@@ -24,10 +35,11 @@ footer .info {
 }
 footer .social_media {
     float: right;
-    /* border: 1px green solid; */
-    height: 100%;
+    /* *
+    border: 1px green solid;
+    * */
+    height: 90%;
     width: 170px;
-    position: relative;
     padding-top: 4px;
 }
 footer .info::before,
@@ -42,20 +54,14 @@ footer .info li {
     padding-right: 8px;
 }
 
-
-.pagefooter {
-    /* Prevent hiding items beneath the fixed and remove footer */
-    margin-top:80px;    /* same as footer height */
-    /*
-    border: 1px red solid;
-    */
-}
-
 footer .social_media ul {
     width: 60%;
-    /* border: 1px black solid; */
-    height: 50%;
-    position: absolute;
+    /* *
+    border: 1px black solid;
+    * */
+    height: 30px;
+    padding-top: 1px;
+    margin-top: 1px;
 }
 
 footer .facebook div {
@@ -64,7 +70,6 @@ footer .facebook div {
     background-position: center;
     width: 30%;
     height: 100%;
-    margin-top: -10px;
     float:left;
 }
 
@@ -73,8 +78,7 @@ footer .twitter div {
     background-repeat: no-repeat;
     background-position: center;
     width: 30%;
-    height: 110%;
-    margin-top: -13px;
+    height: 100%;
     float: left;
 }
 
@@ -83,10 +87,8 @@ footer .github div {
     background-repeat: no-repeat;
     background-position: center;
     width: 30%;
-    height: 110%;
-    margin-top: -13.3px;
+    height: 100%;
     float: left;
-    margin-left: 3px;
 }
 /*
 
