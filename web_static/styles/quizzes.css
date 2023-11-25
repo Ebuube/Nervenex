@@ -12,19 +12,27 @@
 }
 
 .quiz_info {
+    position: fixed;
+    left: 0;
     float: left;
     width: 30%;
-    margin-right: 5px;
-    margin-left: -20%;
-    padding-left: 50px;
+    min-height: 1000000px;
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-right: 5px;
+    padding-left: 10px;
     border-right: 1px white solid;
     background-color: white;
     text-align: left;
+    z-index: 1;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /*
+    border: 1px red solid;
+    */
 }
 
 .quiz_info h2 {
-    margin-top: 50px;
+    margin-top: 45px;
     margin-bottom: 20px;
     font-size: 30px;
 }

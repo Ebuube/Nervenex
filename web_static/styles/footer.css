@@ -3,10 +3,11 @@ footer {
     position: relative;
     bottom:0;
     background-color:white;
-    height:55px;
+    height: 45px;
     width:100%;
     border-top:1px #CCCCCC solid;
     color: rgb(231, 111, 13);
+    z-index: 100;
 }
 
 footer p {
@@ -45,6 +46,9 @@ footer .info li {
 .pagefooter {
     /* Prevent hiding items beneath the fixed and remove footer */
     margin-top:80px;    /* same as footer height */
+    /*
+    border: 1px red solid;
+    */
 }
 
 footer .social_media ul {
