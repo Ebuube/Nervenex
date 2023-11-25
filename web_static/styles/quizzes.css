@@ -1,0 +1,211 @@
+.pg_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: -90px;
+    min-height: 500px;
+    width: auto;
+}
+
+.pg_container section {
+    height: auto;
+}
+
+.quiz_info {
+    float: left;
+    width: 30%;
+    margin-right: 5px;
+    margin-left: -20%;
+    padding-left: 50px;
+    border-right: 1px white solid;
+    background-color: white;
+    text-align: left;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.quiz_info h2 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.quiz_numbers {
+    border: 1px #DDDDDD solid;
+    width: 95%;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.quiz_numbers ul {
+    width: 90%;
+    height: 100%;
+    text-align: center;
+    box-sizing: content-box;
+    margin-left: -25px;
+    /* test
+    border: 1px red solid;
+    */
+}
+
+.quiz_numbers li {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 5px;
+    padding-top: 6px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border: 1px #DDDDDD solid;
+    border-radius: 4px;
+    list-style: none;
+    height: 30px;
+    width: max-content;
+    text-align: center;
+    cursor: pointer;
+}
+
+.quiz_numbers .current {
+    background:rgb(231, 111, 13);
+    color: white;
+}
+
+.quiz_numbers .attempted {
+    border-color:rgb(231, 111, 13);
+}
+
+div.time,
+div.level {
+    width: 95%;
+    margin-bottom: 10px;
+    /* test *
+    border: 1px green solid;
+    */
+}
+
+div.time span,
+div.level span {
+    float: right;
+    text-align: left;
+}
+
+.timer p {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0px;
+    padding-top: 5px;
+    /* test *
+    border: 1px red solid;
+    */
+}
+
+.timer .figures {
+    font-size: 50px;
+    margin-bottom: 0px;
+}
+.sign_up_details {
+    float: right;
+    width: 50%;
+    height: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+
+    /* test */
+    /* border: 1px green solid; */
+}
+
+.quiz_info::before,
+.quiz_info::after,
+.sign_up_details::before,
+.sign_up_details::after {
+    clear: both;
+}
+
+/*
+.quiz_info {
+    background-image: url("../images/white_tech_background.jpg");
+    background-repeat: none;
+    background-size: 100%;
+    opacity: 80%;
+}
+*/
+.sign_up_details h2 {
+    border-bottom: 1px #DDDDDD solid;
+    padding-bottom: 5px;
+    font-size: 30px;
+}
+
+.sign_up_details .details input {
+    height: 30px;
+    width: 80%;
+    padding-left: 5%;
+    margin-bottom: 20px;
+    border: 1px #DDDDDD solid;
+    border-radius: 4px;
+    transition: 0.5s ease-out;
+    outline: none;
+}
+
+.sign_up_details .details input:focus {
+    box-shadow: 0 0 8px rgb(231, 111, 13);
+}
+
+#terms_of_service {
+    width: 20px;
+    height: auto;
+}
+#terms_of_service:focus {
+    box-shadow: none;
+}
+
+.alt_sign_up {
+    text-align: center;
+    /* border: 1px black solid; */
+    margin-left: 7%;
+}
+
+.alt_sign_up div {
+    text-align: left;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.alt_sign_up .submit {
+    background-color: rgb(231, 111, 13);
+    color: white;
+    height: 30px;
+    line-height: 30px;
+    width: 200px;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.alt_sign_up .submit:hover {
+    box-shadow: 0 0 3px rgb(231, 111, 13);
+}
+
+.submit:hover {
+    width: 230px;
+}
+
+.sign_with_google {
+    background-color: #f94444;
+    color: white;
+    font-weight: bold;
+    padding: 3px;
+    border-radius: 4px;
+    margin-left: 3px;
+}
+
+.sign_with_google:hover {
+    box-shadow: 0 0 3px #f94444;
+}
+
+.alt_sign_up p.hyperlink {
+    margin-left: 0px;
+    padding-left: 0px;
+    width: max-content;
+    text-align: left;
+}
