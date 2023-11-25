@@ -9,6 +9,7 @@
 
 .pg_container section {
     height: auto;
+    margin-top: 10px;
 }
 
 .quiz_info {
@@ -17,10 +18,8 @@
     float: left;
     width: 30%;
     min-height: 1000000px;
-    margin-right: 0px;
-    margin-left: 0px;
-    padding-right: 5px;
-    padding-left: 10px;
+    padding-right: 15px;
+    padding-left: 20px;
     border-right: 1px white solid;
     background-color: white;
     text-align: left;
@@ -32,11 +31,13 @@
 }
 
 .quiz_info h2 {
-    margin-top: 45px;
     margin-bottom: 20px;
     font-size: 30px;
 }
 
+.quiz_info p {
+    line-height: 20px;
+}
 .quiz_numbers {
     border: 1px #DDDDDD solid;
     width: 95%;
@@ -108,112 +109,64 @@ div.level span {
 
 .timer .figures {
     font-size: 50px;
-    margin-bottom: 0px;
-}
-.sign_up_details {
-    float: right;
-    width: 50%;
-    height: 100%;
-    margin-top: 10px;
-    padding: 10px;
-    text-align: center;
-
-    /* test */
-    /* border: 1px green solid; */
+    margin-bottom: 10px;
+    margin-top: 30px;
 }
 
 .quiz_info::before,
 .quiz_info::after,
-.sign_up_details::before,
-.sign_up_details::after {
+.questions::before,
+.questions::after {
     clear: both;
 }
 
-/*
-.quiz_info {
-    background-image: url("../images/white_tech_background.jpg");
-    background-repeat: none;
-    background-size: 100%;
-    opacity: 80%;
+.questions {
+    float: right;
+    width: 60%;
+    margin-left: 35%;
 }
-*/
-.sign_up_details h2 {
+
+.questions h2 {
+    margin-top: 30px;
+}
+
+.questions ul {
+    margin-left: -20px;
+    margin-right: 7%;
+    padding-left: 20px;
+    list-style: none;
+}
+
+.questions .question_item {
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.question_item p {
+    display: inline-block;
     border-bottom: 1px #DDDDDD solid;
-    padding-bottom: 5px;
-    font-size: 30px;
+    padding-bottom: 10px;
+    line-height: 25px;
 }
 
-.sign_up_details .details input {
+.question_num {
+    display: inline-block;
     height: 30px;
-    width: 80%;
-    padding-left: 5%;
-    margin-bottom: 20px;
-    border: 1px #DDDDDD solid;
-    border-radius: 4px;
-    transition: 0.5s ease-out;
-    outline: none;
-}
-
-.sign_up_details .details input:focus {
-    box-shadow: 0 0 8px rgb(231, 111, 13);
-}
-
-#terms_of_service {
-    width: 20px;
-    height: auto;
-}
-#terms_of_service:focus {
-    box-shadow: none;
-}
-
-.alt_sign_up {
-    text-align: center;
-    /* border: 1px black solid; */
-    margin-left: 7%;
-}
-
-.alt_sign_up div {
-    text-align: left;
-    width: 80%;
-    margin-bottom: 20px;
-}
-
-.alt_sign_up .submit {
-    background-color: rgb(231, 111, 13);
-    color: white;
-    height: 30px;
+    width: 30px;
+    border: 1px rgb(231, 111, 13) solid;
+    border-radius: 50%;
     line-height: 30px;
-    width: 200px;
     text-align: center;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: 0.3s;
 }
 
-.alt_sign_up .submit:hover {
-    box-shadow: 0 0 3px rgb(231, 111, 13);
+.question_item li {
+    list-style:upper-alpha;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
-.submit:hover {
-    width: 230px;
-}
-
-.sign_with_google {
-    background-color: #f94444;
-    color: white;
-    font-weight: bold;
-    padding: 3px;
-    border-radius: 4px;
-    margin-left: 3px;
-}
-
-.sign_with_google:hover {
-    box-shadow: 0 0 3px #f94444;
-}
-
-.alt_sign_up p.hyperlink {
-    margin-left: 0px;
-    padding-left: 0px;
-    width: max-content;
-    text-align: left;
+.question_item .answer {
+    color: rgb(231, 111, 13);
 }
