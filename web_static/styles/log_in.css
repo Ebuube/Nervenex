@@ -28,6 +28,7 @@
     border-right: 1px white solid;
     border-bottom-right-radius: 100px;
     background-color: #EEEEEE;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .sign_up_details {
@@ -63,6 +64,10 @@
     margin-bottom: 20px;
     /* test */
     /* border: 1px black solid; */
+}
+
+.nervenex_description li:hover {
+    cursor: default;
 }
 
 .nervenex_description {
