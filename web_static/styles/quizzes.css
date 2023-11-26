@@ -163,6 +163,7 @@ div.level span {
     list-style:upper-alpha;
     cursor: pointer;
     margin-bottom: 10px;
+    width: fit-content;
 }
 
 .question_item .answer {
