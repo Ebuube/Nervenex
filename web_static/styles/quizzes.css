@@ -1,23 +1,20 @@
 .pg_container {
     display: flex;
     justify-content: center;
-    margin-top: 40px;
     margin-bottom: 25px;
     min-height: 500px;
+    height: fit-content;
     width: auto;
 }
 
-.pg_container section {
-    height: auto;
-    margin-top: 10px;
-}
-
 .quiz_info {
-    position: fixed;
-    left: 0;
-    float: left;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
     width: 30%;
-    min-height: 1000000px;
+    height: fit-content;
+    padding-top: 0px;
+    margin-bottom: -30px;
     padding-right: 15px;
     padding-left: 20px;
     border-right: 1px white solid;
@@ -33,6 +30,7 @@
 .quiz_info h2 {
     margin-bottom: 20px;
     font-size: 30px;
+    margin-top: 78px;
 }
 
 .quiz_info p {
@@ -121,9 +119,9 @@ div.level span {
 }
 
 .questions {
-    float: right;
-    width: 60%;
-    margin-left: 35%;
+    width: 80%;
+    margin-left: 30px;
+    margin-top: 50px;
 }
 
 .questions h2 {
