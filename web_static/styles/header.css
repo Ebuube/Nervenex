@@ -9,7 +9,8 @@ header {
 }
 
 .header_logo {
-    height: 100%;
+    margin-top: 18px;
+    height: 50%;
     width: 40%;
     float: left;
 }
