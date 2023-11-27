@@ -66,6 +66,14 @@ input:focus {
     box-shadow: 0 0 8px rgb(231, 111, 13);
 }
 
+input.checkbox {
+    width: 20px;
+    height: auto;
+}
+
+input.checkbox:focus {
+    box-shadow: none;
+}
 /* textarea should look similar to input fields */
 textarea {
     font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;

@@ -42,7 +42,7 @@
         <div class="pg_container">
             <section class="quiz_info">
                 <input type="text" placeholder="Title"/>
-                <textarea autocomplete="off"placeholder="Describe the quiz ..."></textarea>
+                <textarea maxlength="512" placeholder="Describe the quiz ..."></textarea>
             
                 <div class="quiz_numbers">
                     <ul>
@@ -81,7 +81,7 @@
                     <p class="key"><span>Minutes</span><span>Seconds</span></p>
                 </div>
 
-                <button>Save</button>
+                <button>Upload</button>
             </section>
 
             <section class="questions">
@@ -90,114 +90,18 @@
                     <li class="question_item">
                         <article>
                             <span class="question_num">1</span>
-                            <p>A patient comes to the doctor complaining of abdominal pain. Which of the following is not likely the cause of the pain?</p>
+                            <textarea maxlength="512" placeholder="Describe the question ..."></textarea>
+                            <p>* Checkmark the correct option.</p>
                             <ol>
-                                <li>Pancreatitis</li>
-                                <li>Hernia</li>
-                                <li class="answer">Vertigo</li>
-                                <li>Peptic ulcer disease.</li>
-                            </ol>
-                        </article>
-                    </li>
-
-                    <!--NEXT-->
-                    <li class="question_item">
-                        <article>
-                            <span class="question_num">2</span>
-                            <p>A patient comes to the doctor complaining of abdominal pain. Which of the following is not likely the cause of the pain?</p>
-                            <ol>
-                                <li>Pancreatitis</li>
-                                <li>Hernia</li>
-                                <li>Vertigo</li>
-                                <li class="answer">Peptic ulcer disease.</li>
-                            </ol>
-                        </article>
-                    </li>
-
-                    <!--NEXT-->
-                    <li class="question_item">
-                        <article>
-                            <span class="question_num">3</span>
-                            <p>A patient comes to the doctor complaining of abdominal pain. Which of the following is not likely the cause of the pain?</p>
-                            <ol>
-                                <li>Pancreatitis</li>
-                                <li>Hernia</li>
-                                <li>Vertigo</li>
-                                <li>Peptic ulcer disease.</li>
-                            </ol>
-                        </article>
-                    </li>
-
-                    <!--NEXT-->
-                    <li class="question_item">
-                        <article>
-                            <span class="question_num">4</span>
-                            <p>A patient comes to the doctor complaining of abdominal pain. Which of the following is not likely the cause of the pain?</p>
-                            <ol>
-                                <li>Pancreatitis</li>
-                                <li class="answer">Hernia</li>
-                                <li>Vertigo</li>
-                                <li>Peptic ulcer disease.</li>
-                            </ol>
-                        </article>
-                    </li>
-                    
-                    <!--NEXT-->
-                    <li class="question_item">
-                        <article>
-                            <span class="question_num">5</span>
-                            <p>A patient comes to the doctor complaining of abdominal pain. Which of the following is not likely the cause of the pain?</p>
-                            <ol>
-                                <li>Pancreatitis</li>
-                                <li>Hernia</li>
-                                <li>Vertigo</li>
-                                <li>Peptic ulcer disease.</li>
-                            </ol>
-                        </article>
-                    </li>
-                    
-                    <!--NEXT-->
-                    <li class="question_item">
-                        <article>
-                            <span class="question_num">6</span>
-                            <p>A patient comes to the doctor complaining of abdominal pain. Which of the following is not likely the cause of the pain?</p>
-                            <ol>
-                                <li>Pancreatitis</li>
-                                <li>Hernia</li>
-                                <li class="answer">Vertigo</li>
-                                <li>Peptic ulcer disease.</li>
-                            </ol>
-                        </article>
-                    </li>
-                    
-                    <!--NEXT-->
-                    <li class="question_item">
-                        <article>
-                            <span class="question_num">7</span>
-                            <p>A patient comes to the doctor complaining of abdominal pain. Which of the following is not likely the cause of the pain?</p>
-                            <ol>
-                                <li>Pancreatitis</li>
-                                <li>Hernia</li>
-                                <li>Vertigo</li>
-                                <li>Peptic ulcer disease.</li>
-                            </ol>
-                        </article>
-                    </li>
-                    
-                    <!--NEXT-->
-                    <li class="question_item">
-                        <article>
-                            <span class="question_num">8</span>
-                            <p>A patient comes to the doctor complaining of abdominal pain. Which of the following is not likely the cause of the pain?</p>
-                            <ol>
-                                <li>Pancreatitis</li>
-                                <li>Hernia</li>
-                                <li>Vertigo</li>
-                                <li>Peptic ulcer disease.</li>
+                                <li><input class="checkbox" type="checkbox"/> <input maxlength="128" type="text" placeholder="Option A"/></li>
+                                <li><input class="checkbox" type="checkbox"/> <input maxlength="128" type="text" placeholder="Option B"/></li>
+                                <li class="answer"><input class="checkbox" type="checkbox"/> <input maxlength="128" type="text" placeholder="Option C"/></li>
+                                <li><input class="checkbox" type="checkbox"/> <input maxlength="128" type="text" placeholder="Option D"/></li>
                             </ol>
                         </article>
                     </li>
                 </ul>
+                <button>Add</button>
             </section>
         </div>
 

@@ -52,6 +52,7 @@
 .quiz_info textarea {
     width: 90%;
     min-height: 90px;
+    font-size: 15px;
 }
 
 .quiz_info p {
@@ -170,6 +171,18 @@ div.level span {
     line-height: 25px;
 }
 
+.question_item textarea {
+    font-size: 15px;
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 7px;
+}
+
+.question_item input.checkbox {
+    margin-left: -30px;
+    /* test */
+}
 .question_num {
     display: inline-block;
     height: 30px;
@@ -181,12 +194,21 @@ div.level span {
 }
 
 .question_item li {
-    list-style:upper-alpha;
-    cursor: pointer;
-    margin-bottom: 10px;
+    list-style:none;
+    margin-bottom: 0;
     width: fit-content;
+    display: flex;
 }
 
-.question_item .answer {
+.question_item .answer input {
     color: rgb(231, 111, 13);
+}
+
+.questions button {
+    width: 93%;
+    padding: 7px;
+    font-size: 16px;
+    background-color: rgb(231, 111, 13);
+    color: white;
+    border-radius: 4px;
 }
