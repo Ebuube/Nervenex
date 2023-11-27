@@ -180,6 +180,9 @@ div.level span {
     width: fit-content;
 }
 
+.question_item li:hover {
+    opacity: 90%;
+}
 .question_item .answer {
     color: rgb(231, 111, 13);
 }
