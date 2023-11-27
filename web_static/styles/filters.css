@@ -25,14 +25,6 @@
     float: right;
 }
 
-.filters button:hover {
-    opacity: 90%;
-}
-
-.filters button:focus-within {
-    font-weight: bolder;
-}
-
 /* Add additional search menus e.g.
 .filters .quizzes,
 .filters .posts {...*/
