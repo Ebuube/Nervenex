@@ -94,7 +94,16 @@
                     <div class="intro">
                         <h1>Resources</h1>
                         <h4>Watch, read or download your prefered learning material.</h4>
-                        <button class="button" type="button" name="upload">Upload</button>
+                        <button popovertarget="upload_resource" popovertarget="overlay">Upload</button>
+                            
+                        <div popover id="upload_resource">
+                            <input type="text" placeholder="Title"/>
+                            <input type="text" placeholder="Description"/>
+                            <input type="text" placeholder="Enter the link to the resource ..."/>
+                            <button class="reset">Reset</button>
+                            <button class="submit">Submit</button>
+                        </div>
+
                         <input type="text" placeholder="Search ..."/>
                     </div>
 

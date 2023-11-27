@@ -127,3 +127,29 @@ div.intro h4 {
     border: none;
     margin-bottom: 20px;
 }
+
+#upload_resource button {
+    width: 20%;
+}
+
+#upload_resource .reset {
+    float: left;
+}
+
+#upload_resource .submit {
+    float: right;
+}
+
+#upload_resource:popover-open {
+    width: 400px;
+    padding: 30px;
+    border: 1px rgb(231, 111, 13) solid;
+    border-radius: 4px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+#upload_resource input {
+    width: 94%;
+}
