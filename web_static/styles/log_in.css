@@ -109,7 +109,7 @@
 }
 
 .alt_sign_up {
-    text-align: center;
+    text-align: left;
     /* border: 1px black solid; */
     margin-left: 7%;
 }
@@ -120,37 +120,8 @@
     margin-bottom: 20px;
 }
 
-.alt_sign_up .submit {
-    background-color: rgb(231, 111, 13);
-    color: white;
-    height: 30px;
-    line-height: 30px;
-    width: 200px;
-    text-align: center;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.alt_sign_up .submit:hover {
-    box-shadow: 0 0 3px rgb(231, 111, 13);
-}
-
-.submit:hover {
-    width: 230px;
-}
-
-.sign_with_google {
-    background-color: #f94444;
-    color: white;
-    font-weight: bold;
-    padding: 3px;
-    border-radius: 4px;
-    margin-left: 3px;
-}
-
-.sign_with_google:hover {
-    box-shadow: 0 0 3px #f94444;
+.alt_sign_up .google {
+    background-color: #f94444;;
 }
 
 .alt_sign_up p.hyperlink {
@@ -158,4 +129,13 @@
     padding-left: 0px;
     width: max-content;
     text-align: left;
+}
+
+.alt_sign_up button {
+    background-color: rgb(231, 111, 13);
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 4px;
+    margin-left: 3px;
 }
