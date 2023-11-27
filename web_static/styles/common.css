@@ -61,3 +61,23 @@ input {
 input:focus {
     box-shadow: 0 0 8px rgb(231, 111, 13);
 }
+
+::-webkit-scrollbar {
+    width: 7px;
+    /*
+    border: 1px red solid;
+    */
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(231, 111, 13);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar:hover {
+    background-color: #DDDDDD;
+}
