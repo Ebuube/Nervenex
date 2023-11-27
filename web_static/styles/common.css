@@ -49,7 +49,10 @@ button:hover,
 /* input buttons */
 
 input {
+    /*
     height: 30px;
+    */
+    height: fit-content;
     width: 100%;
     padding-left: 5%;
     margin-bottom: 20px;
@@ -60,6 +63,21 @@ input {
 }
 
 input:focus {
+    box-shadow: 0 0 8px rgb(231, 111, 13);
+}
+
+/* textarea should look similar to input fields */
+textarea {
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    height: fit-content;
+    padding:5%;
+    border: 1px #DDDDDD solid;
+    border-radius: 4px;
+    transition: 0.5s ease-out;
+    outline: none;
+}
+
+textarea:focus {
     box-shadow: 0 0 8px rgb(231, 111, 13);
 }
 
