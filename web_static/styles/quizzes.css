@@ -97,7 +97,7 @@
 div.time,
 div.level {
     width: 95%;
-    margin-bottom: 10px;
+    margin-bottom: -25px;
     /* test *
     border: 1px green solid;
     */
