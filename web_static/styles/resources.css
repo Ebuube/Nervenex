@@ -153,3 +153,13 @@ div.intro h4 {
 #upload_resource input {
     width: 94%;
 }
+
+#upload_resource h3 {
+    color: #434343;
+    text-align: center;
+    margin-top: 0px;
+}
+
+.intro input.search {
+    font-size: large;
+}
