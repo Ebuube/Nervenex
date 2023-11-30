@@ -18,6 +18,17 @@ class Answer(BaseModel, Base):
         created_at = Column(DateTime, default=datetime.utcnow)
         question = relationship("Question", backref="answers")
         user = relationship("User", backref="answers")
+    else:
+        answer_id = 0
+        question_id = 0
+        user_id = ""
+        selected_option = 0
+        is_correct = False
+        explanation = ""
+        created_at = None
+        question = None
+        user = None
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

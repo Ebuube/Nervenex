@@ -13,6 +13,11 @@ class Post(BaseModel, Base):
         author_id = Column(String(60), ForeignKey("users.id", ondelete="CASCADE"))
         author = relationship("User", backref="posts")
         created_at = Column(DateTime, default=datetime.utcnow)
+    else:
+        content = ""
+        author_id = ""
+        author = None
+        created_at = None
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

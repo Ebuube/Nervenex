@@ -23,12 +23,20 @@ class User(BaseModel, Base):
         threads = relationship("Thread", backref="author")
         attempts = relationship("Attempt", backref="student")
         study_records = relationship("StudyRecord", backref="student")
+    else:
+        username = ""
+        email = ""
+        password = ""
+        first_name = ""
+        last_name = ""
+        
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
 
     def __setattr__(self, name, value):
+        """set password with md5 encryption"""
         if name == "password":
             value = md5(value.encode()).hexdigest()
         super().__setattr__(name, value)

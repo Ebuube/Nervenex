@@ -16,6 +16,13 @@ class Quiz(BaseModel, Base):
         duration = Column(Integer, nullable=False)
         is_active = Column(Boolean, default=False)
         questions = relationship("Question", backref="quiz")
+    else:
+        quiz_id = 0
+        title = ""
+        description = ""
+        duration = 0
+        is_active = False
+        questions = []
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

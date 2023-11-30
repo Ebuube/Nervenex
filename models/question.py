@@ -17,6 +17,15 @@ class Question(BaseModel, Base):
         option_c = Column(String(255), nullable=False)
         option_d = Column(String(255), nullable=False)
         correct_answer = Column(Integer, nullable=False)
+    else:
+        quiz_id = 0
+        text = ""
+        option_a = ""
+        option_b = ""
+        option_c = ""
+        option_d = ""
+        correct_answer = 0
+    
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

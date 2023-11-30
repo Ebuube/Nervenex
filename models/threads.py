@@ -13,6 +13,12 @@ class Thread(BaseModel, Base):
         author_id = Column(String(60), ForeignKey("users.id", ondelete="CASCADE"))
         author = relationship("User", backref="threads")
         created_at = Column(DateTime, default=datetime.utcnow)
-
+    else:
+        title = ""
+        author_id = ""
+        author = None
+        created_at = None 
+        
+        
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
