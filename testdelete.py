@@ -8,7 +8,7 @@ from models.answer import Answer
 from models.attempt import Attempt
 
 
-def test_student_platform_delete_feature():
+def test_delete_feature():
     # Initialize FileStorage instance
     fs = FileStorage()
 
@@ -84,4 +84,4 @@ def test_student_platform_delete_feature():
 
 
 if __name__ == "__main__":
-    test_student_platform_delete_feature()
+    test_delete_feature()
