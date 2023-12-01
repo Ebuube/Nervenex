@@ -5,7 +5,7 @@ header {
     border-bottom: 1px #CCCCCC solid;
     position: fixed;
     top:0;
-    z-index: 100;
+    z-index: 5;
 }
 
 .header_logo {
@@ -74,6 +74,62 @@ header {
     /* border: 2px black solid; */
 }
 
+.navigation .button {
+    margin-left: 0px;
+    /* border: 1px red solid;  /* test */
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 4px;
+    background-color: white;
+}
+
+.navigation .button .menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: max-content;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px rgb(231, 111, 13) solid;
+    border-radius: 4px;
+    background: rgb(231, 111, 13);
+    z-index: 6;
+    box-shadow:0px 4px 8px 4px rgba(0, 0, 0, 0.100);
+    /* border: 1px red solid;  /* test */
+}
+
+.navigation .button:hover .menu{
+    display: block;
+}
+
+.navigation .menu li {
+    color: white;
+    list-style: none;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: background-color 1s ease-out;
+}
+
+.navigation .menu li:hover {
+    /* color: white; */
+    /* background-color: rgb(231, 111, 13); */
+    background-color: white;
+    color: rgb(231, 111, 13);
+}
+
+.navigation .bar {
+    background-color: rgb(231, 111, 13);
+    width: 25px;
+    height: 4px;
+    margin: 4px;
+    border-radius: 4px;
+}
 /* User info */
 
 header .user_info
