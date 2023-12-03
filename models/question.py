@@ -19,13 +19,13 @@ class Question(BaseModel, Base):
         option_d = Column(String(255), nullable=False)
         correct_answer = Column(Integer, nullable=False)
     else:
-        quiz_id = 0
+        quiz_id = ""
         text = ""
         option_a = ""
         option_b = ""
         option_c = ""
         option_d = ""
-        correct_answer = 0
+        # correct_answer = 0    # Not needed
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
