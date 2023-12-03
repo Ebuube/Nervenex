@@ -18,10 +18,14 @@ class Quiz(BaseModel, Base):
         is_active = Column(Boolean, default=False)
         questions = relationship("Question", backref="quiz")
     else:
-        quiz_id = 0
+        quiz_id = ""
         title = ""
         description = ""
-        duration = 0
+        duration = 0    # How long (minutes) a quiz should last
+        # is_active -> attribute
+        # It determines whether or not a quiz is available for other users.
+        # If True, then it will be globally accessible,
+        # else only the owner can see and modify it.
         is_active = False
         questions = []
 
