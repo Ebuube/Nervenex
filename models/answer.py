@@ -24,15 +24,16 @@ class Answer(BaseModel, Base):
         question = relationship("Question", backref="answers")
         user = relationship("User", backref="answers")
     else:
-        answer_id = 0
-        question_id = 0
-        user_id = ""
-        selected_option = 0
-        is_correct = False
+        # answer_id = 0
+        # user_id = ""
+        # selected_option = 0
+        # is_correct = False
+        # created_at = None
+        # question = None
+        # user = None
+        question_id = ""
         explanation = ""
-        created_at = None
-        question = None
-        user = None
+        value = 0   # 1: 'a', 2: 'b', 3: 'c', 4: 'd'
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
