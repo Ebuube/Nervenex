@@ -25,7 +25,7 @@ class User(BaseModel, Base):
         attempts = relationship("Attempt", backref="student")
         study_records = relationship("StudyRecord", backref="student")
     else:
-        username = ""
+        # username = ""
         email = ""
         password = ""
         first_name = ""
