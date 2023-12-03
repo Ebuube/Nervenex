@@ -10,7 +10,8 @@ from sqlalchemy.orm import relationship
 class Quiz(BaseModel, Base):
     if models.storage_t == 'db':
         __tablename__ = "quizzes"
-        quiz_id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+        quiz_id = Column(Integer, primary_key=True, autoincrement=True,
+                         nullable=False)
         title = Column(String(255), nullable=False)
         description = Column(Text, nullable=True)
         duration = Column(Integer, nullable=False)

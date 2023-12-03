@@ -21,19 +21,21 @@ else:
 class BaseModel:
     """The baseModel class from which all other classes will inherit from """
     if models.storage_t == "db":
-        id = Column(String(60),primary_key=True, default=lambda: str(uuid.uuid4()))
+        id = Column(String(60), primary_key=True,
+                    default=lambda: str(uuid.uuid4()))
         created_at = Column(DateTime, default=datetime.utcnow)
         updated_at = Column(DateTime, default=datetime.utcnow)
 
-    
     def __init__(self, **kwargs):
         """Initializing the BaseModel with kwargs for potential instances"""
         if kwargs:
             for key, value in kwargs.items():
                 if key != "__class__":
                     setattr(self, key, value)
-            if kwargs.get("created_at", None) and type(self.created_at) is str:
-                self.created_at = datetime.strptime(kwargs["created_at"], time)
+            if (kwargs.get("created_at", None) and
+                    type(self.created_at) is str):
+                self.created_at = datetime.strptime(kwargs["created_at"],
+                                                    time)
             else:
                 self.created_at = datetime.utcnow()
             if kwargs.get("updated_at", None) and type(self.updated_at) is str:
@@ -47,19 +49,16 @@ class BaseModel:
             self.created_at = datetime.utcnow()
             self.updated_at = self.created_at
 
-    
     def __str__(self):
         """String representation of the BaseModel class"""
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
-    
     def save(self):
         """Saving changes in the instance"""
         self.updated_at = datetime.utcnow()
         models.storage.new(self)
         models.storage.save()
 
-    
     def to_dict(self, save_fs=None):
         """Converts all instance attributes to a dictionary and returns it"""
         new_dict = self.__dict__.copy()
@@ -75,7 +74,6 @@ class BaseModel:
                 del new_dict["password"]
         return new_dict
 
-    
     def delete(self):
         """Delete the current instance"""
         models.storage.delete(self)

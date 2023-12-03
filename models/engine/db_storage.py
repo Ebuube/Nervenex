@@ -33,14 +33,15 @@ class DBStorage:
         host = "localhost"
         db = "student_platform_db"
 
-        self.__engine = create_engine("mysql+mysqldb://{}:{}@{}/{}".
-                               format(user, password, host, db))
+        self.__engine = create_engine(
+                "mysql+mysqldb://{}:{}@{}/{}".format(user, password, host, db))
 
     def all(self, cls=None):
-        """Query on the current database session all objects of the given class.
+        """Query on the current database session all objects of the given class
             If cls is None: queries all types of objects.
             Return:
-                Dict of queried classes in the format <class name>.<obj id> = obj.
+                Dict of queried classes in the format:
+                <class name>.<obj id> = obj.
         """
         new_list = []
         if cls is None:
@@ -71,7 +72,7 @@ class DBStorage:
         """
         Base.metadata.create_all(self.__engine)
         session_factory = sessionmaker(bind=self.__engine,
-                                     expire_on_commit=False)
+                                       expire_on_commit=False)
         Session = scoped_session(session_factory)
         self.__session = Session()
 
@@ -87,7 +88,7 @@ class DBStorage:
         if cls not in cls_list:
             return (None)
 
-        obj = self.__session.query(cls).filter(cls.id==id)
+        obj = self.__session.query(cls).filter(cls.id == id)
         if not obj:
             return (None)
         return (obj)

@@ -67,7 +67,7 @@ class FileStorage:
             for key, val in self.__objects.items():
                 newdict_objs[key] = val.to_dict()
             json_f.write(json.dumps(newdict_objs))
-            
+
     def delete(self, obj=None):
         """
         Removes the specified object from storage
@@ -112,7 +112,8 @@ class FileStorage:
                 self.__objects[key] = new_class
 
         except Exception as e:
-            print("Error reloading data from file:", e)
+            # print("Error reloading data from file:", e)
+            pass
 
     def get(self, cls, id):
         """

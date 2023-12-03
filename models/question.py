@@ -6,6 +6,7 @@ from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, Integer, Boolean
 from sqlalchemy.orm import relationship
 
+
 class Question(BaseModel, Base):
     if models.storage_t == 'db':
         __tablename__ = "questions"
@@ -25,7 +26,6 @@ class Question(BaseModel, Base):
         option_c = ""
         option_d = ""
         correct_answer = 0
-    
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
