@@ -18,7 +18,7 @@ class Quiz(BaseModel, Base):
         is_active = Column(Boolean, default=False)
         questions = relationship("Question", backref="quiz")
     else:
-        quiz_id = ""
+        # quiz_id = ""
         title = ""
         description = ""
         duration = 0    # How long (minutes) a quiz should last

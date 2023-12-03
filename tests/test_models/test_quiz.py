@@ -31,7 +31,7 @@ class test_Quiz(test_BaseModel):
 
         foo = _cls()
         attrs = {
-                    'quiz_id': str, 'title': str, 'description': str,
+                    'title': str, 'description': str,
                     'duration': int, 'is_active': bool, 'questions': list
                 }
 
