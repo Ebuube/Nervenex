@@ -40,4 +40,7 @@ class Attempt(BaseModel, Base):
         # answers -> A property
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize an instance
+        """
         super().__init__(*args, **kwargs)

@@ -36,6 +36,9 @@ class User(BaseModel, Base):
         last_name = ""
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize instance
+        """
         super().__init__(*args, **kwargs)
 
     def __setattr__(self, name, value):
