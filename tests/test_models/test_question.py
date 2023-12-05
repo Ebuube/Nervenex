@@ -32,7 +32,7 @@ class test_Question(test_BaseModel):
 
         foo = _cls()
         attrs = {
-                    'quiz_id': str, 'text': str, 'option_a': str,
+                    'quiz_id': str, 'content': str, 'option_a': str,
                     'option_b': str, 'option_c': str, 'option_d': str
                 }
 
