@@ -17,12 +17,14 @@ class Comment(BaseModel, Base):
     if models.storage_t == 'db':
         __tablename__ = "comments"
         content = Column(String(255), nullable=False)
-        post_id = Column(Integer, ForeignKey("posts.id", ondelete="CASCADE"))
-        post = relationship("Post", backref="comments")
+        post_id = Column(String(60),
+                         ForeignKey("posts.id", ondelete="CASCADE"))
         author_id = Column(String(60), ForeignKey("users.id",
                            ondelete="CASCADE"))
+
+        # Relationships
+        post = relationship("Post", backref="comments")
         author = relationship("User", backref="comments")
-        created_at = Column(DateTime, default=datetime.utcnow)
     else:
         content = ""
         post_id = ""
@@ -32,4 +34,7 @@ class Comment(BaseModel, Base):
         # created_at = None
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize an instance
+        """
         super().__init__(*args, **kwargs)
