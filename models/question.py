@@ -8,6 +8,11 @@ from sqlalchemy.orm import relationship
 
 
 class Question(BaseModel, Base):
+    """
+    Logic: Prevent addition of extra questions, change of duration \
+            once quiz is uploaded
+    but permit modification of the questions
+    """
     if models.storage_t == 'db':
         __tablename__ = "questions"
         quiz_id = Column(Integer, ForeignKey("quizzes.id", ondelete="CASCADE"))
