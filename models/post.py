@@ -3,7 +3,7 @@
 """The Post class that inherits from BaseModel"""
 import models
 from models.base_model import BaseModel, Base
-from sqlalchemy import Column, String, DateTime, ForeignKey
+from sqlalchemy import Column, Text, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 
 
@@ -16,17 +16,22 @@ class Post(BaseModel, Base):
     """
     if models.storage_t == 'db':
         __tablename__ = "posts"
-        content = Column(String(255), nullable=False)
+        content = Column(Text, nullable=False)
         author_id = Column(String(60),
                            ForeignKey("users.id", ondelete="CASCADE"))
+        thread_id = Column(String(60),
+                           ForeignKey("threads.id", ondelete="CASCADE"))
+
+        # Relationships
         author = relationship("User", backref="posts")
-        created_at = Column(DateTime, default=datetime.utcnow)
     else:
         content = ""
         author_id = ""
-        # author = None # Will be a property method
-        # created_at = None
         thread_id = ""
+        # author = None # Will be a property method
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize an instance
+        """
         super().__init__(*args, **kwargs)
