@@ -17,7 +17,8 @@ class Quiz(BaseModel, Base):
         #                  nullable=False)
         user_id = Column(String(60),
                          ForeignKey('users.id', ondelete="CASCADE"))
-        # category_id
+        category_id = Column(String(60),
+                             ForeignKey('categories.id', ondelete="CASCADE"))
         title = Column(String(60), nullable=False)
         description = Column(Text, nullable=True)
         duration = Column(Integer, nullable=False)
@@ -27,6 +28,8 @@ class Quiz(BaseModel, Base):
         questions = relationship("Question", backref="quiz")
     else:
         # quiz_id = ""
+        user_id = ""
+        category_id = ""
         title = ""
         description = ""
         duration = 0    # How long (minutes) a quiz should last

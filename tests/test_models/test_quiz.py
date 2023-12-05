@@ -31,8 +31,9 @@ class test_Quiz(test_BaseModel):
 
         foo = _cls()
         attrs = {
-                    'title': str, 'description': str,
-                    'duration': int, 'is_active': bool, 'question_ids': list
+                    'title': str, 'description': str, 'user_id': str,
+                    'duration': int, 'is_active': bool, 'question_ids': list,
+                    'category_id': str
                 }
 
         for attr, attr_type in attrs.items():
