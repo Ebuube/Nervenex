@@ -8,6 +8,11 @@ from sqlalchemy.orm import relationship
 
 
 class Thread(BaseModel, Base):
+    """
+    A discussion topic
+    - title : title of discussion
+    - author_id : id of user who created the thread
+    """
     if models.storage_t == 'db':
         __tablename__ = "threads"
         title = Column(String(128), nullable=False)
@@ -18,8 +23,8 @@ class Thread(BaseModel, Base):
     else:
         title = ""
         author_id = ""
-        author = None
-        created_at = None
+        # author = None # Property  method
+        # created_at = None
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
