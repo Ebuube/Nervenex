@@ -21,14 +21,14 @@ class test_Answer(test_BaseModel):
         Ensure that the correct attributes are present in the model
         Namely:
         - value -> The correct option amongst (1: 'a', 2: 'b', 3: 'c', 4: 'd')
-        - explanation -> A reason for the answer
         - question_id -> The particular question it references
+        - attempt_id -> The particular Attempt this answer was provided for
         """
         _cls = Answer
 
         foo = _cls()
         attrs = {
-                'value': int, 'explanation': str, 'question_id': str
+                'value': int, 'question_id': str, 'attempt_id': str
                 }
 
         for attr, attr_type in attrs.items():

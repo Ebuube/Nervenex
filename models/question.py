@@ -12,6 +12,7 @@ class Question(BaseModel, Base):
     Logic: Prevent addition of extra questions, change of duration \
             once quiz is uploaded
     but permit modification of the questions
+    correct_answer -> from 1-4 matching options a-d
     """
     if models.storage_t == 'db':
         __tablename__ = "questions"
@@ -22,7 +23,8 @@ class Question(BaseModel, Base):
         option_b = Column(String(128), nullable=False)
         option_c = Column(String(128), nullable=False)
         option_d = Column(String(128), nullable=False)
-        # correct_answer = Column(Integer, nullable=False)
+        correct_answer = Column(Integer, nullable=False)
+        explanation = Column(Text, nullable=True)
 
         # Relationships
         quiz = relationship("Quiz", backref="questions")
@@ -33,7 +35,8 @@ class Question(BaseModel, Base):
         option_b = ""
         option_c = ""
         option_d = ""
-        # correct_answer = 0    # Not needed
+        correct_answer = 0
+        explanation = ""
 
     def __init__(self, **kwargs):
         """

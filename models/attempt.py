@@ -18,16 +18,14 @@ class Attempt(BaseModel, Base):
     """
     if models.storage_t == 'db':
         __tablename__ = "attempts"
-        attempt_id = Column(Integer, primary_key=True, autoincrement=True,
-                            nullable=False)
         user_id = Column(String(60), ForeignKey("users.id"),
                          ondelete="CASCADE", nullable=False)
         quiz_id = Column(Integer, ForeignKey("quizzes.id"),
                          ondelete="CASCADE", nullable=False)
         score = Column(Integer, nullable=False)
-        total_questions = Column(Integer, nullable=False)
-        start_time = Column(DateTime, default=datetime.utcnow)
-        end_time = Column(DateTime, nullable=False)
+        duration = Column(Integer, nullable=False)
+
+        # Relationships
         user = relationship("User", backref="attempts")
         quiz = relationship("Quiz", backref="attempts")
         answers = relationship("Answer", backref="attempt")
@@ -36,8 +34,10 @@ class Attempt(BaseModel, Base):
         user_id = ""
         quiz_id = ""
         score = 0
+        duration = 0
+        answer_ids = []
         # user = None   \t should be implemented as a property method
-        answers = []
+        # answers -> A property
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
