@@ -8,6 +8,7 @@ import os
 from models.base_model import BaseModel
 from models.answer import Answer
 from models.attempt import Attempt
+from models.category import Category
 from models.comment import Comment
 from models.post import Post
 from models.question import Question
@@ -18,8 +19,9 @@ from models.user import User
 
 classes = {
             "BaseModel": BaseModel, "Answer": Answer, "Attempt": Attempt,
-            "Comment": Comment, "Post": Post, "Question": Question,
-            "Quiz": Quiz, "Thread": Thread, "User": User}
+            "Category": Category, "Comment": Comment, "Post": Post,
+            "Question": Question, "Quiz": Quiz, "Thread": Thread,
+            "User": User}
 
 
 class FileStorage:

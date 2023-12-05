@@ -10,6 +10,7 @@ from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 from models.answer import Answer
 from models.attempt import Attempt
+from models.category import Category
 from models.comment import Comment
 from models.post import Post
 from models.question import Question
@@ -35,7 +36,7 @@ class test_FileStorage(unittest.TestCase):
         self.value = FileStorage
         self.name = self.value.__name__
         self.file_path = 'file.json'
-        self._classes = [BaseModel, Answer, Attempt, Comment, Post,
+        self._classes = [BaseModel, Answer, Attempt, Category, Comment, Post,
                          Question, Quiz, Thread, User]
 
     def setUp(self):
