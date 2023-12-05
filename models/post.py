@@ -8,6 +8,12 @@ from sqlalchemy.orm import relationship
 
 
 class Post(BaseModel, Base):
+    """
+    Posts made by users
+    - content : what the post is all about
+    - author_id : id of user who made the post
+    - thread_id : id of thread under which the post was made
+    """
     if models.storage_t == 'db':
         __tablename__ = "posts"
         content = Column(String(255), nullable=False)
@@ -18,8 +24,9 @@ class Post(BaseModel, Base):
     else:
         content = ""
         author_id = ""
-        author = None
-        created_at = None
+        # author = None # Will be a property method
+        # created_at = None
+        thread_id = ""
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
