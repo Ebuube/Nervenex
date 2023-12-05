@@ -19,7 +19,9 @@ else:
 
 
 class BaseModel:
-    """The baseModel class from which all other classes will inherit from """
+    """
+    The baseModel class from which all other classes will inherit from
+    """
     if models.storage_t == "db":
         id = Column(String(60), primary_key=True,
                     default=lambda: str(uuid.uuid4()))
@@ -60,7 +62,11 @@ class BaseModel:
         models.storage.save()
 
     def to_dict(self, save_fs=None):
-        """Converts all instance attributes to a dictionary and returns it"""
+        """
+        Converts all instance attributes to a dictionary and returns it
+        If `save_fs` is not None, it includes the hashed password in the
+        return value
+        """
         new_dict = self.__dict__.copy()
         if "created_at" in new_dict:
             new_dict["created_at"] = new_dict["created_at"].strftime(time)
