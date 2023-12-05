@@ -8,14 +8,22 @@ from sqlalchemy.orm import relationship
 
 
 class Quiz(BaseModel, Base):
+    """
+    Description of the Quiz class
+    """
     if models.storage_t == 'db':
         __tablename__ = "quizzes"
-        quiz_id = Column(Integer, primary_key=True, autoincrement=True,
-                         nullable=False)
-        title = Column(String(255), nullable=False)
+        # quiz_id = Column(Integer, primary_key=True, autoincrement=True,
+        #                  nullable=False)
+        user_id = Column(String(60),
+                         ForeignKey('users.id', ondelete="CASCADE"))
+        # category_id
+        title = Column(String(60), nullable=False)
         description = Column(Text, nullable=True)
         duration = Column(Integer, nullable=False)
         is_active = Column(Boolean, default=False)
+
+        # Relationship
         questions = relationship("Question", backref="quiz")
     else:
         # quiz_id = ""
@@ -27,7 +35,11 @@ class Quiz(BaseModel, Base):
         # If True, then it will be globally accessible,
         # else only the owner can see and modify it.
         is_active = False
-        questions = []
+        question_ids = []
+        # questions -> Property
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize using Parent class
+        """
         super().__init__(*args, **kwargs)
