@@ -18,8 +18,9 @@ class Thread(BaseModel, Base):
         title = Column(String(128), nullable=False)
         author_id = Column(String(60),
                            ForeignKey("users.id", ondelete="CASCADE"))
+
+        # Relationships
         author = relationship("User", backref="threads")
-        created_at = Column(DateTime, default=datetime.utcnow)
     else:
         title = ""
         author_id = ""
@@ -27,4 +28,7 @@ class Thread(BaseModel, Base):
         # created_at = None
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize an instance
+        """
         super().__init__(*args, **kwargs)
