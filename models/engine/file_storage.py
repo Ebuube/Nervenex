@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 Defining FileStorage Class for Student Platform
 """
@@ -7,15 +6,20 @@ Defining FileStorage Class for Student Platform
 import json
 import os
 from models.base_model import BaseModel
-from models.user import User
-from models.quiz import Quiz
-from models.question import Question
 from models.answer import Answer
 from models.attempt import Attempt
+from models.comment import Comment
+from models.post import Post
+from models.question import Question
+from models.quiz import Quiz
+from models.thread import Thread
+from models.user import User
 
 
-classes = {"BaseModel": BaseModel, "User": User, "Quiz": Quiz,
-           "Question": Question, "Answer": Answer, "Attempt": Attempt}
+classes = {
+            "BaseModel": BaseModel, "Answer": Answer, "Attempt": Attempt,
+            "Comment": Comment, "Post": Post, "Question": Question,
+            "Quiz": Quiz, "Thread": Thread, "User": User}
 
 
 class FileStorage:
@@ -40,7 +44,7 @@ class FileStorage:
         if cls is not None:
             new_dict = {}
             for key, value in self.__objects.items():
-                if cls == value.__class__ or cls == value.__class__.__name__:
+                if type(value) is cls:
                     new_dict[key] = value
             return new_dict
 
@@ -85,33 +89,13 @@ class FileStorage:
         :return: None
         """
 
-        emptdict_objs = {}
+        temp = {}
         try:
             with open(self.__file_path, 'r') as json_f:
-                emptdict_objs = json.loads(json_f.read())
-
-            emptdict_objs = {str(k): v for k, v in emptdict_objs.items()}
-
-            for key, val in emptdict_objs.items():
-                if key.split('.')[0] == "Answer":
-                    val['reload'] = True
-                    new_class = classes[key.split(".")[0]](**val)
-                elif key.split('.')[0] == "Attempt":
-                    val['reload'] = True
-                    new_class = classes[key.split(".")[0]](**val)
-                elif key.split('.')[0] == "Question":
-                    val['reload'] = True
-                    new_class = classes[key.split(".")[0]](**val)
-                elif key.split('.')[0] == "Quiz":
-                    val['reload'] = True
-                    new_class = classes[key.split(".")[0]](**val)
-                else:
-                    val['reload'] = True
-                    new_class = classes[key.split(".")[0]](**val)
-
-                self.__objects[key] = new_class
-
-        except Exception as e:
+                temp = json.load(json_f)
+                for key, val in temp.items():
+                    self.__objects[key] = classes[val['__class__']](**val)
+        except FileNotFoundError as e:
             # print("Error reloading data from file:", e)
             pass
 
@@ -130,9 +114,7 @@ class FileStorage:
             if key in self.__objects:
                 return self.__objects[key]
         except Exception as e:
-            print("Error getting object from storage:", e)
-
-        return None
+            print("Error getting object from storage:\n", e)
 
     def count(self, cls=None):
         """
@@ -143,7 +125,8 @@ class FileStorage:
         if cls is not None:
             count = 0
             for key, val in self.__objects.items():
-                if cls == val.__class__ or cls == val.__class__.__name__:
+                if type(val) is cls:
                     count += 1
-                return count
-        return len(self.__objects)
+            return count
+        else:
+            return len(self.__objects)
