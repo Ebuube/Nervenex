@@ -22,7 +22,7 @@ class User(BaseModel, Base):
         quizzes = relationship("Quiz", backref="author")
         attempts = relationship("Attempt", backref="maker")
         posts = relationship("Post", backref="author")
-        comment = relationship("Comment", backref="author")
+        comments = relationship("Comment", backref="author")
     else:
         email = ""
         password = ""
