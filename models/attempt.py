@@ -24,6 +24,7 @@ class Attempt(BaseModel, Base):
         duration = Column(Integer, nullable=False)
 
         # Relationships
+        answers = relationship("Answer", backref="attempt")
     else:
         user_id = ""
         quiz_id = ""

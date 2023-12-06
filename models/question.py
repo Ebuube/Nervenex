@@ -16,7 +16,7 @@ class Question(BaseModel, Base):
     """
     if models.storage_t == 'db':
         __tablename__ = "questions"
-        quiz_id = Column(String(60), ForeignKey("quizzes.id"))
+        quiz_id = Column(String(60), ForeignKey("quizzes.id"), nullable=False)
         content = Column(Text, nullable=False)
         option_a = Column(String(128), nullable=False)
         option_b = Column(String(128), nullable=False)

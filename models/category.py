@@ -14,7 +14,11 @@ class Category(BaseModel, Base):
     """
     if models.storage_t == 'db':
         __tablename__ = "categories"
-        name = Column(String(128), nullable=False)
+        name = Column(String(128), unique=True, nullable=False)
+
+        # Relationships
+        threads = relationship("Thread", backref="category")
+        quizzes = relationship("Quiz", backref="category")
     else:
         name = ""
 

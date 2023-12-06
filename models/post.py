@@ -17,10 +17,12 @@ class Post(BaseModel, Base):
     if models.storage_t == 'db':
         __tablename__ = "posts"
         content = Column(Text, nullable=False)
-        author_id = Column(String(60), ForeignKey("users.id"))
-        thread_id = Column(String(60), ForeignKey("threads.id"))
+        author_id = Column(String(60), ForeignKey("users.id"), nullable=False)
+        thread_id = Column(String(60), ForeignKey("threads.id"),
+                           nullable=False)
 
         # Relationships
+        comments = relationship("Comment", backref="post")
     else:
         content = ""
         author_id = ""

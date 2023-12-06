@@ -19,6 +19,10 @@ class User(BaseModel, Base):
         last_name = Column(String(128), nullable=False)
 
         # Relationships
+        quizzes = relationship("Quiz", backref="author")
+        attempts = relationsihp("Attempt", backref="maker")
+        posts = relationship("Post", backref="author")
+        comment = relationship("Comment", backref="author")
     else:
         email = ""
         password = ""

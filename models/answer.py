@@ -11,6 +11,7 @@ from sqlalchemy.orm import relationship
 class Answer(BaseModel, Base):
     """
     Description of answer to a question
+    This is the answer supplied by the quiz-taker not creator.
     value: Mathing 1-4 to a-d options
     """
     if models.storage_t == 'db':
@@ -20,8 +21,6 @@ class Answer(BaseModel, Base):
         attempt_id = Column(String(60), ForeignKey("attempts.id"),
                             nullable=False)
         value = Column(Integer, nullable=False)
-
-        # Relationships
 
         # Constraints
         # constrain `value` to 1-4 integer limit

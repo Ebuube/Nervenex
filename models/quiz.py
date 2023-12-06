@@ -15,7 +15,7 @@ class Quiz(BaseModel, Base):
         __tablename__ = "quizzes"
         # quiz_id = Column(Integer, primary_key=True, autoincrement=True,
         #                  nullable=False)
-        user_id = Column(String(60), ForeignKey('users.id'))
+        user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
         category_id = Column(String(60), ForeignKey('categories.id'))
         title = Column(String(60), nullable=False)
         description = Column(Text, nullable=True)
@@ -23,6 +23,8 @@ class Quiz(BaseModel, Base):
         is_active = Column(Boolean, default=False)
 
         # Relationship
+        questions = relationship("Question", backref="quiz")
+        attempts = relationship("Attempt", backref="attempts")
     else:
         # quiz_id = ""
         user_id = ""
