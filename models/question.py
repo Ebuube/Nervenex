@@ -16,8 +16,7 @@ class Question(BaseModel, Base):
     """
     if models.storage_t == 'db':
         __tablename__ = "questions"
-        quiz_id = Column(String(60),
-                         ForeignKey("quizzes.id", ondelete="CASCADE"))
+        quiz_id = Column(String(60), ForeignKey("quizzes.id"))
         content = Column(Text, nullable=False)
         option_a = Column(String(128), nullable=False)
         option_b = Column(String(128), nullable=False)
@@ -27,10 +26,6 @@ class Question(BaseModel, Base):
         explanation = Column(Text, nullable=True)
 
         # Relationships
-        quiz = relationship("Quiz", backref="questions")
-
-        # new
-        answers = relationship("Answer", backref="question")
     else:
         quiz_id = ""
         content = ""

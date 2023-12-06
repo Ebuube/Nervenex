@@ -17,18 +17,14 @@ class Post(BaseModel, Base):
     if models.storage_t == 'db':
         __tablename__ = "posts"
         content = Column(Text, nullable=False)
-        author_id = Column(String(60),
-                           ForeignKey("users.id", ondelete="CASCADE"))
-        thread_id = Column(String(60),
-                           ForeignKey("threads.id", ondelete="CASCADE"))
+        author_id = Column(String(60), ForeignKey("users.id"))
+        thread_id = Column(String(60), ForeignKey("threads.id"))
 
         # Relationships
-        author = relationship("User", backref="posts")
     else:
         content = ""
         author_id = ""
         thread_id = ""
-        # author = None # Will be a property method
 
     def __init__(self, *args, **kwargs):
         """

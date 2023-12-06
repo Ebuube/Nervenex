@@ -15,17 +15,14 @@ class Quiz(BaseModel, Base):
         __tablename__ = "quizzes"
         # quiz_id = Column(Integer, primary_key=True, autoincrement=True,
         #                  nullable=False)
-        user_id = Column(String(60),
-                         ForeignKey('users.id', ondelete="CASCADE"))
-        category_id = Column(String(60),
-                             ForeignKey('categories.id', ondelete="CASCADE"))
+        user_id = Column(String(60), ForeignKey('users.id'))
+        category_id = Column(String(60), ForeignKey('categories.id'))
         title = Column(String(60), nullable=False)
         description = Column(Text, nullable=True)
         duration = Column(Integer, nullable=False)
         is_active = Column(Boolean, default=False)
 
         # Relationship
-        questions = relationship("Question", backref="quiz")
     else:
         # quiz_id = ""
         user_id = ""

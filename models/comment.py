@@ -17,21 +17,14 @@ class Comment(BaseModel, Base):
     if models.storage_t == 'db':
         __tablename__ = "comments"
         content = Column(String(255), nullable=False)
-        post_id = Column(String(60),
-                         ForeignKey("posts.id", ondelete="CASCADE"))
-        author_id = Column(String(60), ForeignKey("users.id",
-                           ondelete="CASCADE"))
+        post_id = Column(String(60), ForeignKey("posts.id"))
+        author_id = Column(String(60), ForeignKey("users.id"))
 
         # Relationships
-        post = relationship("Post", backref="comments")
-        author = relationship("User", backref="comments")
     else:
         content = ""
         post_id = ""
         author_id = ""
-        # post = None # property method
-        # author = None # property method
-        # created_at = None
 
     def __init__(self, *args, **kwargs):
         """

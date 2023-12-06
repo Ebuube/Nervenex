@@ -16,16 +16,12 @@ class Thread(BaseModel, Base):
     if models.storage_t == 'db':
         __tablename__ = "threads"
         title = Column(String(128), nullable=False)
-        author_id = Column(String(60),
-                           ForeignKey("users.id", ondelete="CASCADE"))
+        author_id = Column(String(60), ForeignKey("users.id"))
 
         # Relationships
-        author = relationship("User", backref="threads")
     else:
         title = ""
         author_id = ""
-        # author = None # Property  method
-        # created_at = None
 
     def __init__(self, *args, **kwargs):
         """
