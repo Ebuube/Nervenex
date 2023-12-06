@@ -29,7 +29,7 @@ class Quiz(BaseModel, Base):
 
         # Relationship
         questions = relationship("Question", backref="quiz")
-        attempts = relationship("Attempt", backref="attempts")
+        attempts = relationship("Attempt", backref="quiz")
     else:
         user_id = ""
         category_id = ""
@@ -38,6 +38,18 @@ class Quiz(BaseModel, Base):
         duration = 0    # How long (minutes) a quiz should last
         is_active = False
         question_ids = []
+
+        @property
+        def category(self):
+            """
+            Return a Category instance linked to this Quiz
+            """
+            from models.category import Category
+
+            key = Category.__name__ + '.' + self.category_id
+            obj = models.storage.all(Category).get(key, None)
+
+            return obj
 
         @property
         def author(self):
@@ -50,6 +62,34 @@ class Quiz(BaseModel, Base):
             user = models.storage.all(User).get(key, None)
 
             return user
+
+        @property
+        def attempts(self):
+            """
+            Return a list of 'Attempts' linked to this Quiz
+            """
+            from models.attempt import Attempt
+
+            objs = list()
+            for attempt in models.storage.all(Attempt).values():
+                if attempt.quiz_id == self.id:
+                    objs.append(attempt)
+
+            return objs
+
+        @property
+        def questions(self):
+            """
+            Return a list of Questions linked to this Quiz
+            """
+            from models.question import Question
+
+            objs = list()
+            for question in models.storage.all(Question).values():
+                if question.quiz_id == self.id:
+                    objs.append(question)
+
+            return objs
 
     def __init__(self, *args, **kwargs):
         """

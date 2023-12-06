@@ -37,6 +37,32 @@ class Question(BaseModel, Base):
         correct_answer = 0
         explanation = ""
 
+        @property
+        def answers(self):
+            """
+            Return a list of Answer instances linked to this Question
+            """
+            from models.answer import Answer
+
+            objs = list()
+            for answer in models.storage.all(Answer).values():
+                if answer.question_id == self.id:
+                    objs.append(answer)
+
+            return objs
+
+        @property
+        def quiz(self):
+            """
+            Return a Quiz instance linked to this question
+            """
+            from models.quiz import Quiz
+
+            key = Quiz.__name__ + '.' + self.quiz_id
+            obj = models.storage.all(Quiz).get(key, None)
+
+            return obj
+
     def __init__(self, **kwargs):
         """
         Initialize the instance

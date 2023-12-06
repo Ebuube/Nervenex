@@ -26,6 +26,32 @@ class Thread(BaseModel, Base):
         title = ""
         author_id = ""
 
+        @property
+        def category(self):
+            """
+            Return a Category instance linked to this Thread
+            """
+            from models.category import Category
+
+            key = Category.__name__ + '.' + self.category_id
+            obj = models.storage.all(Category).get(key, None)
+
+            return obj
+
+        @property
+        def posts(self):
+            """
+            Return a list of Post instances linked to this Thread
+            """
+            from models.post import Post
+
+            objs = []
+            for post in models.storage.all(Post).values():
+                if post.thread_id == self.id:
+                    objs.append(post)
+
+            return objs
+
     def __init__(self, *args, **kwargs):
         """
         Initialize an instance

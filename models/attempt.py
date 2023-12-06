@@ -45,6 +45,18 @@ class Attempt(BaseModel, Base):
             return user
 
         @property
+        def quiz(self):
+            """
+            Return a Quiz instance linked to this Attempt
+            """
+            from models.quiz import Quiz
+
+            key = Quiz.__name__ + '.' + self.quiz_id
+            obj = models.storage.all(Quiz).get(key, None)
+
+            return obj
+
+        @property
         def answers(self):
             """
             Return a list of 'Answer' instances linked to this Attempt instance
@@ -53,7 +65,7 @@ class Attempt(BaseModel, Base):
 
             objs = list()
             for answer in models.storage.all(Answer).values():
-                if answer.user_id == self.id:
+                if answer.attempt_id == self.id:
                     objs.append(answer)
 
             return objs

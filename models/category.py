@@ -22,6 +22,34 @@ class Category(BaseModel, Base):
     else:
         name = ""
 
+        @property
+        def quizzes(self):
+            """
+            Return a list of Quiz instances linked to this category
+            """
+            from models.quiz import Quiz
+
+            objs = []
+            for quiz in models.storage.all(Quiz).values():
+                if quiz.category_id == self.id:
+                    objs.append(quiz)
+
+            return objs
+
+        @property
+        def threads(self):
+            """
+            Return a list of Thread instances linked to this category
+            """
+            from models.thread import Thread
+
+            objs = []
+            for thread in models.storage.all(Thread).values():
+                if thread.category_id == self.id:
+                    objs.append(thread)
+
+            return objs
+
     def __init__(self, *args, **kwargs):
         """
         Initialize using the Parent class
