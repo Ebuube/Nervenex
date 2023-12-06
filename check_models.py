@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
 Initialize db -> manual testing
+Environmental variables considered:
+    NERVENEX_TYPE_STORAGE -> 'db' or (anything else taken as file storage)
+    NERVENEX_ENV -> 'dev' or 'test'
 Usage:
     $ cat setup_mysql_test.sql | sudo mysql;
     $ NERVENEX_TYPE_STORAGE=db NERVENEX_ENV=test ./check_models.py
