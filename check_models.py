@@ -60,7 +60,7 @@ quest1.save()
 at1 = Attempt()
 at1.user_id = u1.id
 at1.quiz_id = quiz1.id
-at1.score = len(quiz1.questions)
+at1.score = 4
 at1.duration = quiz1.duration
 at1.save()
 

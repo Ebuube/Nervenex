@@ -132,3 +132,9 @@ class FileStorage:
             return count
         else:
             return len(self.__objects)
+
+    def close(self):
+        """
+        Close Storage engine
+        """
+        pass
