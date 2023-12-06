@@ -26,6 +26,7 @@ class Question(BaseModel, Base):
         explanation = Column(Text, nullable=True)
 
         # Relationships
+        answers = relationship("Answer", backref="question")
     else:
         quiz_id = ""
         content = ""
