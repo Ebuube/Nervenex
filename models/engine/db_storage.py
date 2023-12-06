@@ -4,21 +4,29 @@ DB Storage for Student Platform
 """
 
 from models.base_model import BaseModel, Base
-from models.user import User
-from models.quiz import Quiz
-from models.question import Question
-from models.answer import Answer
-from models.attempt import Attempt
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+from models.answer import Answer
+from models.attempt import Attempt
+from models.category import Category
+from models.comment import Comment
+from models.post import Post
+from models.question import Question
+from models.quiz import Quiz
+from models.thread import Thread
+from models.user import User
 
 classes = {
-    'User': User,
-    'Quiz': Quiz,
-    'Question': Question,
     'Answer': Answer,
-    'Attempt': Attempt
+    'Attempt': Attempt,
+    'Category': Category,
+    'Comment': Comment,
+    'Post': Post,
+    'Question': Question,
+    'Quiz': Quiz,
+    'Thread': Thread,
+    'User': User
 }
 
 
@@ -28,13 +36,16 @@ class DBStorage:
     __session = None
 
     def __init__(self):
-        user = "student_platform_dev"
-        password = "student_platform_pwd"
+        user = "nervenex_dev"
+        password = "nervenex_dev_pwd"
         host = "localhost"
-        db = "student_platform_db"
+        port = 3306
+        db = "nervenex_dev_db"
 
-        self.__engine = create_engine(
-                "mysql+mysqldb://{}:{}@{}/{}".format(user, password, host, db))
+        engine_url = "mysql+mysqldb://{}:{}@{}:{}/{}".format(
+                      user, password, host, port, db)
+        self.__engine = create_engine(engine_url, pool_pre_ping=True,
+                                      echo=False)
 
     def all(self, cls=None):
         """Query on the current database session all objects of the given class
@@ -43,15 +54,29 @@ class DBStorage:
                 Dict of queried classes in the format:
                 <class name>.<obj id> = obj.
         """
-        new_list = []
+        objs = []
         if cls is None:
-            for clss in classes:
-                new_list.extend(self.__session.query(classes[clss]).all())
+            for a_class in classes:
+                objs += self.__session.query(classes[a_class])\
+                        .order_by(a_class.id)\
+                        .all()
+        elif cls in classes.values():
+                objs = self.__session.query(cls)\
+                        .order_by(cls.id)\
+                        .all()
         else:
-            if cls in classes.values():
-                new_list = self.__session.query(cls)
+            return dict()
 
-        return ({}.format(type(obj).__name__, obj.id): obj for obj in new_list)
+        # Modify objects so that the result will be a dictionary of
+        # key, value pairs where
+        # key = <class name>.<object id>
+        # value = object
+        objs_dict = dict()
+        for value in objs:
+            key = type(value).__name__ + '.' + value.id
+            objs_dict.update({key: value})
+
+        return objs_dict
 
     def new(self, obj):
         """ add the object to the current database session """
@@ -71,8 +96,12 @@ class DBStorage:
             the current database session
         """
         Base.metadata.create_all(self.__engine)
+
+        # Create current database session
+        # The option expire_on commit must be False
+        # and scoped_session is used to ensur the session is thread-safe
         session_factory = sessionmaker(bind=self.__engine,
-                                       expire_on_commit=False)
+                                       expire_on_commit=False)  # global scope
         Session = scoped_session(session_factory)
         self.__session = Session()
 
@@ -100,8 +129,8 @@ class DBStorage:
         count = 0
 
         if not cls:
-            for clss in classes:
-                obj = self.__session.query(eval(clss)).all()
+            for a_class in classes:
+                obj = self.__session.query(eval(a_class)).all()
                 count += len(obj)
         else:
             obj = self.__session.query(classes[cls]).all()

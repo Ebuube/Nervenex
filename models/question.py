@@ -28,6 +28,9 @@ class Question(BaseModel, Base):
 
         # Relationships
         quiz = relationship("Quiz", backref="questions")
+
+        # new
+        answers = relationship("Answer", backref="question")
     else:
         quiz_id = ""
         content = ""

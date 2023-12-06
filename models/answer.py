@@ -18,13 +18,13 @@ class Answer(BaseModel, Base):
         # answer_id = Column(Integer, primary_key=True, autoincrement=True,
         #                    nullable=False)
         question_id = Column(String(60), ForeignKey("questions.id"),
-                             ondelete="CASCADE", nullable=False)
+                             nullable=False)
         attempt_id = Column(String(60), ForeignKey("attempts.id"),
-                            ondelete="CASCADE", nullable=False)
+                            nullable=False)
         value = Column(Integer, nullable=False)
 
         # Relationships
-        question = relationship("Question", backref="answers")
+        # question = relationship("Question", backref="answers")
 
         # Constraints
         # constrain `value` to 1-4 integer limit
