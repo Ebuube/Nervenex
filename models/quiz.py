@@ -31,7 +31,6 @@ class Quiz(BaseModel, Base):
         questions = relationship("Question", backref="quiz")
         attempts = relationship("Attempt", backref="attempts")
     else:
-        # quiz_id = ""
         user_id = ""
         category_id = ""
         title = ""
@@ -39,7 +38,18 @@ class Quiz(BaseModel, Base):
         duration = 0    # How long (minutes) a quiz should last
         is_active = False
         question_ids = []
-        # questions -> Property
+
+        @property
+        def author(self):
+            """
+            Return a 'User' instance linked to this 'Quiz' instance
+            """
+            from models.user import User
+
+            key = User.__name__ + '.' + self.user_id
+            user = models.storage.all(User).get(key, None)
+
+            return user
 
     def __init__(self, *args, **kwargs):
         """

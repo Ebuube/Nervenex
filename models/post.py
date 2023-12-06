@@ -28,6 +28,18 @@ class Post(BaseModel, Base):
         author_id = ""
         thread_id = ""
 
+        @property
+        def author(self):
+            """
+            Return a 'User' instance linked to this post
+            """
+            from models.user import User
+
+            key = User.__name__ + '.' + self.author_id
+            user = models.storage.all(User).get(key, None)
+
+            return user
+
     def __init__(self, *args, **kwargs):
         """
         Initialize an instance
