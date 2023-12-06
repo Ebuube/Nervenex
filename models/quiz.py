@@ -4,7 +4,7 @@
 import models
 from models.base_model import BaseModel, Base
 from sqlalchemy import (Column, Integer, String, DateTime, Boolean, ForeignKey,
-        Text)
+                        Text)
 from sqlalchemy.orm import relationship
 
 
@@ -20,7 +20,8 @@ class Quiz(BaseModel, Base):
     if models.storage_t == 'db':
         __tablename__ = "quizzes"
         user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
-        category_id = Column(String(60), ForeignKey('categories.id'))
+        category_id = Column(String(60), ForeignKey('categories.id'),
+                             nullable=False)
         title = Column(String(60), nullable=False)
         description = Column(Text, nullable=True)
         duration = Column(Integer, nullable=False)

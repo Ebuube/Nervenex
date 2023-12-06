@@ -53,7 +53,10 @@ class BaseModel:
 
     def __str__(self):
         """String representation of the BaseModel class"""
-        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
+        obj_data = self.__dict__.copy()
+        if "_sa_instance_state" in obj_data:
+            del obj_data["_sa_instance_state"]
+        return f"[{self.__class__.__name__}] ({self.id}) {obj_data}"
 
     def save(self):
         """Saving changes in the instance"""
