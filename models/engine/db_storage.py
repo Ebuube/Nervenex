@@ -56,8 +56,8 @@ class DBStorage:
         """
         objs = []
         if cls is None:
-            for a_class in classes:
-                objs += self.__session.query(classes[a_class])\
+            for a_class in classes.values():
+                objs += self.__session.query(a_class)\
                         .order_by(a_class.id)\
                         .all()
         elif cls in classes.values():

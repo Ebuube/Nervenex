@@ -3,18 +3,22 @@
 """The Quiz class that inherits from BaseModel"""
 import models
 from models.base_model import BaseModel, Base
-from sqlalchemy import Column, Integer, String, DateTime, Boolean
+from sqlalchemy import (Column, Integer, String, DateTime, Boolean, ForeignKey,
+        Text)
 from sqlalchemy.orm import relationship
 
 
 class Quiz(BaseModel, Base):
     """
     Description of the Quiz class
+    - is_active -> attribute
+        It determines whether or not a quiz is available for other users.
+        If True, then it will be globally accessible,
+        else only the owner can see and modify it.
+
     """
     if models.storage_t == 'db':
         __tablename__ = "quizzes"
-        # quiz_id = Column(Integer, primary_key=True, autoincrement=True,
-        #                  nullable=False)
         user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
         category_id = Column(String(60), ForeignKey('categories.id'))
         title = Column(String(60), nullable=False)
@@ -32,10 +36,6 @@ class Quiz(BaseModel, Base):
         title = ""
         description = ""
         duration = 0    # How long (minutes) a quiz should last
-        # is_active -> attribute
-        # It determines whether or not a quiz is available for other users.
-        # If True, then it will be globally accessible,
-        # else only the owner can see and modify it.
         is_active = False
         question_ids = []
         # questions -> Property

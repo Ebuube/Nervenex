@@ -3,7 +3,7 @@
 """The Question class that inherits from BaseModel"""
 import models
 from models.base_model import BaseModel, Base
-from sqlalchemy import Column, String, Integer, Boolean, Text
+from sqlalchemy import Column, String, Integer, Boolean, Text, ForeignKey
 from sqlalchemy.orm import relationship
 
 

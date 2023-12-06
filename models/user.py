@@ -20,7 +20,7 @@ class User(BaseModel, Base):
 
         # Relationships
         quizzes = relationship("Quiz", backref="author")
-        attempts = relationsihp("Attempt", backref="maker")
+        attempts = relationship("Attempt", backref="maker")
         posts = relationship("Post", backref="author")
         comment = relationship("Comment", backref="author")
     else:

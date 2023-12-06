@@ -19,7 +19,7 @@ class Attempt(BaseModel, Base):
     if models.storage_t == 'db':
         __tablename__ = "attempts"
         user_id = Column(String(60), ForeignKey("users.id"), nullable=False)
-        quiz_id = Column(Integer, ForeignKey("quizzes.id"), nullable=False)
+        quiz_id = Column(String(60), ForeignKey("quizzes.id"), nullable=False)
         score = Column(Integer, nullable=False)
         duration = Column(Integer, nullable=False)
 
