@@ -2,6 +2,8 @@
 """
 Tests for the Answer model
 """
+import models
+from unittest import skipIf
 from tests.test_models.test_base_model import test_BaseModel
 from models.answer import Answer
 
@@ -16,6 +18,7 @@ class test_Answer(test_BaseModel):
         """
         super().__init__(*args, **kwargs)
 
+    @skipIf(models.storage_t == 'db', "Test is for file storage")
     def test_answer_attrs(self):
         """
         Ensure that the correct attributes are present in the model

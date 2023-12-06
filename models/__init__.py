@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
 initialize the models package
+Environmental variables considered:
+    NERVENEX_TYPE_STORAGE -> 'db' or (anything else taken as file storage)
+    NERVENEX_ENV -> 'dev' or 'test'
 """
 
 from os import getenv

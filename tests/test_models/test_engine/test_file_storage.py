@@ -3,9 +3,11 @@
 Tests for the FileStorage class
 """
 import os
+import models
 import unittest
 import datetime
 import pep8
+from unittest import skipIf
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 from models.answer import Answer
@@ -93,6 +95,7 @@ class test_FileStorage(unittest.TestCase):
         FileStorage().save()
         self.assertTrue(os.path.exists(self.file_path))
 
+    @skipIf(models.storage_t == 'db', "Test is for file storage")
     def test_all(self):
         """
         Ensure that the ``all`` method is implemented
@@ -135,6 +138,7 @@ class test_FileStorage(unittest.TestCase):
         storage.new(foo)
         self.assertIn(key, storage.all().keys())
 
+    @skipIf(models.storage_t == 'db', "Test is for file storage")
     def test_save(self):
         """
         Ensure that the 'save' method is implemented
@@ -167,6 +171,7 @@ class test_FileStorage(unittest.TestCase):
                     self.assertIn(key, storage.all().keys())
             self.tearDown()
 
+    @skipIf(models.storage_t == 'db', "Test is for file storage")
     def test_reload(self):
         """
         Ensure that the 'reload' method is implemented
@@ -205,6 +210,7 @@ class test_FileStorage(unittest.TestCase):
 
             self.tearDown()
 
+    @skipIf(models.storage_t == 'db', "Test is for file storage")
     def test_delete(self):
         """
         Ensure that the 'delete' method is implemented
@@ -252,6 +258,7 @@ class test_FileStorage(unittest.TestCase):
 
             self.tearDown()
 
+    @skipIf(models.storage_t == 'db', "Test is for file storage")
     def test_get(self):
         """
         Ensure that the 'get' method is implemented
@@ -283,6 +290,7 @@ class test_FileStorage(unittest.TestCase):
 
             self.tearDown()
 
+    @skipIf(models.storage_t == 'db', "Test is for file storage")
     def test_count(self):
         """
         Ensure that the 'count' method is implemented

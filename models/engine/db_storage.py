@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """
-DB Storage for Student Platform
+DB Storage for models
 """
 
-from models.base_model import BaseModel, Base
 import sqlalchemy
+from os import getenv
+from models.base_model import BaseModel, Base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from models.answer import Answer
@@ -36,11 +37,23 @@ class DBStorage:
     __session = None
 
     def __init__(self):
-        user = "nervenex_dev"
-        password = "nervenex_dev_pwd"
-        host = "localhost"
-        port = 3306
-        db = "nervenex_dev_db"
+        """
+        Initialize storage instance
+        """
+        if getenv("NERVENEX_ENV") == "test":
+            # Use test database
+            user = "nervenex_test"
+            password = "nervenex_test_pwd"
+            host = "localhost"
+            port = 3306
+            db = "nervenex_test_db"
+        else:
+            # Use development database
+            user = "nervenex_dev"
+            password = "nervenex_dev_pwd"
+            host = "localhost"
+            port = 3306
+            db = "nervenex_dev_db"
 
         engine_url = "mysql+mysqldb://{}:{}@{}:{}/{}".format(
                       user, password, host, port, db)

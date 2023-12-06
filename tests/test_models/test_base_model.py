@@ -3,12 +3,24 @@
 Test for the `BaseModel` class
 """
 import unittest
+import models
 import os
 import pep8
 import json
 import datetime
+from unittest import skipIf
 from models.base_model import BaseModel
 from tests import config
+from models.engine.db_storage import DBStorage
+from models.answer import Answer
+from models.attempt import Attempt
+from models.category import Category
+from models.comment import Comment
+from models.post import Post
+from models.question import Question
+from models.quiz import Quiz
+from models.thread import Thread
+from models.user import User
 
 
 class test_BaseModel(unittest.TestCase):
@@ -25,6 +37,10 @@ class test_BaseModel(unittest.TestCase):
         super().__init__(*args, **kwargs)
         self.value = BaseModel
         self.name = self.value.__name__
+        self._classes = [
+                            Answer, Attempt, Category, Comment, Post,
+                            Question, Quiz, Thread, User
+                        ]
 
     def setUp(self):
         """
@@ -93,6 +109,7 @@ class test_BaseModel(unittest.TestCase):
         self.assertTrue(hasattr(foo, 'created_at'))
         self.assertTrue(type(foo.created_at), datetime)
 
+    @skipIf(models.storage_t == 'db', "Test is for file storage")
     def test_BaseModel_updated_at(self):
         """
         Ensure that ``BaseModel.updated_at`` is implemented
@@ -107,6 +124,17 @@ class test_BaseModel(unittest.TestCase):
         foo.save()
         self.assertNotEqual(foo.updated_at, prev)
 
+    @skipIf(models.storage_t != 'db', "Test is for Database storage")
+    def test_db_BaseModel_updated_at(self):
+        """
+        Ensure that `BaseModel.updated_at` is implemented
+        This is for DataBase
+        """
+        for cls in self._classes:
+            foo = cls()
+            self.assertTrue(hasattr(foo, 'updated_at'))
+            self.assertTrue(type(foo.updated_at), datetime)
+
     def test_magic_str(self):
         """
         Ensure that the `__str__` method is implemented
@@ -117,6 +145,7 @@ class test_BaseModel(unittest.TestCase):
 
         self.assertEqual(str(foo), expected_str)
 
+    @skipIf(models.storage_t == 'db', "Test is for file storage")
     def test_save(self):
         """
         Ensure that the ``save`` method is implemented

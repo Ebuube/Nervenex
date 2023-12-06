@@ -2,6 +2,8 @@
 """
 Tests for the Category class
 """
+import models
+from unittest import skipIf
 from tests.test_models.test_base_model import test_BaseModel
 from models.category import Category
 
@@ -30,6 +32,7 @@ class test_Category(test_BaseModel):
         """
         super().tearDown()
 
+    @skipIf(models.storage_t == 'db', "Test is for file storage")
     def test_category_attrs(self):
         """
         Ensure that the correct attributes are present in the model
