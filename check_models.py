@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
 Initialize db -> manual testing
+Environmental variables considered:
+    NERVENEX_TYPE_STORAGE -> 'db' or (anything else taken as file storage)
+    NERVENEX_ENV -> 'dev' or 'test'
 Usage:
     $ cat setup_mysql_test.sql | sudo mysql;
     $ NERVENEX_TYPE_STORAGE=db NERVENEX_ENV=test ./check_models.py
@@ -60,7 +63,7 @@ quest1.save()
 at1 = Attempt()
 at1.user_id = u1.id
 at1.quiz_id = quiz1.id
-at1.score = len(quiz1.questions)
+at1.score = 4
 at1.duration = quiz1.duration
 at1.save()
 

@@ -32,6 +32,44 @@ class Attempt(BaseModel, Base):
         duration = 0
         answer_ids = []
 
+        @property
+        def maker(self):
+            """
+            Return a 'User' instance linked to this Attempt instance
+            """
+            from models.user import User
+
+            key = User.__name__ + '.' + self.user_id
+            user = models.storage.all(User).get(key, None)
+
+            return user
+
+        @property
+        def quiz(self):
+            """
+            Return a Quiz instance linked to this Attempt
+            """
+            from models.quiz import Quiz
+
+            key = Quiz.__name__ + '.' + self.quiz_id
+            obj = models.storage.all(Quiz).get(key, None)
+
+            return obj
+
+        @property
+        def answers(self):
+            """
+            Return a list of 'Answer' instances linked to this Attempt instance
+            """
+            from models.answer import Answer
+
+            objs = list()
+            for answer in models.storage.all(Answer).values():
+                if answer.attempt_id == self.id:
+                    objs.append(answer)
+
+            return objs
+
     def __init__(self, *args, **kwargs):
         """
         Initialize an instance

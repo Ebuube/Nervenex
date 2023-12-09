@@ -24,6 +24,30 @@ class Comment(BaseModel, Base):
         post_id = ""
         author_id = ""
 
+        @property
+        def author(self):
+            """
+            Return a 'User' instance linked to this comment
+            """
+            from models.user import User
+
+            key = User.__name__ + '.' + self.author_id
+            user = models.storage.all(User).get(key, None)
+
+            return user
+
+        @property
+        def post(self):
+            """
+            Return a Post instance linked to this Comment
+            """
+            from models.post import Post
+
+            key = Post.__name__ + '.' + self.post_id
+            obj = models.storage.all(Post).get(key, None)
+
+            return obj
+
     def __init__(self, *args, **kwargs):
         """
         Initialize an instance

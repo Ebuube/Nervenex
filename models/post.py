@@ -28,6 +28,44 @@ class Post(BaseModel, Base):
         author_id = ""
         thread_id = ""
 
+        @property
+        def author(self):
+            """
+            Return a 'User' instance linked to this post
+            """
+            from models.user import User
+
+            key = User.__name__ + '.' + self.author_id
+            user = models.storage.all(User).get(key, None)
+
+            return user
+
+        @property
+        def thread(self):
+            """
+            Return a Thread instance linked to this post
+            """
+            from models.thread import Thread
+
+            key = Thread.__name__ + '.' + self.thread_id
+            obj = models.storage.all(Thread).get(key, None)
+
+            return obj
+
+        @property
+        def comments(self):
+            """
+            Return a list of Comments linked to this Post
+            """
+            from models.comment import Comment
+
+            objs = []
+            for comment in models.storage.all(Comment).values():
+                if comment.post_id == self.id:
+                    objs.append(comment)
+
+            return objs
+
     def __init__(self, *args, **kwargs):
         """
         Initialize an instance

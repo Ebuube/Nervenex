@@ -29,6 +29,30 @@ class Answer(BaseModel, Base):
         attempt_id = ""
         value = 0   # 1: 'a', 2: 'b', 3: 'c', 4: 'd'
 
+        @property
+        def attempt(self):
+            """
+            Return an 'Attempt' instance linked to this Answer instance
+            """
+            from models.attempt import Attempt
+
+            key = Attempt.__name__ + '.' + self.attempt_id
+            obj = models.storage.all(Attempt).get(key, None)
+
+            return obj
+
+        @property
+        def question(self):
+            """
+            Return a 'Question' instance linked to this Answer instance
+            """
+            from models.question import Question
+
+            key = Question.__name__ + '.' + self.question_id
+            obj = models.storage.all(Question).get(key, None)
+
+            return obj
+
     def __init__(self, *args, **kwargs):
         """
         Initialize instance
