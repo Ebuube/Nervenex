@@ -1,0 +1,201 @@
+header {
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px #CCCCCC solid;
+    position: fixed;
+    top:0;
+    z-index: 5;
+}
+
+.header_logo {
+    margin-top: 18px;
+    height: 50%;
+    width: 40%;
+    float: left;
+}
+
+.header_logo div {
+    height:100%;
+    width:140px;
+    margin-left:20px;
+    background-image:url('../images/logo.png');
+    background-repeat:no-repeat;
+    background-position:left;
+}
+
+.sign_up {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    line-height: 270%;
+    float: right;
+    width: 50%;
+
+    /* test */
+    /* border: 1px green solid; */
+}
+
+
+.navigation {
+    float: left;
+    width: 60px;
+    height: 100%;;
+    /*border: 1px rgb(208, 153, 58) solid; */
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation .circle {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: rgb(231, 111, 13);
+    border-radius: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.circle .bar {
+    width: 15px;
+    background-color: white;
+    border: none;
+    border-radius: 4px;
+    height: 4px;
+    align-self: center;
+    /* border: 2px black solid; */
+}
+
+.navigation .button {
+    margin-left: 0px;
+    /* border: 1px red solid;  /* test */
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-top: 4px;
+    background-color: white;
+}
+
+.navigation .button .menu {
+    font-size: 16px;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: max-content;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px rgb(231, 111, 13) solid;
+    border-radius: 4px;
+    background: rgb(231, 111, 13);
+    z-index: 6;
+    box-shadow:0px 4px 8px 4px rgba(0, 0, 0, 0.100);
+    /* border: 1px red solid;  /* test */
+}
+
+.navigation .button:hover .menu{
+    display: block;
+}
+
+.navigation .menu li {
+    color: white;
+    list-style: none;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    transition: background-color 1s ease-out;
+}
+
+.navigation .menu li:hover {
+    /* color: white; */
+    /* background-color: rgb(231, 111, 13); */
+    background-color: white;
+    color: rgb(231, 111, 13);
+}
+
+.navigation .bar {
+    background-color: rgb(231, 111, 13);
+    width: 25px;
+    height: 4px;
+    margin: 4px;
+    border-radius: 4px;
+}
+/* User info */
+
+header .user_info
+{ 
+    display:inline-block;
+    margin-top:0.32%;
+    height:100%;
+    text-align:right;
+    width:70%;
+    /* background-color:yellow; */
+    padding-right:5px;
+    clear:both; /* for the floats */
+
+    /* test */
+    /* border: 1px black solid; */
+}
+
+header .user_info::before,
+header .user_info::after {
+    clear:both;
+}
+
+header .user_info * {
+    display:inline-block;
+}
+
+header .user_info .profile:hover {
+    margin-top:4px;
+    box-shadow:0px 4px 8px 4px rgba(0, 0, 0, 0.100);
+    font-weight:bolder;
+}
+header .user_info .profile {
+    border:1px #CCCCCC solid;
+    border-radius:50px;
+    background-color:#FFFFFF;
+    margin-top:5px;
+    margin-right: -40px;
+    padding:10px;
+    float:right;
+    box-shadow:0px 1px 2px 0px rgba(0, 0, 0, 0.100);
+
+    line-height:50%;
+    width:60%;
+    height:45.6%;
+    background-image:url("../images/user-profile-svgrepo-com.svg");
+    background-repeat:no-repeat;
+    background-position:right;
+    text-align:left;
+}
+
+.hoverable_block {
+    transition: all 0.18s ease-out;
+}
+
+.hoverable_block:hover{
+    cursor: pointer;
+}
+
+.profile p {
+    /* border: 1px red solid; */
+    height: 100%;
+    padding-bottom: 10px;
+    margin-top: -30px;
+    padding-top: 38px;
+    margin-right: -40px;
+    padding-right:10%;
+    padding-left: 10%;
+}
