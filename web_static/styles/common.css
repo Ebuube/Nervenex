@@ -112,3 +112,7 @@ textarea:focus {
 ::-webkit-scrollbar:hover {
     background-color: #EEEEEE;
 }
+
+.hidden {
+    display: none;
+}
