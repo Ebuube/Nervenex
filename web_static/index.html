@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="styles/footer.css">
         <link rel="stylesheet" href="styles/filters.css">
         <link rel="stylesheet" href="styles/core.css">
+        <link rel="stylesheet" href="styles/resources.css">
     </head>
 
     <body>
@@ -49,9 +50,9 @@
         <!--CONTENTS-->
         <div class="container">
 
-            <!--SEARCH AND FILTER SECTION - TO BE PROVIDED SOON-->
+            <!--SEARCH AND FILTER SECTION - TO BE PROVIDED SOON-
             <section class="filters">
-                <!--Options-->
+                <!--Options--
                 <div class="quizzes">
                     <h3>Quizzes</h3>
                     <h4>Physiology, Histology ...</h4>
@@ -78,12 +79,13 @@
                     </ul>
                 </div>
 
-                <!--SEARCH BUTTON-->
+                <!--SEARCH BUTTON--
                 <button class="button">Search</button>
             </section>
+        -->
 
 
-            <!--SWITCH TABS-->
+            <!--SWITCH TABS--
             <section class="tabs">
                 <ul>
                     <li class="button">Quizzes</li>
@@ -91,16 +93,217 @@
                     <li class="button">Resources</li>
                 </ul>
             </section>
+        -->
 
 
             <!--CONTENTS-->
             <section class="contents">
-                The standard Lorem Ipsum passage, used since the 1500s
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                <section class="resources">
+                    
+                    <div class="intro">
+                        <h1>Resources</h1>
+                        <h4>Watch, read or download your prefered learning material.</h4>
+                        <button popovertarget="upload_resource" popovertarget="overlay">Upload</button>
+                            
+                        <div popover id="upload_resource">
+                            <h3>Upload a resource</h3>
+                            <input maxlength="30" type="text" placeholder="Title"/>
+                            <input maxlength="128" type="text" placeholder="Description"/>
+                            <input maxlength="128" type="text" placeholder="Enter the link to the resource ..."/>
+                            <button class="reset">Reset</button>
+                            <button class="submit">Submit</button>
+                        </div>
 
-Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                        <input class="search" type="text" placeholder="Search ..."/>
+                    </div>
 
+                    <div class="tabs">
+                        <p class="hyperlink">Aritcles</p>
+                        <p class="hyperlink">Books</p>
+                        <p class="hyperlink">Videos</p>
+                    </div>
+                    
+                    <!--ARTICLES-->
+                    <ul class="flex_list">
+                        <li class="flex_list_item">
+                            <article>
+                                <h2>Enzymology facts</h2>
+                                <div class="information">
+                                    <span class="type">Text: </span>
+                                    <span class="length">303 pages</span>
+                                </div>
+
+                                <div class="user"><b>By: </b>John Doe</div>
+                                
+                                <div class="description">
+                                    The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </div>
+
+                                <!--reviews--
+                                <div class="reviews">
+                                    <h2>2 Reviews</h2>
+
+                                    <ul>
+                                        <li>
+                                            <h3>From Ebube 3 days ago</h3>
+                                            <p>I enjoyed reading the book. I learnt a great deal.</p>
+                                        </li>
+                                        <li>
+                                            <h3>From Dan today</h3>
+                                            <p>Please give us more of this. What a masterpiece!</p>
+                                        </li>
+
+                                        
+                                    </ul>
+                                </div>
+                            -->
+                            </article>
+                        </li>
+
+
+                        <!--next-->
+                        <li class="flex_list_item">
+                            <article>
+                                <h2>Histology</h2>
+                                <div class="information">
+                                    <span class="type">Video: </span>
+                                    <span class="length">30 minutes.</span>
+                                </div>
+
+                                <div class="user"><b>By: </b>Len Down</div>
+                                
+                                <div class="description">
+                                    The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </div>
+
+                                <!--reviews--
+                                <div class="reviews">
+                                    <h2>1 Review</h2>
+
+                                    <ul>
+                                        <li>
+                                            <h3>From Edwin yesterday</h3>
+                                            <p>In your video you mentioned the absence of palatine tonsil in mammapls, but it was descibed in my Netter's Atlas. Pleas explain more. Maybe I am wrong or not.</p>
+                                        </li>
+
+                                        
+                                    </ul>
+                                </div>
+                            -->
+                            </article>
+                        </li>
+
+                        <!--next-->
+                        <li class="flex_list_item">
+                            <article>
+                                <h2>Gross Anatomy</h2>
+                                <div class="information">
+                                    <span class="type">Text: </span>
+                                    <span class="length">1692 pages</span>
+                                </div>
+
+                                <div class="user"><b>By: </b>Memy Taki</div>
+                                
+                                <div class="description">
+                                    The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </div>
+
+                                <!--reviews--
+                                <div class="reviews">
+                                    <h2>3 Reviews</h2>
+
+                                    <ul>
+                                        <li>
+                                            <h3>From Ebube 5 weeks ago</h3>
+                                            <p>I enjoyed reading the book. I learnt a great deal.</p>
+                                        </li>
+                                        <li>
+                                            <h3>From Dan 2 years ago</h3>
+                                            <p>Please give us more of this. What a masterpiece!</p>
+                                        </li>
+                                        <li>
+                                            <h3>From Pushplatha 1 year ago</h3>
+                                            <p>Nice book. Very comprehensive and with a lot of pictures.</p>
+                                        </li>                                        
+                                    </ul>
+                                </div>
+                            -->
+                            </article>
+                        </li>
+
+                        <!--next-->
+                        <li class="flex_list_item">
+                            <article>
+                                <h2>Oncology</h2>
+                                <div class="information">
+                                    <span class="type">Text: </span>
+                                    <span class="length">150 pages</span>
+                                </div>
+
+                                <div class="user"><b>By: </b>Clandestine Leo</div>
+                                
+                                <div class="description">
+                                    The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </div>
+
+                                <!--reviews--
+                                <div class="reviews">
+                                    <h2>2 Reviews</h2>
+
+                                    <ul>
+                                        <li>
+                                            <h3>From Ebube 3 days ago</h3>
+                                            <p>I enjoyed reading the book. I learnt a great deal.</p>
+                                        </li>
+                                        <li>
+                                            <h3>From Dan today</h3>
+                                            <p>Please give us more of this. What a masterpiece!</p>
+                                        </li>
+
+                                        
+                                    </ul>
+                                </div>
+                            -->
+                            </article>
+                        </li>
+
+                        <!--next-->
+                        <li class="flex_list_item">
+                            <article>
+                                <h2>Git Branching</h2>
+                                <div class="information">
+                                    <span class="type">Text: </span>
+                                    <span class="length">54 pages</span>
+                                </div>
+
+                                <div class="user"><b>By: </b>Philip Frankenstein</div>
+                                
+                                <div class="description">
+                                    The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                </div>
+
+                                <!--reviews--
+                                <div class="reviews">
+                                    <h2>2 Reviews</h2>
+
+                                    <ul>
+                                        <li>
+                                            <h3>From Ebube 3 days ago</h3>
+                                            <p>I enjoyed reading the book. I learnt a great deal.</p>
+                                        </li>
+                                        <li>
+                                            <h3>From Dan today</h3>
+                                            <p>Please give us more of this. What a masterpiece!</p>
+                                        </li>
+
+                                        
+                                    </ul>
+                                </div>
+                            -->
+                            </article>
+                        </li>
+                    </ul>
+                </section>
             </section>
         </div>
 
