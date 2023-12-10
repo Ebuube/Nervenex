@@ -1,6 +1,6 @@
 # Nervenex
 
-[![Generic badge](https://img.shields.io/badge/Maintained-Yes-green.svg)](https://github.com/Ebuube/Nervenex) [![Generic badge](https://img.shields.io/badge/Made%20With-Python-HTML-CSS-JavaScript-blue.svg)](https://www.python.org/)) [![Generic badge](https://img.shields.io/badge/contributors-2-green.svg)](#)
+[![Generic badge](https://img.shields.io/badge/Maintained-Yes-green.svg)](https://github.com/Ebuube/Nervenex) [![Generic badge](https://img.shields.io/badge/Made%20With-Python-HTML-CSS-JavaScript-blue.svg)](https://www.python.org/) [![Generic badge](https://img.shields.io/badge/contributors-2-green.svg)](#)
 
 Unleas the inner genius in you using this web application.
 
