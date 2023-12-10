@@ -57,7 +57,8 @@ def delete_user(user_id):
         storage.delete(user)
         storage.save()
 
-        return make_response(jsonify({'message': 'User deleted successfully'}), 200)
+        return make_response(
+            jsonify({'message': 'User deleted successfully'}), 200)
     except Exception:
         return make_response(jsonify({'message': 'Something is wrong'}), 400)
 
@@ -82,7 +83,7 @@ def post_user():
             abort(400, description="Missing first name")
         if 'last_name' not in data:
             abort(400, description="Missing last name")
-       
+
         valid = validate(data)
         if valid is not None:
             return make_response(jsonify({'message': valid}), 400)
