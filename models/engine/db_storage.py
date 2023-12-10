@@ -15,6 +15,7 @@ from models.comment import Comment
 from models.post import Post
 from models.question import Question
 from models.quiz import Quiz
+from models.resource import Resource
 from models.thread import Thread
 from models.user import User
 
@@ -26,6 +27,7 @@ classes = {
     'Post': Post,
     'Question': Question,
     'Quiz': Quiz,
+    'Resource': Resource,
     'Thread': Thread,
     'User': User
 }

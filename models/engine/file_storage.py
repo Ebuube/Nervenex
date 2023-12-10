@@ -12,6 +12,7 @@ from models.category import Category
 from models.comment import Comment
 from models.post import Post
 from models.question import Question
+from models.resource import Resource
 from models.quiz import Quiz
 from models.thread import Thread
 from models.user import User
@@ -20,8 +21,8 @@ from models.user import User
 classes = {
             "BaseModel": BaseModel, "Answer": Answer, "Attempt": Attempt,
             "Category": Category, "Comment": Comment, "Post": Post,
-            "Question": Question, "Quiz": Quiz, "Thread": Thread,
-            "User": User}
+            "Question": Question, "Resource": Resource, "Quiz": Quiz,
+            "Thread": Thread, "User": User}
 
 
 class FileStorage:

@@ -28,6 +28,7 @@ class User(BaseModel, Base):
         posts = relationship("Post", backref="author")
         comments = relationship("Comment", backref="author")
         threads = relationship("Thread", backref="author")
+        resources = relationship("Resource", backref="author")
     else:
         email = ""
         password = ""
