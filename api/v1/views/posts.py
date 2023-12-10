@@ -6,6 +6,7 @@ from api.v1.views import app_views
 from flask import abort, jsonify, make_response, request
 from flasgger.utils import swag_from
 
+
 @app_views.route('/posts', methods=['GET'], strict_slashes=False)
 @swag_from('documentation/post/all_posts.yml')
 def get_posts():
@@ -36,7 +37,7 @@ def get_post(post_id):
         return jsonify(post.to_dict())
     except Exception:
         return make_response(jsonify({'message': 'Something is wrong'}), 400)
-    
+
 
 @app_views.route('/posts', methods=['POST'], strict_slashes=False)
 @swag_from('documentation/post/post_post.yml', methods=['POST'])
@@ -106,7 +107,8 @@ def delete_post(post_id):
         storage.delete(post)
         storage.save()
 
-        return make_response(jsonify({'message': 'Post deleted successfully'}), 200)
+        return make_response(
+            jsonify({'message': 'Post deleted successfully'}), 200)
     except Exception:
-        return make_response(jsonify({'message': 'Something went wrong while deleting the post'}), 400)
-
+        return make_response(
+            jsonify({'message': 'Something went wrong while deleting the post'}), 400)
