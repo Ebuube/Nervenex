@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import validators
 
+
 def validate(req):
     """ Validate Data """
 
