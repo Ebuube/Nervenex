@@ -25,6 +25,19 @@ class Thread(BaseModel, Base):
     else:
         title = ""
         author_id = ""
+        category_id = ""
+
+        @property
+        def author(self):
+            """
+            Return a User instances linked to this Thread
+            """
+            from models.user import User
+
+            key = User.__name__ + '.' + self.author_id
+            obj = models.storage.all(User).get(key, None)
+
+            return obj
 
         @property
         def category(self):

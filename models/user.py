@@ -27,11 +27,26 @@ class User(BaseModel, Base):
         attempts = relationship("Attempt", backref="maker")
         posts = relationship("Post", backref="author")
         comments = relationship("Comment", backref="author")
+        threads = relationship("Thread", backref="author")
     else:
         email = ""
         password = ""
         first_name = ""
         last_name = ""
+
+        @property
+        def threads(self):
+            """
+            Return a list of 'Thread' instances linked to this User instance
+            """
+            from models.thread import Thread
+
+            objs = list()
+            for thread in models.storage.all(Thread).values():
+                if thread.author_id == self.id:
+                    objs.append(thread)
+
+            return objs
 
         @property
         def quizzes(self):

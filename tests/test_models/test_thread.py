@@ -27,7 +27,7 @@ class test_Thread(test_BaseModel):
 
         foo = _cls()
         attrs = {
-                'title': str, 'author_id': str
+                'title': str, 'author_id': str, 'category_id': str
                 }
 
         for attr, attr_type in attrs.items():
