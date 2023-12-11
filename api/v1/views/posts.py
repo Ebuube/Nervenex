@@ -20,7 +20,8 @@ def get_posts():
             list_posts.append(post.to_dict())
 
         return jsonify(list_posts)
-    except Exception:
+    except Exception as e:
+        print("Exception: {}".format(e))
         return make_response(jsonify({'message': 'Something is wrong'}), 400)
 
 
@@ -35,7 +36,8 @@ def get_post(post_id):
             abort(404)
 
         return jsonify(post.to_dict())
-    except Exception:
+    except Exception as e:
+        print("Exception: {}".format(e))
         return make_response(jsonify({'message': 'Something is wrong'}), 400)
 
 
@@ -62,7 +64,8 @@ def create_post():
         post = instance.to_dict()
 
         return make_response(jsonify(post), 201)
-    except Exception:
+    except Exception as e:
+        print("Exception: {}".format(e))
         return make_response(jsonify({'message': 'Something is wrong'}), 400)
 
 
@@ -90,7 +93,8 @@ def update_post(post_id):
         storage.save()
 
         return make_response(jsonify(post.to_dict()), 200)
-    except Exception:
+    except Exception as e:
+        print("Exception: {}".format(e))
         return make_response(jsonify({'message': 'Something is wrong'}), 400)
 
 
@@ -109,6 +113,7 @@ def delete_post(post_id):
 
         return make_response(
             jsonify({'message': 'Post deleted successfully'}), 200)
-    except Exception:
+    except Exception as e:
+        print("Exception: {}".format(e))
         return make_response(
             jsonify({'message': 'Something went wrong while deleting the post'}), 400)

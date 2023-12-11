@@ -25,7 +25,8 @@ def get_comments_for_post(post_id):
                          for comment in comments if comment.post_id == post_id]
 
         return jsonify(post_comments)
-    except Exception:
+    except Exception as e:
+        print("Exception: {}".format(e))
         return make_response(jsonify({'message': 'Something went wrong'}), 400)
 
 
@@ -43,7 +44,8 @@ def get_comment(comment_id):
             abort(404, description="Comment not found")
 
         return jsonify(comment.to_dict())
-    except Exception:
+    except Exception as e:
+        print("Exception: {}".format(e))
         return make_response(jsonify({'message': 'Something went wrong'}), 400)
 
 
@@ -65,7 +67,8 @@ def delete_comment(comment_id):
 
         return make_response(
             jsonify({'message': 'Comment deleted successfully'}), 200)
-    except Exception:
+    except Exception as e:
+        print("Exception: {}".format(e))
         return make_response(jsonify({'message': 'Something went wrong'}), 400)
 
 
@@ -98,7 +101,8 @@ def create_comment(post_id):
         comment.save()
 
         return make_response(jsonify(comment.to_dict()), 201)
-    except Exception:
+    except Exception as e:
+        print("Exception: {}".format(e))
         return make_response(jsonify({'message': 'Something went wrong'}), 400)
 
 
@@ -126,5 +130,6 @@ def update_comment(comment_id):
                 setattr(comment, key, value)
         storage.save()
         return make_response(jsonify(comment.to_dict()), 200)
-    except Exception:
+    except Exception as e:
+        print("Exception: {}".format(e))
         return make_response(jsonify({'message': 'Something went wrong'}), 400)

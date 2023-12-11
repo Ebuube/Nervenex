@@ -22,8 +22,7 @@ def all_categories():
         return (jsonify(list_categories))
     except Exception as e:
         print("Exception: {}".format(e))
-        return make_response(jsonify(
-                             {'message': 'Error processing request'}), 400)
+        return make_response(jsonify({'message': 'Something is wrong'}), 400)
 
 
 @app_views.route('/categories/<category_id>', methods=['GET'],
@@ -40,8 +39,7 @@ def get_category(category_id):
         return jsonify(category.to_dict())
     except Exception as e:
         print("Exception: {}".format(e))
-        return make_response(jsonify(
-                             {'message': 'Error processing request'}), 400)
+        return make_response(jsonify({'message': 'Something is wrong'}), 400)
 
 
 @app_views.route('/categories/<category_id>', methods=['DELETE'],
@@ -64,8 +62,7 @@ def delete_category(category_id):
             jsonify({'message': 'Category deleted successfully'}), 200)
     except Exception as e:
         print("Exception: {}".format(e))
-        return make_response(jsonify(
-                             {'message': 'Error processing request'}), 400)
+        return make_response(jsonify({'message': 'Something is wrong'}), 400)
 
 
 @app_views.route('/categories', methods=['POST'], strict_slashes=False)
@@ -90,8 +87,7 @@ def create_category():
         return make_response(jsonify(category), 201)
     except Exception as e:
         print("Exception: {}".format(e))
-        return make_response(jsonify(
-                             {'message': 'Error processing request'}), 400)
+        return make_response(jsonify({'message': 'Something is wrong'}), 400)
 
 @app_views.route('/categories/<category_id>', methods=['PUT'],
                  strict_slashes=False)
@@ -121,5 +117,4 @@ def update_category(category_id):
         return make_response(jsonify(instance), 200)
     except Exception as e:
         print("Exception: {}".format(e))
-        return make_response(jsonify(
-                             {'message': 'Error processing request'}), 400)
+        return make_response(jsonify({'message': 'Something is wrong'}), 400)
