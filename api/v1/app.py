@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Flask Application """
 from models import storage
+from flask import Blueprint
 from api.v1.views import app_views
 from os import environ
 from flask import Flask, render_template, make_response, jsonify
@@ -26,7 +27,12 @@ def not_found(error):
       404:
         description: a resource was not found
     """
-    return make_response(jsonify({'error': "Not found"}), 404)
+    try:
+        print(":param error: {}".format(error))     # test
+        return make_response(jsonify(error), 404)
+    except TypeError as e:
+        print('not_found:'.format(e))
+        return make_response(jsonify({'error': "Not found"}), 404)
 
 app.config['SWAGGER'] = {
     'title': 'Nervenex Restful API',
@@ -44,4 +50,5 @@ if __name__ == "__main__":
         host = '0.0.0.0'
     if not port:
         port = '5000'
-    app.run(host=host, port=port, threaded=True)
+    # app.run(host=host, port=port, threaded=True)
+    app.run(debug=True, host=host, port=port, threaded=True)

@@ -138,4 +138,4 @@ class FileStorage:
         """
         Close Storage engine
         """
-        pass
+        self.reload()

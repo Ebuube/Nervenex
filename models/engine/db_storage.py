@@ -132,7 +132,7 @@ class DBStorage:
         if cls not in cls_list:
             return (None)
 
-        obj = self.__session.query(cls).filter(cls.id == id)
+        obj = self.__session.query(cls).filter(cls.id == id).first()
         if not obj:
             return (None)
         return (obj)

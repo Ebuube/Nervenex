@@ -22,8 +22,9 @@ def get_users():
             list_users.append(user.to_dict())
 
         return (jsonify(list_users))
-    except Exception:
-        return make_response(jsonify({'message': 'Something is wrong'}), 400)
+    except Exception as e:
+        print("Exception: {}".format(e))
+        return make_response(jsonify({'message': str(e)}), 400)
 
 
 @app_views.route('/users/<user_id>', methods=['GET'], strict_slashes=False)
@@ -31,14 +32,15 @@ def get_users():
 def get_user(user_id):
     """ Retrieves an user """
     try:
-        user = storage.get(User, user_id).first()
+        user = storage.get(User, user_id)
 
         if not user:
             abort(404)
 
         return jsonify(user.to_dict())
-    except Exception:
-        return make_response(jsonify({'message': 'Something is wrong'}), 400)
+    except Exception as e:
+        print("Exception: {}".format(e))
+        return make_response(jsonify({'message': str(e)}), 400)
 
 
 @app_views.route('/users/<user_id>', methods=['DELETE'],
@@ -49,7 +51,7 @@ def delete_user(user_id):
     Deletes a user Object
     """
     try:
-        user = storage.get(User, user_id).first()
+        user = storage.get(User, user_id)
 
         if not user:
             abort(404)
@@ -59,8 +61,9 @@ def delete_user(user_id):
 
         return make_response(
             jsonify({'message': 'User deleted successfully'}), 200)
-    except Exception:
-        return make_response(jsonify({'message': 'Something is wrong'}), 400)
+    except Exception as e:
+        print("Exception: {}".format(e))
+        return make_response(jsonify({'message': str(e)}), 400)
 
 
 @app_views.route('/users', methods=['POST'], strict_slashes=False)
@@ -93,8 +96,9 @@ def post_user():
         user = instance.to_dict()
 
         return make_response(jsonify(user), 201)
-    except Exception:
-        return make_response(jsonify({'message': 'Something is wrong'}), 400)
+    except Exception as e:
+        print("Exception: {}".format(e))
+        return make_response(jsonify({'message': str(e)}), 400)
 
 
 @app_views.route('/users/<user_id>', methods=['PUT'], strict_slashes=False)
@@ -104,7 +108,7 @@ def put_user(user_id):
     Updates a user
     """
     try:
-        user = storage.get(User, user_id).first()
+        user = storage.get(User, user_id)
 
         if not user:
             abort(404)
@@ -122,9 +126,10 @@ def put_user(user_id):
         for key, value in data.items():
             if key not in ignore:
                 setattr(user, key, value)
-        storage.save()
+        user.save()
         user = user.to_dict()
 
         return make_response(jsonify(user), 200)
-    except Exception:
-        return make_response(jsonify({'message': 'Something is wrong'}), 400)
+    except Exception as e:
+        print("Exception: {}".format(e))
+        return make_response(jsonify({'message': str(e)}), 400)
