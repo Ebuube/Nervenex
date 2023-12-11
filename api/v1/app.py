@@ -15,12 +15,13 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.register_blueprint(app_views)
 cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
+
 @app.teardown_appcontext
 def close_db(error):
     """ Close Storage """
     storage.close()
 
-# @app.errorhandler(404)
+
 @app.errorhandler(Exception)
 def not_found(error):
     """

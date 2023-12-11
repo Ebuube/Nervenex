@@ -6,16 +6,15 @@ from flask import Blueprint
 app_views = Blueprint('app_views', __name__, url_prefix='/api/v1')
 
 
-# shellcheck disable=E402
-from api.v1.views.index import *
-from api.v1.views.answers import *
-from api.v1.views.attempts import *
-from api.v1.views.categories import *
-from api.v1.views.comments import *
-from api.v1.views.posts import *
-from api.v1.views.questions import *
-from api.v1.views.quizzes import *
-from api.v1.views.resources import *
-from api.v1.views.threads import *
-from api.v1.views.users import *
-from api.v1.views.validating import *
+from api.v1.views.index import *    # noqa: E402
+from api.v1.views.answers import *    # noqa: E402
+from api.v1.views.attempts import *    # noqa: E402
+from api.v1.views.categories import *    # noqa: E402
+from api.v1.views.comments import *    # noqa: E402
+from api.v1.views.posts import *    # noqa: E402
+from api.v1.views.questions import *    # noqa: E402
+from api.v1.views.quizzes import *    # noqa: E402
+from api.v1.views.resources import *    # noqa: E402
+from api.v1.views.threads import *    # noqa: E402
+from api.v1.views.users import *    # noqa: E402
+from api.v1.views.validating import *    # noqa: E402

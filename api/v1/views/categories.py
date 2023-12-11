@@ -89,6 +89,7 @@ def create_category():
         print("Exception: {}".format(e))
         return make_response(jsonify({'message': 'Something is wrong'}), 400)
 
+
 @app_views.route('/categories/<category_id>', methods=['PUT'],
                  strict_slashes=False)
 @swag_from('documentation/category/put_category.yml', methods=['PUT'])
