@@ -34,7 +34,7 @@ def get_user(user_id):
         user = storage.get(User, user_id)
 
         if not user:
-            abort(404)
+            abort(404, description="User object not found")
 
         return jsonify(user.to_dict())
     except Exception as e:
@@ -53,7 +53,7 @@ def delete_user(user_id):
         user = storage.get(User, user_id)
 
         if not user:
-            abort(404)
+            abort(404, description="User object not found")
 
         storage.delete(user)
         storage.save()
@@ -110,7 +110,7 @@ def put_user(user_id):
         user = storage.get(User, user_id)
 
         if not user:
-            abort(404)
+            abort(404, description="User object not found")
 
         data = request.get_json()
         if not data:
