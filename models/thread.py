@@ -21,7 +21,7 @@ class Thread(BaseModel, Base):
                              nullable=False)
 
         # Relationships
-        posts = relationship("Post", backref="thread")
+        posts = relationship("Post", backref="thread", cascade="delete")
     else:
         title = ""
         author_id = ""

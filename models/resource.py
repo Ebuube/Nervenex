@@ -20,7 +20,7 @@ class Resource(BaseModel, Base):
         __tablename__ = "resources"
         title = Column(String(30), nullable=False)
         author_id = Column(String(60), ForeignKey("users.id"), nullable=False)
-        type =  Column(String(6), nullable=False)
+        type = Column(String(6), nullable=False)
         link = Column(String(1000), nullable=False)
         description = Column(String(400), nullable=False)
     else:

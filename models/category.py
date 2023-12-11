@@ -17,8 +17,8 @@ class Category(BaseModel, Base):
         name = Column(String(128), unique=True, nullable=False)
 
         # Relationships
-        threads = relationship("Thread", backref="category")
-        quizzes = relationship("Quiz", backref="category")
+        threads = relationship("Thread", backref="category", cascade="delete")
+        quizzes = relationship("Quiz", backref="category", cascade="delete")
     else:
         name = ""
 

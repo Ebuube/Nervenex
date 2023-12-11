@@ -28,8 +28,8 @@ class Quiz(BaseModel, Base):
         is_active = Column(Boolean, default=False)
 
         # Relationship
-        questions = relationship("Question", backref="quiz")
-        attempts = relationship("Attempt", backref="quiz")
+        questions = relationship("Question", backref="quiz", cascade="delete")
+        attempts = relationship("Attempt", backref="quiz", cascade="delete")
     else:
         user_id = ""
         category_id = ""

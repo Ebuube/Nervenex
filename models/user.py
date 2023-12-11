@@ -23,12 +23,12 @@ class User(BaseModel, Base):
         last_name = Column(String(128), nullable=False)
 
         # Relationships
-        quizzes = relationship("Quiz", backref="author")
-        attempts = relationship("Attempt", backref="maker")
-        posts = relationship("Post", backref="author")
-        comments = relationship("Comment", backref="author")
-        threads = relationship("Thread", backref="author")
-        resources = relationship("Resource", backref="author")
+        quizzes = relationship("Quiz", backref="author", cascade="delete")
+        attempts = relationship("Attempt", backref="maker", cascade="delete")
+        posts = relationship("Post", backref="author", cascade="delete")
+        comments = relationship("Comment", backref="author", cascade="delete")
+        threads = relationship("Thread", backref="author", cascade="delete")
+        resources = relationship("Resource", backref="author", cascade="delete")
     else:
         email = ""
         password = ""

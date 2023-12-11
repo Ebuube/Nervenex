@@ -22,7 +22,7 @@ class Post(BaseModel, Base):
                            nullable=False)
 
         # Relationships
-        comments = relationship("Comment", backref="post")
+        comments = relationship("Comment", backref="post", cascade="delete")
     else:
         content = ""
         author_id = ""
