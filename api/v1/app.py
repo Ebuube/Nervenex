@@ -8,6 +8,7 @@ from flask import Flask, render_template, make_response, jsonify
 from flask_cors import CORS
 from flasgger import Swagger
 from flasgger.utils import swag_from
+from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
@@ -19,20 +20,21 @@ def close_db(error):
     """ Close Storage """
     storage.close()
 
-@app.errorhandler(404)
+# @app.errorhandler(404)
+@app.errorhandler(Exception)
 def not_found(error):
-    """ 404 Error
-    ---
-    responses:
-      404:
-        description: a resource was not found
     """
-    try:
-        print(":param error: {}".format(error))     # test
-        return make_response(jsonify(error), 404)
-    except TypeError as e:
-        print('not_found:'.format(e))
-        return make_response(jsonify({'error': "Not found"}), 404)
+    Generic error handler
+    """
+    if isinstance(error, HTTPException):
+        # Specially handle HTTPExceptions
+        message = error.__dict__
+        message['status'] = error.code
+        return make_response(jsonify(message), error.code)
+
+    # Handle others errors
+    print(error)
+    return make_response(jsonify({"500": "Insternal server error"}), 500)
 
 app.config['SWAGGER'] = {
     'title': 'Nervenex Restful API',
