@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """ Index """
-from models.user import User
 from models.category import Category
+from models.question import Question
 from models.quiz import Quiz
+from models.user import User
 from models import storage
 from api.v1.views import app_views
 from flask import jsonify
@@ -17,7 +18,7 @@ def status():
 @app_views.route('/stats', methods=['GET'], strict_slashes=False)
 def number_objects():
     """ Retrieves the number of each objects by type """
-    classes = [Category, Quiz, User]
+    classes = [Category, Question, Quiz, User]
 
     num_objs = {}
     for cls in classes:
