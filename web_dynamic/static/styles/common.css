@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    overflow-x: hidden;
+    color: #484848;
+}
+
+body .container {
+    max-width: 10000px;
+    min-height: 360px;
+    margin-top: 100px;
+    margin-bottom: 70px;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+button,
+.button {
+    transition: all 0.17s ease-out;
+    border: none;
+}
+
+button:hover,
+.button:hover {
+    /*font-weight: bolder;
+    font-size: larger;
+    font-weight: bolder;
+    */
+    cursor: pointer;
+    opacity: 80%;
+}
+
+.hyperlink {
+    text-decoration: underline;
+    color: rgb(231, 111, 13);
+    transition: all 0.3s ease-out;
+    font-weight: normal;
+}
+
+.hyperlink:hover {
+    font-weight: bolder;
+    color: black;
+    cursor: pointer;
+    transition-delay: all 0s;
+}
+
+/* input buttons */
+
+input {
+    /*
+    height: 30px;
+    */
+    height: fit-content;
+    width: 100%;
+    padding-left: 5%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 20px;
+    border: 1px #DDDDDD solid;
+    border-radius: 4px;
+    transition: 0.5s ease-out;
+    outline: none;
+    color: #434343;
+}
+
+input:focus {
+    box-shadow: 0 0 8px rgb(231, 111, 13);
+}
+
+input.checkbox {
+    width: 20px;
+    height: auto;
+}
+
+input.checkbox:focus {
+    box-shadow: none;
+}
+/* textarea should look similar to input fields */
+textarea {
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    height: fit-content;
+    padding:5%;
+    border: 1px #DDDDDD solid;
+    border-radius: 4px;
+    transition: 0.5s ease-out;
+    outline: none;
+    resize: none;
+}
+
+textarea:focus {
+    box-shadow: 0 0 8px rgb(231, 111, 13);
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    /*
+    border: 1px red solid;
+    */
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #CCCCCC;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar:hover {
+    background-color: #EEEEEE;
+}
+
+.hidden {
+    display: none;
+}
