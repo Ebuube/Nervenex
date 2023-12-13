@@ -133,54 +133,6 @@ header {
 }
 /* User info */
 
-header .user_info
-{ 
-    display:inline-block;
-    margin-top:0.32%;
-    height:100%;
-    text-align:right;
-    width:70%;
-    /* background-color:yellow; */
-    padding-right:5px;
-    clear:both; /* for the floats */
-
-    /* test */
-    /* border: 1px black solid; */
-}
-
-header .user_info::before,
-header .user_info::after {
-    clear:both;
-}
-
-header .user_info * {
-    display:inline-block;
-}
-
-header .user_info .profile:hover {
-    margin-top:4px;
-    box-shadow:0px 4px 8px 4px rgba(0, 0, 0, 0.100);
-    font-weight:bolder;
-}
-header .user_info .profile {
-    border:1px #CCCCCC solid;
-    border-radius:50px;
-    background-color:#FFFFFF;
-    margin-top:5px;
-    margin-right: -40px;
-    padding:10px;
-    float:right;
-    box-shadow:0px 1px 2px 0px rgba(0, 0, 0, 0.100);
-
-    line-height:50%;
-    width:60%;
-    height:45.6%;
-    background-image:url("../images/user-profile-svgrepo-com.svg");
-    background-repeat:no-repeat;
-    background-position:right;
-    text-align:left;
-}
-
 .hoverable_block {
     transition: all 0.18s ease-out;
 }
@@ -189,13 +141,39 @@ header .user_info .profile {
     cursor: pointer;
 }
 
-.profile p {
-    /* border: 1px red solid; */
-    height: 100%;
-    padding-bottom: 10px;
-    margin-top: -30px;
-    padding-top: 38px;
-    margin-right: -40px;
-    padding-right:10%;
-    padding-left: 10%;
+.user_detail {
+    border: 1px #CCCCCC solid;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    float: right;
+    height: 50px;
+    width: fit-content;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 8px;
+    min-width: 200px;
+}
+
+.user_detail p {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.user_detail .api_status {
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: #BBBBBB;
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    font-size: 20px;
+}
+
+.user_detail .api_active {
+    background-color: rgb(231, 111, 13);
 }
