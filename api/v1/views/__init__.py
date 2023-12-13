@@ -18,5 +18,4 @@ from api.v1.views.resources import *    # noqa: E402
 from api.v1.views.threads import *    # noqa: E402
 from api.v1.views.users import *    # noqa: E402
 from api.v1.views.validating import *    # noqa: E402
-from api.v1.views.auth import *    # noqa: E402 
-
+from api.v1.views.auth import *    # noqa: E402
