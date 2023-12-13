@@ -1,0 +1,103 @@
+/* STYLING FOR FOOTER */
+.pagefooter {
+    /* Prevent hiding items beneath the fixed and remove footer */
+    bottom: 0;
+    position: relative;
+    z-index: 100;
+    height: 45px;
+    width: 100%; /* change it to 100% */
+    margin-bottom: -15px;
+    background-color: white;
+    /**
+    border: 1px red solid;
+    **/
+}
+
+footer {
+    background-color:white;
+    height: 100%;
+    width:100%;
+    border-top:1px #CCCCCC solid;
+    color: rgb(231, 111, 13);
+}
+
+footer p {
+    text-align:center;
+    line-height:30px;
+}
+
+footer li {
+    display: inline;
+}
+
+footer .info {
+    float: left;
+}
+footer .social_media {
+    float: right;
+    /* *
+    border: 1px green solid;
+    * */
+    height: 90%;
+    width: 170px;
+    padding-top: 4px;
+}
+footer .info::before,
+footer .info::after,
+footer .social_media::before,
+footer .social_media::after {
+    clear:both;
+}
+
+footer .info li {
+    margin-right: 3px;
+    padding-right: 8px;
+}
+
+footer .social_media ul {
+    width: 60%;
+    /* *
+    border: 1px black solid;
+    * */
+    height: 30px;
+    padding-top: 1px;
+    margin-top: 1px;
+}
+
+footer .facebook div {
+    background-image:url('../images/facebook.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30%;
+    height: 100%;
+    float:left;
+}
+
+footer .twitter div {
+    background-image:url('../images/twitter.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+footer .github div {
+    background-image:url('../images/github_white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+/*
+
+.header_logo div {
+    height:100%;
+    width:140px;
+    margin-left:20px;
+    background-image:url('../images/logo.png');
+    background-repeat:no-repeat;
+    background-position:left;
+}
+*/

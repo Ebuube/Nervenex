@@ -1,0 +1,165 @@
+.resources {
+    width: 100%;
+    margin-left: -28px;
+    padding-top: -50px;
+    margin-top: -45px;
+}
+.resources div.intro {
+    padding-left: 30px;
+}
+
+div.intro h1 {
+    font-size: 30px;
+}
+
+div.intro h4 {
+    font-weight: 400;
+}
+
+.resources ul.flex_list {
+    text-align: center;
+    justify-content: space-around;
+}
+
+.resources li.flex_list {
+    list-style: none;
+    display: inline-block;
+}
+
+.resources article {
+    position: relative; /* necessary for price by night */
+    width: 200px;
+    padding: 20px;
+    margin: 20px;
+    border: 1px rgb(231, 111, 13) solid;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.resources article:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+}
+
+.resources article h2 {
+    font-size: 30px;
+    margin-top: 5px;
+    margin-bottom: 50px;
+}
+
+.resources .user {
+    text-align: left;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.resources .description {
+    text-align: left;
+}
+
+.resources .information {
+    text-align: left;
+    border: 1px #CCCCCC solid;
+    border-left: none;
+    border-right: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.resources .reviews {
+    margin-top: 40px;
+}
+.resources .reviews h2 {
+    font-size: 16px;
+    border-bottom: 1px #DDDDDD solid;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.resources .reviews ul {
+    margin-top: -50px;
+    margin-left: -35px;
+    text-align: left;
+}
+
+.resources .reviews li {
+    margin-bottom: -10px;
+}
+
+.resources .reviews p {
+    margin-top: -12px;
+    font-size: 12px;
+}
+
+/* Improving the flexible boxes */
+.resources .flex_list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.flex_list .flex_list_item {
+    display: flex;
+}
+
+.resources div.tabs {
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
+.resources div.tabs p {
+    font-style: underline;
+    font-size: 16px;
+}
+
+.intro button {
+    padding: 5px;
+    height: 30px;
+    font-size: 15px;
+    background-color: rgb(231, 111, 13);
+    color: white;
+    width: 15%;
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+#upload_resource button {
+    width: 20%;
+}
+
+#upload_resource .reset {
+    float: left;
+}
+
+#upload_resource .submit {
+    float: right;
+}
+
+#upload_resource:popover-open {
+    width: 400px;
+    padding: 30px;
+    border: 1px rgb(231, 111, 13) solid;
+    border-radius: 4px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+#upload_resource input {
+    width: 94%;
+}
+
+#upload_resource h3 {
+    color: #434343;
+    text-align: center;
+    margin-top: 0px;
+}
+
+.intro input.search {
+    font-size: large;
+}

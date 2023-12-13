@@ -1,0 +1,141 @@
+.pg_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 25px;
+    min-height: 520px;
+    width: auto;
+}
+
+/* test */
+.container {
+    max-width: 10000px;
+    min-height: 360px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+/* test */
+.pg_container section {
+    height: auto;
+    
+}
+.nervenex_description {
+    float: left;
+    width: 50%;
+    margin-right: 5px;
+    border-right: 1px white solid;
+    border-bottom-right-radius: 100px;
+    background-color: #EEEEEE;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.sign_up_details {
+    float: right;
+    width: 50%;
+    height: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+
+    /* test */
+    /* border: 1px green solid; */
+}
+
+.nervenex_description::before,
+.nervenex_description::after,
+.sign_up_details::before,
+.sign_up_details::after {
+    clear: both;
+}
+
+.nervenex_description ul {
+    list-style: none;
+    border-left: rgb(231, 111, 13) solid;
+    font-size: 45px;
+    margin-left: 10%;
+    color:  rgb(231, 111, 13);
+}
+
+.nervenex_description li {
+    margin-left: -15px;
+    width: 50px;
+    margin-bottom: 20px;
+    transition: 0.3s font-size ease-out;
+    /* test */
+    /* border: 1px black solid; */
+}
+
+.nervenex_description li:hover {
+    cursor: default;
+    font-size:larger;
+}
+
+.nervenex_description {
+    background-image: url("../images/white_tech_background.jpg");
+    background-repeat: none;
+    background-size: 100%;
+    opacity: 80%;
+}
+
+.sign_up_details h2 {
+    border-bottom: 1px #DDDDDD solid;
+    padding-bottom: 5px;
+    font-size: 30px;
+}
+
+.sign_up_details .details input {
+    height: 30px;
+    width: 80%;
+    padding-left: 5%;
+    margin-bottom: 20px;
+    border: 1px #DDDDDD solid;
+    border-radius: 4px;
+    transition: 0.5s ease-out;
+    outline: none;
+}
+
+.sign_up_details .details input:focus {
+    box-shadow: 0 0 8px rgb(231, 111, 13);
+}
+
+#terms_of_service {
+    width: 20px;
+    height: auto;
+}
+#terms_of_service:focus {
+    box-shadow: none;
+}
+
+.alt_sign_up {
+    text-align: left;
+    /* border: 1px black solid; */
+    margin-left: 7%;
+}
+
+.alt_sign_up div {
+    text-align: left;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.alt_sign_up .google {
+    background-color: #f94444;;
+}
+
+.alt_sign_up p.hyperlink {
+    margin-left: 0px;
+    padding-left: 0px;
+    width: max-content;
+    text-align: left;
+}
+
+.alt_sign_up button {
+    background-color: rgb(231, 111, 13);
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 4px;
+    margin-left: 3px;
+}
