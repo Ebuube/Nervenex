@@ -9,12 +9,15 @@ $(function() {
 		dataType: 'json'
 	})
 	.done (function (json) {
-		console.log('API is available');
-		api = $('header .user_detail .api_status')
+		api = $('#api_status')
 		if (json.status == 'OK'){
+			console.log('API is available');
 			if (!api.hasClass('api_active')) {
 				api.addClass('api_active');
 			}
+		}
+		else {
+			console.log('API is unavailable at the moment');
 		}
 	})
 	.fail(function (xhr, status, errorThrown) {
