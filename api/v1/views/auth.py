@@ -70,7 +70,6 @@ def signup():
     required_fields = [
         'email',
         'password',
-        'verify_password',
         'first_name',
         'last_name']
 
