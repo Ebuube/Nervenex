@@ -51,3 +51,9 @@
     background-repeat: none;
     background-size: 100%;
 }
+
+.filters {
+    background-color: white;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
