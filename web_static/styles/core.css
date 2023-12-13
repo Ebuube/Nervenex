@@ -15,9 +15,39 @@
     border-radius: 2px;
     border-top-right-radius: 25px;
 }
-.container .contents {
-    border: 1px #CCCCCC solid;
+
+.content {
+    text-align: center;
+    min-height: 350px;
+}
+
+/* Animation */
+@keyframes blink {
+    from {background-color: rgb(231, 111, 13);}
+    to {background-color: red;}
+}
+.start {
+    background-color: rgb(231, 111, 13);
+    color: white;
+    margin: 20px;
+    font-size: 18px;
     border-radius: 4px;
-    padding: 5%;
-    margin-top: -8px;
+    padding: 20px;
+    margin-top: 20%;
+
+    box-shadow:  20px 20px 60px #ff7300,
+               -20px -20px 60px #be1515;
+    
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+    
+}
+
+.container {
+    background-image: url(../images/nervenex_room.jpeg);
+    background-repeat: none;
+    background-size: 100%;
 }
