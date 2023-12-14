@@ -4,6 +4,7 @@ from models.user import User
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String
 
+
 class Authorized(BaseModel, Base):
     """
     Keeps a record of the logged in users
@@ -19,6 +20,9 @@ class Authorized(BaseModel, Base):
         """
         Check if a user is currently logged in or not
         """
+        if user is None:
+            return
+
         for auth in models.storage.all(Authorized).values():
             if auth.user_id == user.id:
                 return True
@@ -34,6 +38,9 @@ class Authorized(BaseModel, Base):
             True: if user was found and unauthorized
             False: if user was not found
         """
+        if user is None:
+            return
+
         for auth in models.storage.all(Authorized).values():
             if auth.user_id == user.id:
                 auth.delete()
@@ -48,6 +55,9 @@ class Authorized(BaseModel, Base):
         Authorize a user
         - If user is already authorized, the authorization is renewed
         """
+        if user is None:
+            return
+
         for auth in models.storage.all(Authorized).values():
             if auth.user_id == user.id:
                 auth.save()
