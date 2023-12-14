@@ -11,6 +11,7 @@ from flasgger.utils import swag_from
 from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'c518f22ee3936b9cebd40726'
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.register_blueprint(app_views)
 cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
