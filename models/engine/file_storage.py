@@ -6,6 +6,7 @@ Defining FileStorage Class for Student Platform
 import json
 import os
 from models.base_model import BaseModel
+from models.authorized import Authorized
 from models.answer import Answer
 from models.attempt import Attempt
 from models.category import Category
@@ -19,6 +20,7 @@ from models.user import User
 
 
 classes = {
+            "Authorized": Authorized,
             "BaseModel": BaseModel, "Answer": Answer, "Attempt": Attempt,
             "Category": Category, "Comment": Comment, "Post": Post,
             "Question": Question, "Resource": Resource, "Quiz": Quiz,

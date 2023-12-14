@@ -8,6 +8,7 @@ from os import getenv
 from models.base_model import BaseModel, Base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+from models.authorized import Authorized
 from models.answer import Answer
 from models.attempt import Attempt
 from models.category import Category
@@ -20,6 +21,7 @@ from models.thread import Thread
 from models.user import User
 
 classes = {
+    'Authorized': Authorized,
     'Answer': Answer,
     'Attempt': Attempt,
     'Category': Category,
