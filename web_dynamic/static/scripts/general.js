@@ -53,6 +53,6 @@ $(function() {
 	});
 
 	$('#menu_login').click(function() {
-		window.location.href = 'http://location:5000/login';
+		window.location.href = 'http://localhost:5000/login';
 	});
 });
