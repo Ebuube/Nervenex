@@ -81,17 +81,18 @@ header {
     margin-bottom: auto;
     padding-top: 4px;
     background-color: white;
+    position: relative;
 }
 
 .navigation .button .menu {
     font-size: 16px;
-    display: none;
-    position: fixed;
-    top: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
     left: 0;
     width: max-content;
     text-align: left;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-left: 10px;
     padding: 10px;
     border: 1px rgb(231, 111, 13) solid;
@@ -103,7 +104,7 @@ header {
 }
 
 .navigation .button:hover .menu{
-    display: block;
+    visibility: visible;
 }
 
 .navigation .menu li {
