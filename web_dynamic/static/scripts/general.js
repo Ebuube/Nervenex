@@ -27,6 +27,32 @@ $(function() {
 	// Nervenex icon > Home
 	nervenex_icon = $('.header_logo div.button');
 	nervenex_icon.click(function () {
-		window.location.href='http://localhost:5000/home';
+		window.location.href = 'http://localhost:5000/home';
+	});
+
+
+	// Menu -> navigation
+	$('#menu_home').click(function() {
+		window.location.href = 'http://localhost:5000/home';
+	});
+
+	$('#menu_take_quiz').click(function() {
+		window.location.href = 'http://localhost:5000/take_quiz';
+	});
+
+	$('#menu_create_quiz').click(function() {
+		window.location.href = 'http://localhost:5000/create_quiz';
+	});
+
+	$('#menu_view_posts').click(function() {
+		window.location.href = 'http://localhost:5000/view_posts';
+	});
+
+	$('#menu_get_resources').click(function() {
+		window.location.href = 'http://localhost:5000/get_resources';
+	});
+
+	$('#menu_login').click(function() {
+		window.location.href = 'http://location:5000/login';
 	});
 });
