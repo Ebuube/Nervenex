@@ -4,6 +4,8 @@ Starts a Flask Web application to serve dynamic web page
 """
 from uuid import uuid4
 from models import storage
+from models.quiz import Quiz
+from models.thread import Thread
 from flask import Flask, render_template, make_response, jsonify
 from werkzeug.exceptions import HTTPException
 
@@ -40,8 +42,19 @@ def hbnb():
     """
     Return home page
     """
-    return render_template('index.html',
-                           cache_id=str(uuid4()))
+    quiz_cats = []
+    for quiz in storage.all(Quiz).values():
+        cat = quiz.category
+        if cat not in quiz_cats:
+            quiz_cats.append(cat)
+
+    thread_cats = []
+    for thread in storage.all(Thread).values():
+        cat = thread.category
+        if cat not in thread_cats:
+            thread_cats.append(cat)
+    return render_template('index.html', quiz_cats=quiz_cats,
+            thread_cats=thread_cats)
 
 
 if __name__ == "__main__":

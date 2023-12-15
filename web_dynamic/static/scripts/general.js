@@ -55,4 +55,29 @@ $(function() {
 	$('#menu_login').click(function() {
 		window.location.href = 'http://localhost:5000/login';
 	});
+
+	// Footer -> navigation
+	$('#footer_about').click(function() {
+		window.location.href = 'https://nervenex.mailchimpsites.com/';
+	});
+
+	$('#footer_contact').click(function() {
+		window.location.href = 'https://nervenex.mailchimpsites.com/';
+	});
+
+	$('#footer_terms').click(function() {
+		window.location.href = 'https://nervenex.mailchimpsites.com/';
+	});
+
+	$('#footer_facebook').click(function() {
+		window.location.href = 'https://www.facebook.com/groups/354878470471404/';
+	});
+
+	$('#footer_github_ebube').click(function() {
+		window.location.href = 'https://github.com/Ebuube/';
+	});
+
+	$('#footer_github_edwin').click(function() {
+		window.location.href = 'https://github.com/arkoaikins/';
+	});
 });

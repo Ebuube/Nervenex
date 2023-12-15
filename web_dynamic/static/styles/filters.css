@@ -27,9 +27,9 @@
 
 /* Add additional search menus e.g.
 .filters .quizzes,
-.filters .posts {...*/
+.filters .threads {...*/
 .filters .quizzes,
-.filters .posts
+.filters .threads
 {
     height: 100%;
     width: 30%;
@@ -79,7 +79,7 @@ ul.popover li {
 
 
 .filters .quizzes:hover .popover,
-.filters .posts:hover .popover {
+.filters .threads:hover .popover {
     display: block;
     transition-delay: display 0s ease-in-out;
 }
