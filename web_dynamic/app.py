@@ -26,6 +26,7 @@ def not_found(error):
     print(error)
     return make_response(jsonify({"500": "Insternal server error"}), 500)
 
+
 @app.teardown_appcontext
 def close_db(error):
     """
