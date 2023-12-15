@@ -23,4 +23,10 @@ $(function() {
 	.fail(function (xhr, status, errorThrown) {
 		console.log('Could not access API');
 	});
+
+	// Nervenex icon > Home
+	nervenex_icon = $('.header_logo div.button');
+	nervenex_icon.click(function () {
+		window.location.href='http://localhost:5000/home';
+	});
 });

@@ -116,3 +116,25 @@ textarea:focus {
 .hidden {
     display: none;
 }
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: fit-content;
+    background-color: #434343;
+    color: white;
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 4px;
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+   visibility: visible;
+}
