@@ -62,7 +62,8 @@ $(function () {
 				text: "Login successful",
 				icon: "success",
 				timer: 2000,
-				timerProgressBar: true
+				timerProgressBar: true,
+				showConfirmButton: false
 			});
 			setTimeout(() => {
 				window.location.href = 'http://localhost:5000/home';

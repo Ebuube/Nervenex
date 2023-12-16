@@ -10,18 +10,21 @@ $(function() {
 	})
 	.done(function (json) {
 		api = $('#api_status')
-		if (json.status == 'OK'){
-			console.log('API is available');
-			if (!api.hasClass('api_active')) {
-				api.addClass('api_active');
-			}
-		}
-		else {
-			console.log('API is unavailable at the moment');
+		console.log('API is available');
+		if (!api.hasClass('api_active')) {
+			api.addClass('api_active');
 		}
 	})
 	.fail(function (xhr, status, errorThrown) {
 		console.log('Could not access API');
+		// Mesage
+		Swal.fire({
+			icon: "info",
+			title: "Sorry 😔",
+			text: "API server is inactive at the moment."
+		});
+		setTimeout(() => {}, 1500);
+
 	});
 
 	// Nervenex icon > Home
@@ -57,11 +60,34 @@ $(function() {
 	});
 
 	$('#menu_logout').click(function() {
+		/*
 		if (confirm('Are you sure you want to leave? 😫')) {
 			localStorage.removeItem('user');
 			$('p#username').text('Unidentified User');
 			$('div#api_status').text('U');
 		}
+		*/
+		Swal.fire({
+			title: "Oh no! 😩",
+			text: "Are you sure you want to leave?",
+			icon: "question",
+			showCancelButton: true,
+			confirmButtonText: "Yes, I do"
+		}).then((result) => {
+			if (result.isConfirmed) {
+				localStorage.removeItem('user');
+				$('p#username').text('Unidentified User');
+				$('div#api_status').text('U');
+				console.log("Logged out successfully");
+				Swal.fire({
+					icon: "success",
+					title: "Okay",
+					text: "Successfully logged out!",
+					timer: 2000,
+					showConfirmButton: false
+				});
+			}
+		});
 	});
 
 	// Footer -> navigation
