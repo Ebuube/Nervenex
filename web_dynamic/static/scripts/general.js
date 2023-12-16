@@ -8,7 +8,7 @@ $(function() {
 		type: 'GET',
 		dataType: 'json'
 	})
-	.done (function (json) {
+	.done(function (json) {
 		api = $('#api_status')
 		if (json.status == 'OK'){
 			console.log('API is available');

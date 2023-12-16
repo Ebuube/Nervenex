@@ -38,7 +38,7 @@ def close_db(error):
 
 
 @app.route('/home', strict_slashes=False)
-def hbnb():
+def home():
     """
     Return home page
     """
@@ -55,6 +55,14 @@ def hbnb():
             thread_cats.append(cat)
     return render_template('index.html', quiz_cats=quiz_cats,
             thread_cats=thread_cats)
+
+
+@app.route('/login', strict_slashes=False)
+def login():
+    """
+    Return the login page
+    """
+    return render_template('log_in.html')
 
 
 if __name__ == "__main__":

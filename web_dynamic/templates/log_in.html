@@ -12,11 +12,11 @@
 	<link rel="stylesheet" href="../static/styles/header.css">
 	<link rel="stylesheet" href="../static/styles/footer.css">
 	<link rel="stylesheet" href="../static/styles/filters.css">
-	<link rel="stylesheet" href="../static/styles/core.css">
+	<link rel="stylesheet" href="../static/styles/log_in.css">
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="../static/scripts/general.js"></script>
-	<script src="../static/scripts/index.js"></script>
+	<script src="../static/scripts/log_in.js"></script>
     </head>
 
     <body>
@@ -53,55 +53,31 @@
 
 
         <!--CONTENTS-->
-        <div class="container">
-
-            <!--SEARCH AND FILTER SECTION - TO BE PROVIDED SOON-->
-            <section class="filters">
-                <!--Options-->
-                <div class="quizzes">
-                    <h3>Quizzes</h3>
-                    <h4>Physiology, Histology ...</h4>
-
-                    <ul class="popover">
-			<!--
-                        <li class="button">Physiology</li>
-                        <li class="button">Histology</li>
-                        <li class="button">Gross Anatomy</li>
-                        <li class="button">Biochemistry</li>
-                        <li class="button">Philosophy</li>
-			-->
-		    {% for cat in quiz_cats|sort(attribute='name') %}
-		    	<li class="button">{{ cat.name }}</li>
-		    {% endfor %}
-                    </ul>
-                </div>
-
-                <div class="threads">
-                    <h3>Threads</h3>
-                    <h4>Health, Technology ...</h4>
-
-                    <ul class="popover">
-			<!--
-                        <li class="button">Health</li>
-                        <li class="button">Technology</li>
-                        <li class="button">Ubuntu</li>
-                        <li class="button">Necrosis</li>
-                        <li class="button">Oncology</li>
-			-->
-		    {% for cat in thread_cats|sort(attribute='name') %}
-		    	<li class="button">{{ cat.name }}</li>
-		    {% endfor %}
-                    </ul>
-                </div>
-
-                <!--SEARCH BUTTON-->
-                <button class="button">Search</button>
+        <div class="pg_container">
+            <section class="nervenex_description">
+                <ul>
+                    <li>Start</li>
+                    <li>learning</li>
+                    <li>with</li>
+                    <li>Nervenex</li>
+                </ul>
             </section>
 
+            <section class="sign_up_details">
+                <h2>Join now!</h2>
+                <!--dummy-->
+                <div class="details">
+                    <input id="login_email" type="email" placeholder="Email" size="128"/>
+                    <input id="login_password" type="password" placeholder="Password"/ size="60">
+                </div>
 
-        <section class="content">
-            <button id="start" class="start">START NOW</button>
-        </section>
+                <div class="alt_sign_up">
+                    <button id="log_in">Log in</button>
+                    <p class="hyperlink">Forgot password?</p>
+                    <div><button id="sign_up" class="google">Sign Up</button></div>
+                </div>
+                </section>
+        </div>
 
         <!--FOOTER-->
         <div class="pagefooter">
