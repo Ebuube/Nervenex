@@ -105,4 +105,4 @@ def delete_resource(resource_id):
     storage.save()
 
     return make_response(
-        jsonify({'message': 'Resource deleted successfully'}), 200)
+        jsonify({'description': 'Resource deleted successfully'}), 200)

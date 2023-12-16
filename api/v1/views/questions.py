@@ -57,7 +57,7 @@ def delete_question(question_id):
     storage.save()
 
     return make_response(
-            jsonify({'message': 'Question deleted successfully'}), 200)
+            jsonify({'description': 'Question deleted successfully'}), 200)
 
 
 @app_views.route('/questions', methods=['POST'], strict_slashes=False)

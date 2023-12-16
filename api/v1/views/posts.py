@@ -94,5 +94,5 @@ def delete_post(post_id):
     storage.delete(post)
     storage.save()
 
-    return make_response(jsonify({'message': 'Post deleted successfully'}),
+    return make_response(jsonify({'description': 'Post deleted successfully'}),
                          200)

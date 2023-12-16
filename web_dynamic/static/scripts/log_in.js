@@ -33,7 +33,7 @@ $(function () {
 		})
 		.fail(function (xhr, status, errorThrown) {
 			console.log('Login failure');
-			alert('Invalid email or password');
+			alert(xhr.responseJSON.description);
 			$('p#username').text('Unidentified User');
 			$('div#api_status').text('U');
 		});

@@ -4,7 +4,6 @@ from models.authorized import Authorized
 from models.user import User
 from models import storage
 from api.v1.views import app_views
-from api.v1.views.validating import validate
 from flask import abort, jsonify, make_response, request, session
 from hashlib import md5
 import validators
@@ -30,9 +29,9 @@ def login():
     if not all_users:
         abort(404)
 
-    valid = validate(data)
-    if valid is not None:
-        return make_response(jsonify({'message': valid}), 400)
+    if 'email' in data:
+        if not validators.email(data['email']):
+            abort(400, description="Invalid email format")
 
     hash_password = md5(data['password'].encode()).hexdigest()
 
@@ -44,7 +43,7 @@ def login():
             return make_response(jsonify(user_o), 201)
 
     return (make_response(
-        jsonify({'message': 'E-mail or password is incorrect'}), 401))
+        jsonify({'description': 'E-mail or password is incorrect'}), 401))
 
 
 @app_views.route('/logout/<user_id>', methods=['DELETE'], strict_slashes=False)
@@ -53,10 +52,10 @@ def logout(user_id):
     user = storage.get(User, user_id)
     if Authorized.remove(user):
         return make_response(
-                jsonify({'message': 'Successfully Logged out'}), 200)
+                jsonify({'description': 'Successfully Logged out'}), 200)
 
     return make_response(
-            jsonify({'message': 'No such user is logged in'}), 404)
+            jsonify({'description': 'No such user is logged in'}), 404)
 
 
 @app_views.route('/me/<user_id>', methods=['GET'], strict_slashes=False)
@@ -65,7 +64,7 @@ def me(user_id):
     user = storage.get(User, user_id)
     if Authorized.is_auth(user):
         return make_response(jsonify(user.to_dict()), 200)
-    return (make_response(jsonify({'message': 'User Not Found'}), 404))
+    return (make_response(jsonify({'description': 'User Not Found'}), 404))
 
 
 @app_views.route('/signup', methods=['POST'], strict_slashes=False)
@@ -85,13 +84,17 @@ def signup():
         if field not in data:
             abort(400, description=f"Missing {field}")
 
-    if 'email' in data and not validators.email(data['email']):
-        abort(400, description="Invalid email format")
+    if 'email' in data:
+        if not validators.email(data['email']):
+            print("This email is invalid: {}".format(data['email']))    # test
+            abort(400, description="Invalid email format")
 
     existing_users = storage.all(User).values()
     for user in existing_users:
         if user.email == data['email']:
-            abort(400, description="Email already exists")
+            abort(401,
+            description="""This Email is already in use.\n\
+If you are the owner, try and login instead""")
 
     new_user = User(**data)
     new_user.save()

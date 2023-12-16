@@ -67,7 +67,7 @@ def delete_comment(comment_id):
     storage.delete(comment)
     storage.save()
 
-    return make_response(jsonify({'message': 'Comment deleted successfully'}),
+    return make_response(jsonify({'description': 'Comment deleted successfully'}),
                          200)
 
 

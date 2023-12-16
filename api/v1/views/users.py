@@ -49,7 +49,7 @@ def delete_user(user_id):
     storage.delete(user)
     storage.save()
 
-    return make_response(jsonify({'message': 'User deleted successfully'}),
+    return make_response(jsonify({'description': 'User deleted successfully'}),
                          200)
 
 
@@ -75,7 +75,7 @@ def post_user():
 
     valid = validate(data)
     if valid is not None:
-        return make_response(jsonify({'message': valid}), 400)
+        return make_response(jsonify({'description': valid}), 400)
 
     instance = User(**data)
     instance.save()
@@ -103,7 +103,7 @@ def put_user(user_id):
 
     valid = validate(data)
     if valid is not None:
-        return make_response(jsonify({'message': valid}), 400)
+        return make_response(jsonify({'description': valid}), 400)
 
     for key, value in data.items():
         if key not in ignore:

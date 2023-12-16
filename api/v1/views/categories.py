@@ -49,7 +49,7 @@ def delete_category(category_id):
     storage.delete(category)
     storage.save()
 
-    return make_response(jsonify({'message': 'Category deleted successfully'}),
+    return make_response(jsonify({'description': 'Category deleted successfully'}),
                          200)
 
 

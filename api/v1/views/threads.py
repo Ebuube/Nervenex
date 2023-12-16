@@ -118,4 +118,4 @@ def delete_thread(thread_id):
     storage.save()
 
     return make_response(
-        jsonify({'message': 'Thread deleted successfully'}), 200)
+        jsonify({'description': 'Thread deleted successfully'}), 200)

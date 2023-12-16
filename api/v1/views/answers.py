@@ -50,4 +50,4 @@ def create_answer(attempt_id):
         storage.save(instance)
 
     return make_response(
-        jsonify({'message': 'Answers submitted successfully'}), 201)
+        jsonify({'description': 'Answers submitted successfully'}), 201)

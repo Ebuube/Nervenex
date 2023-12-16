@@ -55,7 +55,7 @@ def delete_quiz(quiz_id):
     storage.save()
 
     return make_response(
-            jsonify({'message': 'Quiz deleted successfully'}), 200)
+            jsonify({'description': 'Quiz deleted successfully'}), 200)
 
 
 @app_views.route('/quizzes', methods=['POST'], strict_slashes=False)
