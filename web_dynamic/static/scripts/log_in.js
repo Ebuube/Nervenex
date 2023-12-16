@@ -3,9 +3,8 @@
 $(function () {
 	// Global variables
 	var user = null;
-	let login_state = false;
 
-	// Cloned object
+	// Clone object
 	function cloneObj (obj) {
 		const clonedObject = JSON.parse(JSON.stringify(obj));
 		return clonedObject;
@@ -25,7 +24,6 @@ $(function () {
 		})
 		.done(function (json) {
 			// console.log(json);
-			alert('Login successful');
 			user = cloneObj(json);
 			user.password = password;
 
@@ -42,6 +40,6 @@ $(function () {
 	});
 
 	$('#sign_up').click(function signUp() {
-		window.location.href = 'http://localhost:5000/sign_up';
+		window.location.href = 'http://localhost:5000/signup';
 	});
 });

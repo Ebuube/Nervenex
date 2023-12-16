@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-9">
+        <title>Nervenex</title>
+
+        <!--Favicon-->
+        <link rel="icon" type="image/png" href="../static/images/icon.png">
+
+        <!--STYLING-->
+        <link rel="stylesheet" href="../static/styles/common.css">
+        <link rel="stylesheet" href="../static/styles/header.css">
+        <link rel="stylesheet" href="../static/styles/footer.css">
+        <link rel="stylesheet" href="../static/styles/filters.css">
+        <link rel="stylesheet" href="../static/styles/sign_up.css">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="../static/scripts/general.js"></script>
+	<script src="../static/scripts/sign_up.js"></script>
+    </head>
+
+    <body>
+        <!--HEADER-->
+        <header>
+            <section class="navigation">
+                <button class="button">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+ 
+                    <ul class="menu">
+                        <li id="menu_home">Home</li>
+                        <li id="menu_take_quiz">Take a quiz</li>
+                        <li id="menu_create_quiz">Create a quiz</li>
+                        <li id="menu_view_posts">View Posts</li>
+                        <li id="menu_get_resources">Get Resources</li>
+                        <li id="menu_login">Log in</li>
+                    </ul>
+                </button>
+            </section>
+            <section class="header_logo">
+		    <div class="tooltip button">
+		    	<span class="tooltiptext">Return to home</span>
+		    </div>
+	    </section>
+          
+            <section class="tooltip user_detail">
+                <p id="username">Unidentified User</p>
+                <div id="api_status">U</div>
+		<span class="tooltiptext">Menu >> Login</span>
+            </section>
+        </header>
+
+
+        <!--CONTENTS-->
+        <div class="pg_container">
+            <section class="nervenex_description">
+                <ul>
+                    <li>Start</li>
+                    <li>learning</li>
+                    <li>with</li>
+                    <li>Nervenex</li>
+                </ul>
+            </section>
+
+            <section class="sign_up_details">
+                <h2>Join now!</h2>
+                <!--dummy-->
+                <div class="details">
+                    <input id="firstname" type="text" placeholder="First name" size="128"/>
+                    <input id="lastname" type="text" placeholder="Last name" size="128"/>
+                    <input id="email" type="email" placeholder="Email" size="128"/>
+                    <input id="password" type="password" placeholder="Password" size="60"/>
+                    <input id="verify_password" type="password" placeholder="Verify password" size="60"/>
+                </div>
+
+                <div class="alt_sign_up">
+                    <div><input id="terms_of_service" type="checkbox" required/>I agree to the tems of service</div>
+                    <button id="sign_up" class="create">Create an account for free</button>
+                    <div class="hidden">Or Register with <button class="google">Google</button></div>
+                </div>
+                </section>
+        </div>
+
+        <!--FOOTER-->
+        <div class="pagefooter">
+            <footer>
+                <span class="info">
+                    <ul>
+                        <li id="footer_about" class="hyperlink">about</li>
+                        <li id="footer_contact" class="hyperlink">contact</li>
+                        <li id="footer_terms" class="hyperlink">terms of service</li>
+                    </ul>
+                </span>
+
+                <span class="social_media">
+                    <ul>
+                        <li id="footer_facebook" class="facebook button logo"><div></div></li>
+                        <li id="footer_github_edwin" class="github button logo"><div></div></li>
+                        <li id="footer_github_ebube" class="github button logo"><div></div></li>
+                    </ul>
+                </span>
+            </footer>
+        </div>
+    </body>
+</html>

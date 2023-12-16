@@ -65,6 +65,14 @@ def login():
     return render_template('log_in.html')
 
 
+@app.route('/signup', strict_slashes=False)
+def signup():
+    """
+    Return the signup page
+    """
+    return render_template('sign_up.html')
+
+
 if __name__ == "__main__":
     """
     Run app
