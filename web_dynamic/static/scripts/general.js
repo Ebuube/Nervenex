@@ -56,6 +56,14 @@ $(function() {
 		window.location.href = 'http://localhost:5000/login';
 	});
 
+	$('#menu_logout').click(function() {
+		if (confirm('Are you sure you want to leave? 😫')) {
+			localStorage.removeItem('user');
+			$('p#username').text('Unidentified User');
+			$('div#api_status').text('U');
+		}
+	});
+
 	// Footer -> navigation
 	$('#footer_about').click(function() {
 		window.location.href = 'https://nervenex.mailchimpsites.com/';
