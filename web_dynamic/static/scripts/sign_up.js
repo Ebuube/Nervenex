@@ -11,6 +11,16 @@ $(function () {
 	};
 
 
+	// Error message
+	function errorMsg(msg, title="Oops...") {
+		Swal.fire({
+			icon: "error",
+			title: `${title}`,
+			text: `${msg}`
+		});
+		setTimeout(() => {}, 1500);
+	};
+
 	// Sign Up proper
 	function createUser(payload) {
 		if (!payload) {
@@ -31,11 +41,25 @@ $(function () {
 
 			// Set data
 			localStorage.setItem('user', JSON.stringify(user));
-			window.location.href = 'http://localhost:5000/home';
+
+			// Message
+			Swal.fire({
+				title: "Welcome",
+				text: "Login successful",
+				icon: "success",
+				timer: 2000,
+				timerProgressBar: true,
+				showConfirmButton: false
+			});
+			setTimeout(() => {
+				window.location.href = 'http://localhost:5000/home';
+			}, 1500);
+
 		})
 		.fail(function (xhr, status, errorThrown) {
 			console.log('Login failure');
-			alert(xhr.responseJSON.description);
+			// alert(xhr.responseJSON.description);
+			errorMsg(xhr.responseJSON.description, title="Login failure");
 			$('p#username').text('Unidentified User');
 			$('div#api_status').text('U');
 		});
@@ -46,36 +70,54 @@ $(function () {
 		console.log('Processing sign up');
 		var firstname = document.getElementById('firstname').value;
 		if (firstname.length == 0) {
-			alert('Please, put your first name in the box 😁');
+			// alert('Please, put your first name in the box 😁');
+			const msg = 'Please, put your first name in the box 😁';
+			errorMsg(msg);
 			return;
 		}
 
 		var lastname = document.getElementById('lastname').value;
 		if (lastname.length == 0) {
-			alert('Could you put your last name in the box 😁');
+			// alert('Could you put your last name in the box 😁');
+			const msg = 'Could you put your last name in the box 😁';
+			errorMsg(msg);
 			return;
 		}
 
 		var email = document.getElementById('email').value;
 		if (email.length == 0) {
-			alert('You forgot to put your email in the box 😁');
+			// alert('You forgot to put your email in the box 😁');
+			const msg = 'You forgot to put your email in the box 😁';
+			errorMsg(msg);
 			return;
 		}
 
 		var password = document.getElementById('password').value;
 		if (password.length == 0) {
-			alert('Kindly, put your password 😊');
+			// alert('Kindly, put your password 😊');
+			const msg = 'Kindly, put your password 😊';
+			errorMsg(msg);
 			return;
 		}
 
 		var verify_password = document.getElementById('verify_password').value;
+		if (verify_password.length == 0) {
+			const msg = "Kindly verify your password 😊";
+			errorMsg(msg);
+			return;
+		}
+
 		if (verify_password !== password) {
-			alert('Kindly verify your password 😊');
+			// alert('Kindly verify your password 😊');
+			const msg = 'Kindly verify your password 😊';
+			errorMsg(msg, title="Mismatch");
 			return;
 		}
 
 		if (!$('#terms_of_service:checked').val()) {
-			alert('Hello, agree to our terms of service. 🥳');
+			// alert('Hello, agree to our terms of service. 🥳');
+			const msg = 'Hello, agree to our terms of service. 🥳';
+			errorMsg(msg);
 			return;
 		}
 
