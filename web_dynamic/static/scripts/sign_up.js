@@ -52,7 +52,7 @@ $(function () {
 
 		var lastname = document.getElementById('lastname').value;
 		if (lastname.length == 0) {
-			alert('Could you puut your last name in the box 😁');
+			alert('Could you put your last name in the box 😁');
 			return;
 		}
 
