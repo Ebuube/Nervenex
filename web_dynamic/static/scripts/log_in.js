@@ -13,7 +13,17 @@ $(function () {
 	$('#log_in').click(function logIn() {
 		console.log('Processing login');
 		var email = document.getElementById('login_email').value;
+		if (email.length == 0) {
+			alert('You forgot to put your email in the box 😁');
+			return;
+		}
+
 		var password = document.getElementById('login_password').value;
+		if (password.length == 0) {
+			alert('Kindly, put your password 😊');
+			return;
+		}
+
 		const details = {'email': email, 'password': password};
 		$.ajax({
 			url: 'http://localhost:5001/api/v1/login',
