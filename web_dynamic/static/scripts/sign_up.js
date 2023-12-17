@@ -57,9 +57,9 @@ $(function () {
 
 		})
 		.fail(function (xhr, status, errorThrown) {
-			console.log('Login failure');
+			console.log('Sign up failure');
 			// alert(xhr.responseJSON.description);
-			errorMsg(xhr.responseJSON.description, title="Login failure");
+			errorMsg(xhr.responseJSON.description, title="Sign up failure");
 			$('p#username').text('Unidentified User');
 			$('div#api_status').text('U');
 		});

@@ -2,6 +2,10 @@
 // Set some general properties
 $(function() {
 
+	// Clobal variables
+	user = JSON.parse(localStorage.getItem('user'));
+
+
 	// Show API status
 	$.ajax({
 		url: 'http://localhost:5001/api/v1/status',
@@ -27,6 +31,20 @@ $(function() {
 
 	});
 
+
+	// Set user details
+	function setUserDetails(user) {
+		user.first_name.toLowerCase();
+		user.last_name.toLowerCase();
+		user.first_name = user.first_name.charAt(0).toUpperCase() + user.first_name.slice(1);
+		user.last_name = user.last_name.charAt(0).toUpperCase() + user.last_name.slice(1);
+		$('p#username').text(user.first_name + ' ' + user.last_name);
+		$('div#api_status').text(user.first_name[0]);
+	};
+	if (user) {
+		setUserDetails(user);
+	}
+
 	// Nervenex icon > Home
 	nervenex_icon = $('.header_logo div.button');
 	nervenex_icon.click(function () {
@@ -40,7 +58,7 @@ $(function() {
 	});
 
 	$('#menu_take_quiz').click(function() {
-		window.location.href = 'http://localhost:5000/take_quiz';
+		window.location.href = 'http://localhost:5000/choose_quiz';
 	});
 
 	$('#menu_create_quiz').click(function() {

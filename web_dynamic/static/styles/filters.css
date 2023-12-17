@@ -66,7 +66,7 @@
     border-radius:4px;
     list-style:none;
     margin-top:-2px;
-    padding:30px;
+    padding:30px 30px 0 30px;
     z-index:1;
     box-shadow:0px 5px 12px 0px rgba(0, 0, 0, 0.112);
     transition: display 0.3s ease-in-out;
@@ -74,7 +74,11 @@
 
 ul.popover li {
     list-style:none;
-    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: -40px;
+    margin-bottom: 5px;
+    width: auto;
 }
 
 
@@ -82,4 +86,12 @@ ul.popover li {
 .filters .threads:hover .popover {
     display: block;
     transition-delay: display 0s ease-in-out;
+}
+
+.popover li input:focus {
+    box-shadow: none;
+}
+
+.popover li label {
+    margin-left: -10px;
 }

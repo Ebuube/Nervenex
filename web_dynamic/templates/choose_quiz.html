@@ -12,12 +12,12 @@
 	<link rel="stylesheet" href="../static/styles/header.css">
 	<link rel="stylesheet" href="../static/styles/footer.css">
 	<link rel="stylesheet" href="../static/styles/filters.css">
-	<link rel="stylesheet" href="../static/styles/core.css">
+	<link rel="stylesheet" href="../static/styles/choose_quiz.css">
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="../static/scripts/general.js"></script>
-	<script src="../static/scripts/index.js"></script>
+	<script src="../static/scripts/choose_quiz.js"></script>
     </head>
 
     <body>
@@ -61,7 +61,7 @@
             <section class="filters">
                 <!--Options-->
                 <div class="quizzes">
-                    <h3>Quizzes</h3>
+                    <h3>Categories</h3>
                     <h4>Physiology, Histology ...</h4>
 
                     <ul class="popover">
@@ -74,29 +74,8 @@
 			-->
 		    {% for cat in quiz_cats|sort(attribute='name') %}
 		    	<li>
-				<input type="radio" id="Quiz.{{ cat.id }}" name="quizzes" value="{{ cat.name }}" data-id="{{ cat.id }}"/>
-				<label for="Quiz.{{ cat.id }}" class="button">{{ cat.name }}</label>
-			</li>
-		    {% endfor %}
-                    </ul>
-                </div>
-
-                <div class="threads">
-                    <h3>Threads</h3>
-                    <h4>Health, Technology ...</h4>
-
-                    <ul class="popover">
-			<!--
-                        <li class="button">Health</li>
-                        <li class="button">Technology</li>
-                        <li class="button">Ubuntu</li>
-                        <li class="button">Necrosis</li>
-                        <li class="button">Oncology</li>
-			-->
-		    {% for cat in thread_cats|sort(attribute='name') %}
-		    	<li>
-				<input type="radio" id="Thread.{{ cat.id }}" name="threads" value="{{ cat.name }}" data-id="{{ cat.id }}"/>
-				<label for="Thread.{{ cat.id }}" class="button">{{ cat.name }}</label>
+				<input type="radio" id="{{ cat.id }}" name="categories" value="{{ cat.name }}"/>
+				<label for="{{ cat.id }}" class="button">{{ cat.name }}</label>
 			</li>
 		    {% endfor %}
                     </ul>
@@ -106,9 +85,27 @@
                 <button class="button">Search</button>
             </section>
 
-
         <section class="content">
-            <button id="start" class="start">START NOW</button>
+            <h1>Choose a quiz to get started</h1>
+
+	{% if quizzes and quizzes|length > 0 %}
+            <ul>
+		<!--
+	        <li>
+                    <h2>Anatomy 101 by <b>Becky Bella</b> 10 months ago</h2>
+                    <p class="multiline">Practice questions for your Anatomy first test.</p>
+                    <p>Duration: <b>30</b> mins</p>
+		</li>
+		-->
+	    {% for quiz in quizzes|sort(attribute='title') %}
+	    	<li data-id="{{ quiz.id }}">
+		    <h2>{{ quiz.title }} by <strong>{{ quiz.author.first_name }} {{ quiz.author.last_name }}</strong> {{ quiz.age }}</h2>
+		    <p class="multiline">{{ quiz.description }}</p>
+		    <p>Duration: <strong>{{ quiz.duration }}</strong> minutes</p>
+                </li>
+	    {% endfor %}
+            </ul>
+	{% endif %}
         </section>
 
         <!--FOOTER-->
@@ -116,17 +113,17 @@
             <footer>
                 <span class="info">
                     <ul>
-                        <li id="footer_about" class="hyperlink">about</li>
-                        <li id="footer_contact" class="hyperlink">contact</li>
-                        <li id="footer_terms" class="hyperlink">terms of service</li>
+                        <li class="hyperlink">about</li>
+                        <li class="hyperlink">contact</li>
+                        <li class="hyperlink">terms of service</li>
                     </ul>
                 </span>
 
                 <span class="social_media">
                     <ul>
-                        <li id="footer_facebook" class="facebook button logo"><div></div></li>
-                        <li id="footer_github_edwin" class="github button logo"><div></div></li>
-                        <li id="footer_github_ebube" class="github button logo"><div></div></li>
+                        <li class="facebook button logo"><div></div></li>
+                        <li class="twitter button logo"><div></div></li>
+                        <li class="github button logo"><div></div></li>
                     </ul>
                 </span>
             </footer>
