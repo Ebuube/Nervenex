@@ -98,7 +98,7 @@
 		</li>
 		-->
 	    {% for quiz in quizzes|sort(attribute='title') %}
-	    	<li data-id="{{ quiz.id }}">
+	    	<li class="quiz_item" data-id="{{ quiz.id }}">
 		    <h2>{{ quiz.title }} by <strong>{{ quiz.author.first_name }} {{ quiz.author.last_name }}</strong> {{ quiz.age }}</h2>
 		    <p class="multiline">{{ quiz.description }}</p>
 		    <p>Duration: <strong>{{ quiz.duration }}</strong> minutes</p>

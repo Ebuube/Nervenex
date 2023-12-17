@@ -18,7 +18,7 @@ def all_questions_from_quiz(quiz_id):
     Retrieve all question instances from a Quiz
     """
     quiz = storage.get(Quiz, quiz_id)
-    if not quiz:
+    if not quiz or not quiz.is_active:
         abort(404, description="Quiz object not found")
 
     all_questions = []
