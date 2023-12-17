@@ -22,7 +22,8 @@ $(function () {
 				icon: "info",
 				timer: 2000,
 				timerProgressBar: true,
-				showConfirmButton: false
+				showConfirmButton: false,
+				allowOutsideClick: false
 			});
 			setTimeout(() => {
 				window.location.href = 'http://localhost:5000/quiz';

@@ -4,6 +4,6 @@ $(function() {
 
 
 	$('#start').click(function() {
-		window.location.href = 'http://localhost:5000/take_quiz';
+		window.location.href = 'http://localhost:5000/choose_quiz';
 	});
 });
