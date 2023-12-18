@@ -12,9 +12,9 @@ $(function () {
 
 
 	// Error message
-	function errorMsg(msg, title="Oops...") {
+	function errorMsg(msg, title="Oops...", icon="error") {
 		Swal.fire({
-			icon: "error",
+			icon: `${icon}`,
 			title: `${title}`,
 			text: `${msg}`
 		});
@@ -118,7 +118,7 @@ $(function () {
 		if (!$('#terms_of_service:checked').val()) {
 			// alert('Hello, agree to our terms of service. 🥳');
 			const msg = 'Hello, agree to our terms of service. 🥳';
-			errorMsg(msg);
+			errorMsg(msg, title="Almost there", icon="info");
 			return;
 		}
 

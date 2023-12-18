@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-9">
+        <title>Nervenex</title>
+
+        <!--Favicon-->
+        <link rel="icon" type="image/png" href="../static/images/icon.png">
+
+        <!--STYLING-->
+	<link rel="stylesheet" href="../static/styles/common.css">
+	<link rel="stylesheet" href="../static/styles/header.css">
+	<link rel="stylesheet" href="../static/styles/footer.css">
+	<link rel="stylesheet" href="../static/styles/filters.css">
+	<link rel="stylesheet" href="../static/styles/quizzes.css">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="../static/scripts/general.js"></script>
+	<script src="../static/scripts/quiz.js"></script>
+    </head>
+
+    <body>
+        <!--HEADER-->
+        <header>
+            <section class="navigation">
+                <button class="button">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+ 
+                    <ul class="menu">
+                        <li id="menu_home">Home</li>
+                        <li id="menu_take_quiz">Take a quiz</li>
+                        <li id="menu_create_quiz">Create a quiz</li>
+                        <li id="menu_view_posts">View Posts</li>
+                        <li id="menu_get_resources">Get Resources</li>
+                        <li id="menu_login">Log in</li>
+			<li id="menu_logout">Log out</li>
+                    </ul>
+                </button>
+            </section>
+            <section class="header_logo">
+		    <div class="tooltip button">
+		    	<span class="tooltiptext">Return to home</span>
+		    </div>
+	    </section>
+          
+            <section class="tooltip user_detail">
+                <p id="username">Unidentified User</p>
+                <div id="api_status">U</div>
+		<span class="tooltiptext">Menu >> Login</span>
+            </section>
+        </header>
+
+
+        <!--CONTENTS-->
+        <div class="pg_container">
+            <section class="quiz_info">
+                <h2>Histology of Human body</h2>
+                <p>This Histology quiz is for those who aspire to become geniuses. Instruction: Answer all Questions.</p>
+            
+                <div class="quiz_numbers">
+                    <ul>
+                        <li class="attempted">1</li>
+                        <li class="attempted">2</li>
+                        <li>3</li>
+                        <li class="attempted">4</li>
+                        <li>5</li>
+                        <li class="attempted">6</li>
+                        <li>7</li>
+                        <li class="current">8</li>
+                        <li>9</li>
+                        <li>10</li>
+                        <li>11</li>
+                        <li>12</li>
+                        <li>13</li>
+                        <li>14</li>
+                        <li>15</li>
+                        <li>16</li>
+                        <li>17</li>
+                        <li>18</li>
+                        <li>19</li>
+                        <li>20</li>
+                        <li>21</li>
+                        <li>22</li>
+                        <li>23</li>
+                    </ul>
+                </div>
+
+                <div class="time"><b>Time</b> <span>20 min</span></div>
+
+                <div class="timer">
+                    <p class="figures"><span class="hour">08</span> <span class="seconds">19</span></p>
+                    <p class="key"><span>Minutes</span><span>Seconds</span></p>
+                </div>
+
+                <button>Submit</button>
+            </section>
+
+            <section class="questions">
+                <h2>Questions</h2>
+                <ul>
+                    <li class="question_item">
+                        <article>
+                            <span class="question_num">1</span>
+                            <p>A patient comes to the doctor complaining of abdominal pain. Which of the following is not likely the cause of the pain?</p>
+                            <ol>
+                                <li>Pancreatitis</li>
+                                <li>Hernia</li>
+                                <li class="answer">Vertigo</li>
+                                <li>Peptic ulcer disease.</li>
+                            </ol>
+                        </article>
+                    </li>
+
+                    <!--NEXT-->
+                    <li class="question_item">
+                        <article>
+                            <span class="question_num">2</span>
+                            <p> What are the three main types of collagen fibers?</p>
+                            <ol>
+                                <li class="answer">Type I, II, and III</li>
+                                <li>Type I, II, and IV</li>
+                                <li>Type I, III, and V</li>
+                                <li>Type II, III, and IV</li>
+                            </ol>
+                        </article>
+                    </li>
+
+                    <!--NEXT-->
+                    <li class="question_item">
+                        <article>
+                            <span class="question_num">3</span>
+                            <p>What is the name of the stain used to identify nuclei in histological slides?</p>
+                            <ol>
+                                <li>Hematoxylin</li>
+                                <li>Eosin</li>
+                                <li>Periodic acid-Schiff stain</li>
+                                <li>Masson's trichrome stain</li>
+                            </ol>
+                        </article>
+                    </li>
+
+                    <!--NEXT-->
+                    <li class="question_item">
+                        <article>
+                            <span class="question_num">4</span>
+                            <p>What is the function of the Golgi apparatus?</p>
+                            <ol>
+                                <li>Protein synthesis</li>
+                                <li class="answer">Packaging and secretion of proteins</li>
+                                <li>Breakdown of cellular waste products</li>
+                                <li>Energy production</li>
+                            </ol>
+                        </article>
+                    </li>
+                    
+                    <!--NEXT-->
+                    <li class="question_item">
+                        <article>
+                            <span class="question_num">5</span>
+                            <p>What is the main function of the endoplasmic reticulum (ER)?</p>
+                            <ol>
+                                <li>Lipid synthesis</li>
+                                <li>Protein synthesis</li>
+                                <li>Cellular respiration</li>
+                                <li>Waste product disposal</li>
+                            </ol>
+                        </article>
+                    </li>
+                    
+                    <!--NEXT-->
+                    <li class="question_item">
+                        <article>
+                            <span class="question_num">6</span>
+                            <p>What is the major function of adipose tissue?</p>
+                            <ol>
+                                <li class="answer">Provides insulation and stores energy</li>
+                                <li>Supports and protects exoskeletons</li>
+                                <li>Transports oxygen and nutrients</li>
+                                <li>Contracts and relaxes to produce movement</li>
+                            </ol>
+                        </article>
+                    </li>
+                    
+                    <!--NEXT-->
+                    <li class="question_item">
+                        <article>
+                            <span class="question_num">7</span>
+                            <p>What is the difference between a neuron and a glial cell?</p>
+                            <ol>
+                                <li>Neurons are responsible for sending and receiving nerve impulses, while glial cells provide support and protection for neurons.</li>
+                                <li>Neurons are found only in the brain and spinal cord, while glial cells are found throughout the nervous system.</li>
+                                <li>Neurons have long axons and dendrites, while glial cells do not.</li>
+                                <li>Neurons are specialized for secretion, while glial cells are specialized for absorption./li>
+                            </ol>
+                        </article>
+                    </li>
+                    
+                    <!--NEXT-->
+                    <li class="question_item">
+                        <article>
+                            <span class="question_num">8</span>
+                            <p>What is the function of the basement membrane?</p>
+                            <ol>
+                                <li>Provides structural support for epithelial tissue</li>
+                                <li>Allows for the exchange of gases and nutrients</li>
+                                <li>Protects against infection</li>
+                                <li>Secretes hormones</li>
+                            </ol>
+                        </article>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!--FOOTER-->
+        <div class="pagefooter">
+            <footer>
+                <span class="info">
+                    <ul>
+                        <li class="hyperlink">about</li>
+                        <li class="hyperlink">contact</li>
+                        <li class="hyperlink">terms of service</li>
+                    </ul>
+                </span>
+
+                <span class="social_media">
+                    <ul>
+                        <li class="facebook button logo"><div></div></li>
+                        <li class="twitter button logo"><div></div></li>
+                        <li class="github button logo"><div></div></li>
+                    </ul>
+                </span>
+            </footer>
+        </div>
+    </body>
+</html>

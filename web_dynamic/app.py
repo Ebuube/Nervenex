@@ -124,6 +124,18 @@ def choose_quiz():
             quizzes=quizzes)
 
 
+@app.route('/quiz/<quiz_id>', strict_slashes=False)
+def quiz(quiz_id):
+    """
+    Return a quiz to be taken by the user
+    """
+    quiz = storage.get(Quiz, quiz_id)
+    if not quiz or not quiz.is_active:
+        abort(404, description="Sorry, no such quiz..")
+
+    return render_template('quiz.html', quiz=quiz)
+
+
 if __name__ == "__main__":
     """
     Run app
