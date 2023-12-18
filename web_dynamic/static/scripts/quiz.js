@@ -3,8 +3,40 @@
 $(function () {
 
 	// Get quiz
-	const Quiz = localStorage.getItem('Quiz');
-	console.log(Quiz);	// test
+	var Quiz = JSON.parse(localStorage.getItem('Quiz'));
+
+	// Count down timer
+	var stopTimer = true;
+	var countDownTime = Quiz.duration;
+	var seconds = 0;
+	// console.log(countDownTime);	// test
+	window.setInterval(function perSec() {
+		if (!stopTimer) {
+			if (seconds > 0) {
+				seconds = seconds - 1;
+				$('div.timer .figures .seconds').html(seconds);
+			} else if (countDownTime > 0) {
+				seconds = 59;
+				countDownTime = countDownTime - 1;
+				$('div.timer .figures .hour').html(countDownTime);
+				$('div.timer .figures .seconds').html(seconds);
+			} else {
+				stopTimer = true;
+				seconds = -1;
+				countDownTime = -1;
+				Swal.fire({
+					icon: "info",
+					title: "Time up ⏳",
+					text: "You have exhausted your time",
+					confirmButtonText: "Submit",
+					allowOutsideClick: false
+				});
+			}
+
+		}
+	}, 1000);
+
+	// console.log(Quiz);	// test
 	if (Quiz == null) {
 		console.log('Null quiz');	// test
 		Swal.fire({
@@ -25,8 +57,11 @@ $(function () {
 			timerProgressBar: true,
 			showConfirmButton: false,
 			allowOutsideClick: false
+		}).then((result) => {
+			if (result.dismiss === Swal.DismissReason.timer) {
+				stopTimer = false;	// start countdown timer
+			}
 		});
-		setTimeout(() => {}, 3000);
 	}
 
 	// Current item
@@ -71,6 +106,4 @@ $(function () {
 	for (var i = 0; i < ans.length; i++) {
 		ans[i].onclick = setAnswer;
 	}
-
-	// Count down timer
 });
