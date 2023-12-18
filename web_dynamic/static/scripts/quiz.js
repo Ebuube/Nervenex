@@ -48,6 +48,7 @@ $(function () {
 		const question = this.parentNode.parentNode.parentNode;
 		let quiz_num = document.getElementById(`quiz_num.${question.id}`);
 		quiz_num.classList.add('attempted');
+		quiz_num.onclick();
 	}
 	const ans = document.querySelectorAll('.question_item ol li');
 	for (var i = 0; i < ans.length; i++) {
