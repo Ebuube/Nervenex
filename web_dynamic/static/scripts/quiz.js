@@ -1,16 +1,33 @@
 #!/usr/bin/node
 // Properties of the Quiz page
 $(function () {
-	Swal.fire({
-		title: "Hurray! 🤩",
-		icon: "info",
-		text: "Scroll down the left panel and start quiz",
-		timer: 3000,
-		timerProgressBar: true,
-		showConfirmButton: false,
-		allowOutsideClick: false
-	});
-	setTimeout(() => {}, 3000);
+
+	// Get quiz
+	const Quiz = localStorage.getItem('Quiz');
+	console.log(Quiz);	// test
+	if (Quiz == null) {
+		console.log('Null quiz');	// test
+		Swal.fire({
+			title: "No quiz loaded 🥺",
+			icon: "error",
+			text: "Sorry, go to Menu >> Take a quiz."
+		}).then((result) => {
+			if (result.isConfirmed) {
+				window.location.href = "http://localhost:5000/choose_quiz";
+			}
+		});
+	} else {
+		Swal.fire({
+			title: "Hurray! 🤩",
+			icon: "info",
+			text: "Scroll down the left panel to submit quiz",
+			timer: 3000,
+			timerProgressBar: true,
+			showConfirmButton: false,
+			allowOutsideClick: false
+		});
+		setTimeout(() => {}, 3000);
+	}
 
 	// Current item
 	function setCurrent() {
@@ -55,26 +72,5 @@ $(function () {
 		ans[i].onclick = setAnswer;
 	}
 
-	/*
-	// Set icon when question is in view
-	const questions = document.getElementsByClassName('question_item');
-	const observer = new IntersectionObserver((entries) => {
-		entries.forEach((entry) => {
-			// console.log(entry.target);
-			var oldLink = document.getElementsByClassName('current')[0];
-			if (oldLink) {
-				oldLink.classList.remove('current');
-			}
-			console.log(`type: ${this}`);	// test
-			var newLink = document.getElementById(`quiz_num.${this.id}`);
-			console.log(newLink);
-			if (newLink) {
-				newLink.classLlist.add('current');
-			}
-		})
-	});
-	for (var i = 0; i < questions.length; i++) {
-		observer.observe(questions[i]);
-	}
-	*/
+	// Count down timer
 });
