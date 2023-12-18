@@ -68,7 +68,7 @@
                         <li class="current">8</li>
 			-->
 		    {% for question in quiz.questions %}
-		        <li class="quiz_num" href="Question.{{ question.id }}">{{ loop.index }}</li>
+		    <li id="quiz_num.Question.{{ question.id }}" class="quiz_num" href="Question.{{ question.id }}">{{ loop.index }}</li>
 		    {% endfor %}
                     </ul>
 		{% endif %}

@@ -36,32 +36,26 @@ $(function () {
 	}
 
 
+	/*
 	// Set icon when question is in view
-	function isInViewPort(element) {
-		// Get the bounding client rectangle position in the viewport
-		var bouding = element.getBoundingClientRect();
-
-		// Here the code checks if it's fully visible
-		// Edit this part if you just want a partial visibility
-		if (
-			bounding.top >= 0 &&
-			bounding.left >= 0 &&
-			bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
-			bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-		) {
-			console.log(`${this.attribute('id')} is in viewport`);
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	const quest = document.getElementsByClassName('question_item');
-	for (var i = 0; i< quest.length; i++) {
-		window.addEventListener('scroll', function (event) {
-			if (isInViewPort(quest[i])) {
-				console.log(quest.getAttribute('id'));
+	const questions = document.getElementsByClassName('question_item');
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			// console.log(entry.target);
+			var oldLink = document.getElementsByClassName('current')[0];
+			if (oldLink) {
+				oldLink.classList.remove('current');
 			}
-		}, false);
+			console.log(`type: ${this}`);	// test
+			var newLink = document.getElementById(`quiz_num.${this.id}`);
+			console.log(newLink);
+			if (newLink) {
+				newLink.classLlist.add('current');
+			}
+		})
+	});
+	for (var i = 0; i < questions.length; i++) {
+		observer.observe(questions[i]);
 	}
+	*/
 });
