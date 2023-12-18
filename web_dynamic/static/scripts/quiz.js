@@ -12,6 +12,7 @@ $(function () {
 	});
 	setTimeout(() => {}, 3000);
 
+	// Current item
 	function setCurrent() {
 		// alert(`${obj.attr('id')} is in view`);
 		var oldLink = document.getElementsByClassName('current')[0];
@@ -29,12 +30,29 @@ $(function () {
 			window.scrollBy(0, -100);
 		}
 	}
-	// Current item
 	const els = document.getElementsByClassName('quiz_num');
 	for (var i = 0; i < els.length; i++) {
 		els[i].onclick = setCurrent;
 	}
 
+
+	// Select answer
+	function setAnswer() {
+		// set this option as answer
+		let children = this.parentNode.children;
+
+		for (let i = 0; i < children.length; i++) {
+			children[i].classList.remove('answer');
+		}
+		this.classList.add('answer');
+		const question = this.parentNode.parentNode.parentNode;
+		let quiz_num = document.getElementById(`quiz_num.${question.id}`);
+		quiz_num.classList.add('attempted');
+	}
+	const ans = document.querySelectorAll('.question_item ol li');
+	for (var i = 0; i < ans.length; i++) {
+		ans[i].onclick = setAnswer;
+	}
 
 	/*
 	// Set icon when question is in view
