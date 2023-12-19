@@ -7,6 +7,7 @@ $(function () {
 
 	// Count down timer
 	var stopTimer = true;
+	var timeExhausted = false;
 	var countDownTime = Quiz.duration;
 	var seconds = 0;
 	// console.log(countDownTime);	// test
@@ -24,13 +25,18 @@ $(function () {
 				stopTimer = true;
 				seconds = -1;
 				countDownTime = -1;
+				timeExhausted = true;
 				Swal.fire({
 					icon: "info",
 					title: "Time up ⏳",
-					text: "You have exhausted your time",
-					confirmButtonText: "Submit",
-					allowOutsideClick: false
+					text: "You have exhausted your time. Submission in progress...",
+					timer: 3000,
+					allowOutsideClick: false,
+					showConfirmButton: false,
+					timerProgressBar: true
 				});
+				// submitAnswers();
+				console.log('Sumbitted answer');	// test
 			}
 
 		}
@@ -106,4 +112,46 @@ $(function () {
 	for (var i = 0; i < ans.length; i++) {
 		ans[i].onclick = setAnswer;
 	}
+
+
+	// Answer submisison
+	const submit = document.getElementById('submit');
+	submit.onclick = function askToSubmit() {
+		// Verify all questions are attempted
+		let attempted = document.querySelectorAll('.quiz_num');
+		for (let i = 0; i < attempted.length; i++) {
+			console.log(`obj -> ${attempted[i].getAttribute('id')}`);	// test
+			if (!attempted[i].classList.contains('attempted')) {
+				// Unattempted question recognized
+				console.log('\tNot attempted');	// test
+				Swal.fire({
+					icon: "warning",
+					title: 'Wait a sec ... 🚦',
+					text: "You have not attempted all questions. Do you still want to submit?",
+					showCancelButton: true,
+					confirmButtonText: 'Yes, submit'
+				}).then((result) => {
+					if (result.isConfirmed) {
+						// submitAnswers();
+						console.log('Sumbitted answer');	// test
+					}
+				});
+				return;
+			} else {
+				// If all questions have been attempted
+
+				Swal.fire({
+					icon: "question",
+					title: "Submission",
+					text: "Are you sure you want to submit?",
+					showCancelButton: true
+				}).then((result) => {
+					if (result.isConfirmed) {
+						// submitAnswers();
+						console.log('Sumbitted answer');	// test
+					}
+				});
+			}
+		};
+	};
 });
