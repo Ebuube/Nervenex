@@ -188,21 +188,29 @@ div.level span {
     color: rgb(231, 111, 13);
 }
 
-.question_item .correct {
+.question_item .correct,
+.key .correct {
     color: green;
-    font-size: large;
+    font-size: larger;
     border-radius: 4px;
     padding: 2px;
 }
 
-.question_item .not_chosen {
+.question_item .not_chosen,
+.key .not_chosen {
     border: 1px #BBBBBB solid;
 }
 
-.question_item .chosen {
+.question_item .chosen,
+.key .chosen {
     border: 1px rgb(231, 111, 13) solid;
 }
 
-.question_item .wrong {
+.question_item .wrong,
+.key .wrong {
     color: red;
+}
+
+.key p {
+    font-size: smaller;
 }
