@@ -11,13 +11,12 @@
 	<link rel="stylesheet" href="../static/styles/common.css">
 	<link rel="stylesheet" href="../static/styles/header.css">
 	<link rel="stylesheet" href="../static/styles/footer.css">
-	<link rel="stylesheet" href="../static/styles/filters.css">
-	<link rel="stylesheet" href="../static/styles/quizzes.css">
+	<link rel="stylesheet" href="../static/styles/quiz_history.css">
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="../static/scripts/general.js"></script>
-	<script src="../static/scripts/quiz.js"></script>
+	<script src="../static/scripts/quiz_history.js"></script>
     </head>
 
     <body>
@@ -56,77 +55,44 @@
 
 
         <!--CONTENTS-->
-        <div class="pg_container">
-            <section class="quiz_info">
-		<h2>{{ quiz.title }}</h2>
-		<p class="mulitline">{{ quiz.description }}</p>
-            
-                <div class="quiz_numbers">
-		{% if quiz.questions and quiz.questions|length > 0 %}
-                    <ul>
-			<!--
-                        <li class="attempted">1</li>
-                        <li class="current">8</li>
-			-->
-		    {% for question in quiz.questions %}
-		    <li id="quiz_num.Question.{{ question.id }}" class="quiz_num" href="Question.{{ question.id }}">{{ loop.index }}</li>
+        <div class="container">
+
+        <section class="content">
+	    <h1>Quiz history</h1>
+
+	{% if quizzes and quizzes|length > 0 %}
+            <h2>Choose a quiz to see your performance</h2>
+            <ul>
+		<!--
+	        <li>
+                    <h2>Anatomy 101 by <b>Becky Bella</b> 10 months ago</h2>
+                    <p class="multiline">Practice questions for your Anatomy first test.</p>
+                    <p>Duration: <b>30</b> mins</p>
+		</li>
+		-->
+	    {% for quiz in quizzes|sort(attribute='title') %}
+	    	<li class="quiz_item" data-id="{{ quiz.id }}">
+		    <h2>{{ quiz.title }} by <strong>{{ quiz.author.first_name }} {{ quiz.author.last_name }}</strong> {{ quiz.age }}</h2>
+		    <p class="multiline">{{ quiz.description }}</p>
+		    <p>Duration: <strong>{{ quiz.duration }}</strong> minutes</p>
+		    <p>Number of questions: {{ quiz.questions|length }}</p>
+		    </br>
+		    <div class="user_attempts">
+			<h4>Attempts</h4>
+		    {% for attempt in user.attempts | sort(reverse=True, attribute='created_at') %}
+		        {% if attempt.quiz == quiz %}
+			<p class="hyperlink" id="{{ attempt.id }}">Score: {{ attempt.score }} on {{ attempt.created_at.strftime('%A %-d, %b %Y at %X')}}</p>
+			{% endif %}
 		    {% endfor %}
-                    </ul>
-		{% endif %}
-                </div>
-
-		<div class="time"><b>Time</b> <span>{{ quiz.duration }} min</span></div>
-
-                <div class="timer">
-			<p class="figures">
-				<span class="hour">{{ quiz.duration }}</span> <span class="seconds">00</span>
-			</p>
-                    <p class="key"><span>Minutes</span><span>Seconds</span></p>
-                </div>
-
-                <button id="submit">Submit</button>
-            </section>
-
-            <section class="questions">
-                <h2>Questions</h2>
-		{% if quiz.questions and quiz.questions|length > 0 %}
-                <ul>
-		    <!--
-                    <li class="question_item">
-                        <article>
-                            <span class="question_num">1</span>
-                            <p>A patient comes to the doctor complaining of abdominal pain. Which of the following is not likely the cause of the pain?</p>
-                            <ol>
-                                <li>Pancreatitis</li>
-                                <li>Hernia</li>
-                                <li class="answer">Vertigo</li>
-                                <li>Peptic ulcer disease.</li>
-                            </ol>
-                        </article>
-                    </li>
-		    -->
-
-		    {% for question in quiz.questions %}
-		    <li class="question_item" id="Question.{{ question.id }}">
-                        <article>
-			    <span class="question_num">{{ loop.index }}</span>
-			    <p>{{ question.content }}</p>
-                            <ol>
-				    <li>{{ question.option_a }}</li>
-
-				    <li>{{ question.option_b }}</li>
-
-				    <li>{{ question.option_c }}</li>
-
-				    <li>{{ question.option_d }}</li>
-                            </ol>
-                        </article>
-                    </li>
-		    {% endfor %}
-                </ul>
-		{% endif %}
-            </section>
-        </div>
+		    </div>
+                </li>
+	    {% endfor %}
+            </ul>
+	{% else %}
+	    <h2>You have not attempted any quiz, yet</h2>
+	    <p>Click on the menu >> Take a quiz to get started</p>
+	{% endif %}
+        </section>
 
         <!--FOOTER-->
         <div class="pagefooter">

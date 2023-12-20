@@ -65,6 +65,20 @@ $(function() {
 		window.location.href = 'http://localhost:5000/create_quiz';
 	});
 
+	$('#menu_quiz_history').click(function() {
+		let user = localStorage.getItem('user');
+		if (!user) {
+			Swal.fire({
+				icon: "error",
+				title: "You are logged out",
+				text: "Log in to see your quiz history"
+			});
+			return;
+		}
+		user = JSON.parse(user);
+		window.location.href = `http://localhost:5000/quiz_history/${user.id}`;
+	});
+
 	$('#menu_view_posts').click(function() {
 		window.location.href = 'http://localhost:5000/view_posts';
 	});

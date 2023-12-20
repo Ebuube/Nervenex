@@ -189,6 +189,22 @@ def correction(attempt_id):
             grade=grade)
 
 
+@app.route('/quiz_history/<user_id>', strict_slashes=False)
+def quiz_history(user_id):
+    """
+    See all the user's prvious performance
+    """
+    user = storage.get(User, user_id);
+    if not user or not Authorized.is_auth(user):
+        abort(404, "Sorry, there is no such user")
+
+    quizzes = []
+    for attempt in user.attempts:
+        if not attempt.quiz in quizzes:
+            quizzes.append(attempt.quiz)
+    return render_template('quiz_history.html', user=user, quizzes=quizzes)
+
+
 if __name__ == "__main__":
     """
     Run app

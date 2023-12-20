@@ -1,0 +1,45 @@
+section.content {
+    min-height: 500px;
+}
+section.content h1 {
+    font-size: 30px;
+    margin-bottom: 40px;
+    border-bottom: 1px #CCCCCC solid;
+    padding-bottom: 10px;
+}
+
+.content ul {
+    width: 100%;
+}
+
+.content ul li {
+    list-style: none;
+    padding: 20px;
+    border: 1px rgb(231, 111, 13) solid;
+    border-radius: 4px;
+    width: 95%;
+    margin-left: -40px;
+    margin-bottom: 40px;
+}
+
+.content ul li:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+}
+
+.content ul li h2 {
+    border-bottom: 1px #CCCCCC solid;
+    padding-bottom: 10px;
+}
+
+.user_attempts h4 {
+    border-bottom: 1px #CCCCCC solid;
+    padding-bottom: 5px;
+    font-size: 23px;
+}
+
+.user_attempts p {
+    font-size: 17px;
+    width: fit-content;
+}
