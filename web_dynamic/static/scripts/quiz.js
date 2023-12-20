@@ -23,8 +23,8 @@ $(function () {
 				$('div.timer .figures .seconds').html(seconds);
 			} else {
 				stopTimer = true;
-				seconds = -1;
-				countDownTime = -1;
+				// seconds = -1;
+				// countDownTime = -1;
 				timeExhausted = true;
 				Swal.fire({
 					icon: "info",
@@ -37,6 +37,7 @@ $(function () {
 				});
 				// submitAnswers();
 				console.log('Sumbitted answer');	// test
+				submitAnswers();
 			}
 
 		}
@@ -133,7 +134,9 @@ $(function () {
 				}).then((result) => {
 					if (result.isConfirmed) {
 						// submitAnswers();
+						stopTimer = true;
 						console.log('Sumbitted answer');	// test
+						submitAnswers();
 					}
 				});
 				return;
@@ -148,10 +151,83 @@ $(function () {
 				}).then((result) => {
 					if (result.isConfirmed) {
 						// submitAnswers();
+						stopTimer = true;
 						console.log('Sumbitted answer');	// test
+						submitAnswers();
 					}
 				});
 			}
 		};
 	};
+
+
+	// Properly compile and submit the answers
+	function submitAnswers() {
+		let payload = new Object();
+		payload['duration'] = Quiz.duration - countDownTime;
+		payload['ans_per_question'] = new Object();
+		let questions = document.querySelectorAll('.question_item');
+		for (let i = 0; i < questions.length; i++) {
+			/*
+			 * Go through each <li> child of this object
+			 * Pick the one with the class 'answer'
+			 * If it is the first one, set answer as 1,
+			 * if it is the second, set answer as 2
+			 */
+			const options = questions[i].getElementsByTagName('li');
+
+			let ans = -1;
+			for (let x = 0; x < options.length; x++, ans = -1) {
+				if (options[x].classList.contains('answer')) {
+					ans = x + 1;
+					break;
+				}
+			}
+			/*
+			 * add the object -- to payload['ans_per_question']
+			 * "id": answer value(1-4)
+			 * Where id is li.getAttribute('id') remove the 'Question.' part
+			 * which starts the string
+			 */
+
+			let obj = new Object();
+			let id = questions[i].id.replace('Question.', '');
+			payload.ans_per_question[id] = ans;
+		}
+
+		// console.log(JSON.stringify(payload));	// test
+		user = localStorage.getItem('user');
+		if (!user) {
+			Swal.fire({
+				icon: "warning",
+				title: "Logged out! 🧐",
+				text: "Log in to see your results "
+			});
+			// Redirect to log in page and redirect back to here
+		}
+		user = JSON.parse(user);
+		if (!Quiz) {
+			Swal.fire({
+				icon: "error",
+				title: "Quiz error",
+				text: "No quiz identified to submit"
+			});
+		}
+
+		$.ajax({
+			url: `http://localhost:5001/api/v1/submit/${user.id}/quiz/${Quiz.id}`,
+			type: 'POST',
+			dataType: 'json',
+			contentType: 'application/json',
+			data: `${JSON.stringify(payload)}`
+		})
+		.done(function (attempt) {
+			console.log(attempt);	// test
+			window.location.href = `http://localhost:5000/correction/${attempt.id}`;
+		})
+		.fail(function (xhr, status, errorThrown) {
+			errorMsg(xhr.responseJSON.description, title="Submission failure");
+			console.log(xhr.responseJSON.description);	// test
+		});
+	}
 });

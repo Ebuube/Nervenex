@@ -5,8 +5,11 @@ Starts a Flask Web application to serve dynamic web page
 from datetime import datetime
 from uuid import uuid4
 from models import storage
+from models.attempt import Attempt
+from models.authorized import Authorized
 from models.quiz import Quiz
 from models.thread import Thread
+from models.user import User
 from flask import Flask, render_template, make_response, jsonify
 from werkzeug.exceptions import HTTPException
 
@@ -134,6 +137,31 @@ def quiz(quiz_id):
         abort(404, description="Sorry, no such quiz..")
 
     return render_template('quiz.html', quiz=quiz)
+
+
+@app.route('/correction/<attempt_id>', strict_slashes=False)
+def correction(attempt_id):
+    """
+    View a correction for a particular attempt made
+    """
+    '''
+    user = storage.get(User, user_id)
+    if not user or not Authorized.is_auth(user):
+        abort(401,
+              description="Sorry, you are not allowed to access this attempt")
+    '''
+    attempt = storage.get(Attempt, attempt_id)
+    if not attempt:
+        abort(404, description="Sorry, no such attempt was made")
+
+    questions = attempt.quiz.questions
+    answers = attempt.answers
+    quiz = attempt.quiz
+    time_hour = int(attempt.duration / 60)
+    time_min = attempt.duration - (time_hour * 60)
+    return render_template('correction.html', answers=answers,
+            questions=questions, quiz=quiz, time_min=time_min,
+            time_hour=time_hour, attempt=attempt)
 
 
 if __name__ == "__main__":
