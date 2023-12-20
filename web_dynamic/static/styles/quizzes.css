@@ -214,3 +214,12 @@ div.level span {
 .key p {
     font-size: smaller;
 }
+
+.quiz_info .grade {
+    font-size: 25px;
+}
+
+.quiz_info .score {
+    font-weight: bold;
+    font-size: 25px;
+}

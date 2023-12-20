@@ -163,6 +163,21 @@ $(function () {
 
 	// Properly compile and submit the answers
 	function submitAnswers() {
+
+		// Keep user busy
+		Swal.fire({
+			icon: "info",
+			title: "Processing result",
+			text: "Just hang in there, we are marking your scripts 😇",
+			timer: 120000,
+			allowOutsideClick: false,
+			didOpen: () => {
+				Swal.showLoading();
+			},
+			willClose: () => {
+			}
+		});
+
 		let payload = new Object();
 		payload['duration'] = Quiz.duration - countDownTime;
 		payload['ans_per_question'] = new Object();
@@ -204,6 +219,8 @@ $(function () {
 				text: "Log in to see your results "
 			});
 			// Redirect to log in page and redirect back to here
+			// To be implemented
+			return;
 		}
 		user = JSON.parse(user);
 		if (!Quiz) {
@@ -212,6 +229,7 @@ $(function () {
 				title: "Quiz error",
 				text: "No quiz identified to submit"
 			});
+			return;
 		}
 
 		$.ajax({

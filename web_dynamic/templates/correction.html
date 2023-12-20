@@ -59,7 +59,8 @@
             <section class="quiz_info">
 		<h2>{{ quiz.title }}</h2>
 		<p class="mulitline">{{ quiz.description }}</p>
-		<p class="grade">Score: {{ attempt.score }}/{{ quiz.questions|length }}
+		<p class="score">Score: {{ attempt.score }}/{{ quiz.questions|length }}
+		<p class="grade">Grade: {{ percent_score }}% => {{ grade }}</p>
             
                 <div class="quiz_numbers">
 		{% if quiz.questions and quiz.questions|length > 0 %}
@@ -118,7 +119,7 @@
                     </li>
 		    -->
 
-		    {% for answer in answers | sort(reverse=False, attribute='updated_at') %}
+		    {% for answer in answers %}
 		    <li class="question_item" id="Question.{{ answer.question.id }}">
                         <article>
 			    <span class="question_num">{{ loop.index }}</span>
@@ -136,26 +137,6 @@
 				    <li>{{ option }}</li>
 				{% endif %}
 			    {% endfor %}
-
-				<!--
-				{% if answer.value == 2 %}
-				    <li class="answer">{{ answer.question.option_b }}</li>
-				{% else %}
-				    <li>{{ answer.question.option_b }}</li>
-				{% endif %}
-
-				{% if answer.value == 3 %}
-				    <li class="answer">{{ answer.question.option_c }}</li>
-				{% else %}
-				    <li>{{ answer.question.option_c }}</li>
-				{% endif %}
-
-				{% if answer.value == 4 %}
-				    <li class="answer">{{ answer.question.option_d }}</li>
-				{% else %}
-				    <li>{{ answer.question.option_d }}</li>
-				{% endif %}
-				-->
                             </ol>
                         </article>
                     </li>

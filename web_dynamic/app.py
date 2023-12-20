@@ -139,6 +139,28 @@ def quiz(quiz_id):
     return render_template('quiz.html', quiz=quiz)
 
 
+def get_grade(value):
+    """
+    Award grade to a performance
+    """
+    if not value:
+        return 'F'
+    if not type(value) is int:
+        return 'F'
+    if value in range(70, 101):
+        return 'A'
+    elif value in range(60, 70):
+        return 'B'
+    elif value in range(50, 60):
+        return 'C'
+    elif value in range(45, 50):
+        return 'D'
+    elif value in range(40, 45):
+        return 'E'
+    else:
+        return 'F'
+
+
 @app.route('/correction/<attempt_id>', strict_slashes=False)
 def correction(attempt_id):
     """
@@ -159,9 +181,12 @@ def correction(attempt_id):
     quiz = attempt.quiz
     time_hour = int(attempt.duration / 60)
     time_min = attempt.duration - (time_hour * 60)
+    percent_score = int((attempt.score / len(attempt.quiz.questions)) * 100)
+    grade = get_grade(percent_score)
     return render_template('correction.html', answers=answers,
             questions=questions, quiz=quiz, time_min=time_min,
-            time_hour=time_hour, attempt=attempt)
+            time_hour=time_hour, attempt=attempt, percent_score=percent_score,
+            grade=grade)
 
 
 if __name__ == "__main__":
