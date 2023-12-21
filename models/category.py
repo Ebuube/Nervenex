@@ -54,4 +54,23 @@ class Category(BaseModel, Base):
         """
         Initialize using the Parent class
         """
+        if 'name' in kwargs.keys():
+            kwargs['name'] = kwargs['name'].capitalize()
+
         super().__init__(*args, **kwargs)
+
+    @staticmethod
+    def get(name=""):
+        """
+        Return a category object if it exists
+
+        case insensitive search
+        """
+        if not name:
+            return None
+
+        for cat in models.storage.all(Category).values():
+            if cat.name.upper() == name.upper():
+                return cat
+
+        return None

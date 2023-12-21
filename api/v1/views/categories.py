@@ -67,11 +67,12 @@ def create_category():
     if 'name' not in data:
         abort(400, description="Missing name of category")
 
-    instance = Category(**data)
-    instance.save()
-    category = instance.to_dict()
+    category = Category.get(data['name'])
+    if not category:
+        category = Category(**data)
+        category.save()
 
-    return make_response(jsonify(category), 201)
+    return make_response(jsonify(category.to_dict()), 201)
 
 
 @app_views.route('/categories/<category_id>', methods=['PUT'],
