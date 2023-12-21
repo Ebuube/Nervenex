@@ -59,9 +59,9 @@
         <div class="container">
 
         <section class="content">
+	{% if quizzes and quizzes|length > 0 %}
             <h1>Choose a quiz to get started</h1>
 
-	{% if quizzes and quizzes|length > 0 %}
             <ul>
 		<!--
 	        <li>
@@ -78,6 +78,10 @@
                 </li>
 	    {% endfor %}
             </ul>
+	{% else %}
+	    <h1>Sorry, no quiz is available at the moment</h1>
+	    <h1>But you can create one 😊</h1>
+	    <h1>Menu >> Create a quiz</h1>
 	{% endif %}
         </section>
 

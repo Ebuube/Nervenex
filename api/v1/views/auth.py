@@ -27,7 +27,7 @@ def login():
     all_users = storage.all(User).values()
 
     if not all_users:
-        abort(404)
+        abort(404, description="E-mail or password is incorrect")
 
     if 'email' in data:
         if not validators.email(data['email']):

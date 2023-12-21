@@ -67,7 +67,6 @@
                     <p class="key"><span>Hours</span><span>Minutes</span></p>
                 </div>
 
-	    {% if categories and categories|length > 0 %}
 		<h4>Categories</h4>
 		<select name="categories" class="categories">
 		<!--
@@ -78,7 +77,6 @@
 		    <option value="{{ cat.id }}">{{ cat.name }}</option>
 		{% endfor %}
 		</select>
-	    {% endif %}
 		<input class="new_category" maxlength="128" placeholder="New category"/>
 
                 <button id="upload">Upload</button>

@@ -139,6 +139,12 @@
 				{% endif %}
 			    {% endfor %}
                             </ol>
+
+			    {% if answer.question.explanation|length > 0 %}
+			    <h4>Explanation</h4>
+			    <pre>{{ answer.question.explanation }}</pre>
+			    {% endif %}
+			    <p>
                         </article>
                     </li>
 		    {% endfor %}

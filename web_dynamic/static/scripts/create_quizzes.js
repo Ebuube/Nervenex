@@ -1,5 +1,23 @@
 // Properties of Quiz creation
 $(function () {
+
+	// Execute on page load
+	Swal.fire({
+		title: "Welcome! 🤩",
+		icon: "info",
+		text: "Scroll down the left panel to upload quiz",
+		timer: 3000,
+		timerProgressBar: true,
+		showConfirmButton: false,
+		allowOutsideClick: false
+	}).then((result) => {
+		if (result.dismiss === Swal.DismissReason.timer) {
+			stopTimer = false;	// start countdown timer
+		}
+	});
+
+
+
 	// Choose a category
 	function setChosen() {
 		let oldChoice = document.querySelector('.cat_chosen');
