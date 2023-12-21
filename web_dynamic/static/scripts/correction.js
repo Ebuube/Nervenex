@@ -14,7 +14,7 @@ $(function () {
 			text: "Sorry, go to Menu >> Take a quiz."
 		}).then((result) => {
 			if (result.isConfirmed) {
-				window.location.href = "http://localhost:5000/choose_quiz";
+				window.location.href = "http://web-01.brainspark.tech/nervenex/choose_quiz";
 			}
 		});
 	}
