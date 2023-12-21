@@ -222,6 +222,7 @@ div.level span {
 }
 
 .quiz_info h4 {
+    margin-top: 30px;
     border-bottom: 1px #CCCCCC solid;
     padding-bottom: 5px;
     margin-bottom: -5px;
@@ -229,7 +230,7 @@ div.level span {
 
 ul.categories {
     text-align: left;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .categories li {
@@ -255,4 +256,20 @@ ul.categories {
 .new_category {
     font-size: 16px;
     margin-top: -30px;
+}
+
+select.categories {
+    margin-top: 20px;
+    width: 100%;
+    border: 1px #CCCCCC solid;
+    border-radius: 4px;
+    padding-left: 5px;
+    min-height: 30px;
+    outline-color: rgb(231, 111, 13);
+}
+
+select.categories option {
+    font-size: 16px;
+    padding-bottom: 40px;
+    padding-left: 10px;
 }

@@ -69,14 +69,15 @@
 
 	    {% if categories and categories|length > 0 %}
 		<h4>Categories</h4>
-		<ul class="categories">
+		<select name="categories" class="categories">
 		<!--
 	  	    <li class="cat_chosen">Lorem ipsum</li>
 	  	-->
+		    <option value="">Choose a category</option>
 		{% for cat in categories | sort(attribute='name') %}
-		    <li id="Category.{{ cat.id }}">{{ cat.name }}</li>
+		    <option value="{{ cat.id }}">{{ cat.name }}</option>
 		{% endfor %}
-		</ul>
+		</select>
 	    {% endif %}
 		<input class="new_category" maxlength="128" placeholder="New category"/>
 

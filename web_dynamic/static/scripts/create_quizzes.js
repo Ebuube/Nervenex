@@ -189,10 +189,9 @@ $(function () {
 			});
 		} else {
 			new_category = new Object();
-			const id = document.querySelector('.quiz_info .cat_chosen').id;
-			new_category.id = id.replace('Category.', '');
-			console.log(`new_cat-> ${id}`);	// test
-			console.log(`category id -> ${new_category.id}`);	// test
+			const id = document.querySelector('.quiz_info select.categories').value;
+			console.log(`category id: ${id}`);	// test
+			new_category.id = id;
 
 			if (!createQuiz(category_id=new_category.id, duration=duration)) {
 				uploadStatus = false;
@@ -322,9 +321,9 @@ $(function () {
 		console.log(duration);
 
 		// Verify category selected
-		const cat = document.querySelector('.cat_chosen');
+		const cat_id = document.querySelector('select.categories').value;
 		const new_cat = document.querySelector('.new_category');
-		if (!cat && new_cat.value.length == 0) {
+		if (cat_id == "" && new_cat.value.length == 0) {
 			Swal.fire({
 				icon: "warning",
 				title: "No category",
