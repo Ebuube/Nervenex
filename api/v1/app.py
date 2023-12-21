@@ -5,13 +5,14 @@ from flask import Blueprint
 from api.v1.views import app_views
 from os import environ
 from flask import Flask, render_template, make_response, jsonify
+from api.v1.config import Config
 from flask_cors import CORS
 from flasgger import Swagger
 from flasgger.utils import swag_from
 from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'c518f22ee3936b9cebd40726'
+app.config.from_object(Config)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.register_blueprint(app_views)
 cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})

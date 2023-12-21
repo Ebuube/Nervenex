@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-9">
+        <title>Nervenex</title>
+
+        <!--Favicon-->
+        <link rel="icon" type="image/png" href="../static/images/icon.png">
+
+        <!--STYLING-->
+    <link rel="stylesheet" href="../static/styles/common.css">
+    <link rel="stylesheet" href="../static/styles/header.css">
+    <link rel="stylesheet" href="../static/styles/footer.css">
+    <link rel="stylesheet" href="../static/styles/filters.css">
+    <link rel="stylesheet" href="../static/styles/resources.css">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../static/scripts/general.js"></script>
+    <script src="../static/scripts/resources.js"></script>
+    
+    </head>
+
+    <body>
+        <!--HEADER-->
+        <header>
+            <section class="navigation">
+                <button class="button">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+ 
+                    <ul class="menu">
+                        <li id="menu_home">Home</li>
+                        <li id="menu_take_quiz">Take a quiz</li>
+                        <li id="menu_create_quiz">Create a quiz</li>
+                        <li id="menu_view_posts">View Posts</li>
+                        <li id="menu_get_resources">Get Resources</li>
+                        <li id="menu_login">Log in</li>
+            <li id="menu_logout">Log out</li>
+                    </ul>
+                </button>
+            </section>
+            <section class="header_logo">
+            <div class="tooltip button">
+                <span class="tooltiptext">Return to home</span>
+            </div>
+        </section>
+          
+            <section class="tooltip user_detail">
+                <p id="username">Unidentified User</p>
+                <div id="api_status">U</div>
+        <span class="tooltiptext">Menu >> Login</span>
+            </section>
+        </header>
+
+
+        <!--CONTENTS-->
+        <div class="container">
+
+            <!--SEARCH AND FILTER SECTION - TO BE PROVIDED SOON-
+            <section class="filters">
+                <!--Options--
+                <div class="quizzes">
+                    <h3>Quizzes</h3>
+                    <h4>Physiology, Histology ...</h4>
+
+                    <ul class="popover">
+                        <li class="button">Physiology</li>
+                        <li class="button">Histology</li>
+                        <li class="button">Gross Anatomy</li>
+                        <li class="button">Biochemistry</li>
+                        <li class="button">Philosophy</li>
+                    </ul>
+                </div>
+
+                <div class="posts">
+                    <h3>Posts</h3>
+                    <h4>Health, Technology ...</h4>
+
+                    <ul class="popover">
+                        <li class="button">Health</li>
+                        <li class="button">Technology</li>
+                        <li class="button">Ubuntu</li>
+                        <li class="button">Necrosis</li>
+                        <li class="button">Oncology</li>
+                    </ul>
+                </div>
+
+                <!--SEARCH BUTTON--
+                <button class="button">Search</button>
+            </section>
+        -->
+
+
+            <!--SWITCH TABS--
+            <section class="tabs">
+                <ul>
+                    <li class="button">Quizzes</li>
+                    <li class="button">Posts</li>
+                    <li class="button">Resources</li>
+                </ul>
+            </section>
+        -->
+
+
+            <!--CONTENTS-->
+            <section class="contents">
+                <section class="resources">
+                    
+                    <div class="intro">
+                        <h1>Resources</h1>
+                        <h4>Watch, read or download your prefered learning material.</h4>
+                        <button popovertarget="upload_resource" popovertarget="overlay">Upload</button>
+                            
+                        <div popover id="upload_resource">
+                            <h3>Upload a resource</h3>
+                            <input id="title" maxlength="30" type="text" placeholder="Title"/>
+                            <input id="description" maxlength="128" type="text" placeholder="Description"/>
+                            <input id="link" maxlength="128" type="text" placeholder="Enter the link to the resource ..."/>
+                            <label for="resource_type">  Type:</label>
+                            <select id="type">
+                                <option value="" disabled selected>Type</option>
+                                <option value="Articles">Articles</option>
+                                <option value="Books">Books</option>
+                                <option value="Videos">Videos</option>
+                            </select>
+
+                            <button class="reset">Reset</button>
+                            <button class="submit">Submit</button>
+                        </div>
+
+                        <input class="search" type="text" placeholder="Search ..."/>
+                    </div>
+
+                    <div class="tabs">
+                        <p class="hyperlink">Aritcles</p>
+                        <p class="hyperlink">Books</p>
+                        <p class="hyperlink">Videos</p>
+                    </div>
+                    
+                    <!--ARTICLES-->
+                    <ul class="flex_list">
+                        <li class="flex_list_item">
+                            <article>
+                                <h2>Enzymology</h2>
+                                <div class="information">
+                                    <span class="type">Text: </span>
+                                    <span class="length">303 pages</span>
+                                </div>
+
+                                <div class="user"><b>By: </b>John Doe</div>
+                                
+                                <div class="description">
+                                    Dive into the Microscopic Marvels: Unlocking the Secrets of Enzymes; the microscopic machines that power life's essential processes.
+                                </div>
+
+                                <!--reviews--
+                                <div class="reviews">
+                                    <h2>2 Reviews</h2>
+
+                                    <ul>
+                                        <li>
+                                            <h3>From Ebube 3 days ago</h3>
+                                            <p>I enjoyed reading the book. I learnt a great deal.</p>
+                                        </li>
+                                        <li>
+                                            <h3>From Dan today</h3>
+                                            <p>Please give us more of this. What a masterpiece!</p>
+                                        </li>
+
+                                        
+                                    </ul>
+                                </div>
+                            -->
+                            </article>
+                        </li>
+
+
+                        <!--next-->
+                        <li class="flex_list_item">
+                            <article>
+                                <h2>Histology</h2>
+                                <div class="information">
+                                    <span class="type">Video: </span>
+                                    <span class="length">30 minutes.</span>
+                                </div>
+
+                                <div class="user"><b>By: </b>Len Down</div>
+                                
+                                <div class="description">
+                                    Imagine a world beyond the naked eye, where you can witness the intricate details of life. This is the captivating realm of histology, the study of tissues at the microscopic level.
+                                </div>
+
+                                <!--reviews--
+                                <div class="reviews">
+                                    <h2>1 Review</h2>
+
+                                    <ul>
+                                        <li>
+                                            <h3>From Edwin yesterday</h3>
+                                            <p>In your video you mentioned the absence of palatine tonsil in mammapls, but it was descibed in my Netter's Atlas. Pleas explain more. Maybe I am wrong or not.</p>
+                                        </li>
+
+                                        
+                                    </ul>
+                                </div>
+                            -->
+                            </article>
+                        </li>
+
+                        <!--next-->
+                        <li class="flex_list_item">
+                            <article>
+                                <h2>Law</h2>
+                                <div class="information">
+                                    <span class="type">Text: </span>
+                                    <span class="length">1692 pages</span>
+                                </div>
+
+                                <div class="user"><b>By: </b>Memy Taki</div>
+                                
+                                <div class="description">
+                                    The earliest seeds of justice: Delve into the ancient legal codes of Mesopotamia, Egypt, and Greece, and discover the foundational principles that shaped future legal systems.
+                                </div>
+
+                                <!--reviews--
+                                <div class="reviews">
+                                    <h2>3 Reviews</h2>
+
+                                    <ul>
+                                        <li>
+                                            <h3>From Ebube 5 weeks ago</h3>
+                                            <p>I enjoyed reading the book. I learnt a great deal.</p>
+                                        </li>
+                                        <li>
+                                            <h3>From Dan 2 years ago</h3>
+                                            <p>Please give us more of this. What a masterpiece!</p>
+                                        </li>
+                                        <li>
+                                            <h3>From Pushplatha 1 year ago</h3>
+                                            <p>Nice book. Very comprehensive and with a lot of pictures.</p>
+                                        </li>                                        
+                                    </ul>
+                                </div>
+                            -->
+                            </article>
+                        </li>
+
+                        <!--next-->
+                        <li class="flex_list_item">
+                            <article>
+                                <h2>Accountancy</h2>
+                                <div class="information">
+                                    <span class="type">Text: </span>
+                                    <span class="length">150 pages</span>
+                                </div>
+
+                                <div class="user"><b>By: </b>Clandestine Leo</div>
+                                
+                                <div class="description">
+                                    Unveiling the financial story: Learn how to interpret financial reports to understand a company's financial health, performance, and future prospects.
+                                </div>
+
+                                <!--reviews--
+                                <div class="reviews">
+                                    <h2>2 Reviews</h2>
+
+                                    <ul>
+                                        <li>
+                                            <h3>From Ebube 3 days ago</h3>
+                                            <p>I enjoyed reading the book. I learnt a great deal.</p>
+                                        </li>
+                                        <li>
+                                            <h3>From Dan today</h3>
+                                            <p>Please give us more of this. What a masterpiece!</p>
+                                        </li>
+
+                                        
+                                    </ul>
+                                </div>
+                            -->
+                            </article>
+                        </li>
+
+                        <!--next-->
+                        <li class="flex_list_item">
+                            <article>
+                                <h2>Cybersecurity</h2>
+                                <div class="information">
+                                    <span class="type">Text: </span>
+                                    <span class="length">54 pages</span>
+                                </div>
+
+                                <div class="user"><b>By: </b>Philip Frankenstein</div>
+                                
+                                <div class="description">
+                                    The digital battlefield: Master the art of incident response, forensics, and vulnerability assessment, honing your skills to detect, analyze, and recover from cyberattacks effectively.
+                                </div>
+
+                                <!--reviews--
+                                <div class="reviews">
+                                    <h2>2 Reviews</h2>
+
+                                    <ul>
+                                        <li>
+                                            <h3>From Ebube 3 days ago</h3>
+                                            <p>I enjoyed reading the book. I learnt a great deal.</p>
+                                        </li>
+                                        <li>
+                                            <h3>From Dan today</h3>
+                                            <p>Please give us more of this. What a masterpiece!</p>
+                                        </li>
+
+                                        
+                                    </ul>
+                                </div>
+                            -->
+                            </article>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+        </div>
+
+        <!--FOOTER-->
+        <div class="pagefooter">
+            <footer>
+                <span class="info">
+                    <ul>
+                        <li class="hyperlink">about</li>
+                        <li class="hyperlink">contact</li>
+                        <li class="hyperlink">terms of service</li>
+                    </ul>
+                </span>
+
+                <span class="social_media">
+                    <ul>
+                        <li class="facebook button logo"><div></div></li>
+                        <li class="twitter button logo"><div></div></li>
+                        <li class="github button logo"><div></div></li>
+                    </ul>
+                </span>
+            </footer>
+        </div>
+    </body>
+</html>
