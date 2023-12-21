@@ -6,7 +6,7 @@ $(function () {
 	var clickedAttempt = false;
 	function viewHistory() {
 		clickedAttempt = true;
-		window.location.href = `http://localhost:5000/correction/${this.id}`;
+		window.location.href = `http://web-01.brainspark.tech:5000/correction/${this.id}`;
 	}
 
 	// bind function to attempts
@@ -27,7 +27,7 @@ $(function () {
 		const quiz_id = $(this).attr('data-id');
 
 		$.ajax({
-			url: `http://localhost:5001/api/v1/quizzes/${quiz_id}`,
+			url: `http://web-01.brainspark.tech:5001/api/v1/quizzes/${quiz_id}`,
 			type: 'GET',
 			dataType: 'json',
 		})
@@ -44,7 +44,7 @@ $(function () {
 				allowOutsideClick: false
 			});
 			setTimeout(() => {
-				window.location.href = `http://localhost:5000/quiz/${quiz_id}`;
+				window.location.href = `http://web-01.brainspark.tech:5000/quiz/${quiz_id}`;
 			}, 2000);
 		})
 		.fail(function (xhr, status, errorThrown) {

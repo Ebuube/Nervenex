@@ -29,7 +29,7 @@ $(function () {
 		};
 
 		$.ajax({
-			url: 'http://localhost:5001/api/v1/signup',
+			url: 'http://web-01.brainspark.tech:5001/api/v1/signup',
 			type: 'POST',
 			dataType: 'json',
 			contentType: 'application/json',
