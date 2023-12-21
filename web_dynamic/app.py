@@ -219,6 +219,14 @@ def create_quiz(user_id):
     return render_template('create_quizzes.html', categories=cats)
 
 
+@app.route('/get_resources', strict_slashes=False)
+def resources():
+    """
+    Render a list of the available resources
+    """
+    return render_template('resources.html')
+
+
 if __name__ == "__main__":
     """
     Run app
