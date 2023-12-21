@@ -8,7 +8,7 @@ $(function() {
 
 	// Show API status
 	$.ajax({
-		url: 'http://web-01.brainspark.tech:5001/api/v1/status',
+		url: 'http://localhost:5001/api/v1/status',
 		type: 'GET',
 		dataType: 'json'
 	})
@@ -48,17 +48,17 @@ $(function() {
 	// Nervenex icon > Home
 	nervenex_icon = $('.header_logo div.button');
 	nervenex_icon.click(function () {
-		window.location.href = 'http://web-01.brainspark.tech:5000/home';
+		window.location.href = 'http://localhost:5000/home';
 	});
 
 
 	// Menu -> navigation
 	$('#menu_home').click(function() {
-		window.location.href = 'http://web-01.brainspark.tech:5000/home';
+		window.location.href = 'http://localhost:5000/home';
 	});
 
 	$('#menu_take_quiz').click(function() {
-		window.location.href = 'http://web-01.brainspark.tech:5000/choose_quiz';
+		window.location.href = 'http://localhost:5000/choose_quiz';
 	});
 
 	$('#menu_create_quiz').click(function() {
@@ -73,7 +73,7 @@ $(function() {
 		}
 		user = JSON.parse(user);
 
-		window.location.href = `http://web-01.brainspark.tech:5000/create_quiz/${user.id}`;
+		window.location.href = `http://localhost:5000/create_quiz/${user.id}`;
 	});
 
 	$('#menu_quiz_history').click(function() {
@@ -87,19 +87,19 @@ $(function() {
 			return;
 		}
 		user = JSON.parse(user);
-		window.location.href = `http://web-01.brainspark.tech:5000/quiz_history/${user.id}`;
+		window.location.href = `http://localhost:5000/quiz_history/${user.id}`;
 	});
 
 	$('#menu_view_posts').click(function() {
-		window.location.href = 'http://web-01.brainspark.tech:5000/view_posts';
+		window.location.href = 'http://localhost:5000/view_posts';
 	});
 
 	$('#menu_get_resources').click(function() {
-		window.location.href = 'http://web-01.brainspark.tech:5000/get_resources';
+		window.location.href = 'http://localhost:5000/get_resources';
 	});
 
 	$('#menu_login').click(function() {
-		window.location.href = 'http://web-01.brainspark.tech:5000/login';
+		window.location.href = 'http://localhost:5000/login';
 	});
 
 	$('#menu_logout').click(function() {
