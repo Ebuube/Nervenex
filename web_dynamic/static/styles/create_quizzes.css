@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
-    min-height: 500px;
+    min-height: 600px;
     height: fit-content;
     width: auto;
 }
@@ -211,4 +211,48 @@ div.level span {
     background-color: rgb(231, 111, 13);
     color: white;
     border-radius: 4px;
+}
+
+.delete_question {
+    color: white;
+    background-color: #f94444;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.quiz_info h4 {
+    border-bottom: 1px #CCCCCC solid;
+    padding-bottom: 5px;
+    margin-bottom: -5px;
+}
+
+ul.categories {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.categories li {
+    list-style: none;
+    margin-left: -40px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.categories li:hover {
+    color: gray;
+}
+
+.categories .cat_chosen {
+    color: rgb(231, 111, 13);
+}
+
+.categories .cat_chosen:hover {
+    color: rgb(231, 111, 13);
+}
+
+.new_category {
+    font-size: 16px;
+    margin-top: -30px;
 }

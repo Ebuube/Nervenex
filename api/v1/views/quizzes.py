@@ -3,6 +3,7 @@
 Objects that handle all default RestFul API actions for Quizzes
 """
 from models import storage
+from models.authorized import Authorized
 from models.user import User
 from models.quiz import Quiz
 from models.category import Category
@@ -74,6 +75,8 @@ def create_quiz():
         user = storage.get(User, data['user_id'])
     if not user:
         abort(401, description="Unknown user")
+    elif not Authorized.is_auth(user):
+        abort(401, description="Please log in")
 
     if 'category_id' not in data:
         abort(400, description="Missing category id")

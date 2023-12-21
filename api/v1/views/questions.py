@@ -88,7 +88,7 @@ def create_question():
     if 'option_d' not in data:
         abort(400, description="Missing option d")
     if 'correct_answer' not in data:
-        abort(400, description="Missing corect answer")
+        abort(400, description="Missing correct answer")
     if 'explanation' not in data:
         abort(400, description="Missing explanation")
 

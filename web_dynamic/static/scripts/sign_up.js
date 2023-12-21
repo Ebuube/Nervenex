@@ -51,10 +51,9 @@ $(function () {
 				timerProgressBar: true,
 				showConfirmButton: false,
 				allowOutsideClick: false
+			}).then((result) => {
+				history.back();
 			});
-			setTimeout(() => {
-				window.location.href = 'http://localhost:5000/home';
-			}, 1500);
 
 		})
 		.fail(function (xhr, status, errorThrown) {

@@ -60,7 +60,7 @@
             <section class="quiz_info">
 		<h2>{{ quiz.title }}</h2>
 		<p class="mulitline">{{ quiz.description }}</p>
-		<p class="score">Score: {{ attempt.score }}/{{ quiz.questions|length }}
+		<p class="score">Score: {{ attempt.score }}/{{ attempt.answers|length }}
 		<p class="grade">Grade: {{ percent_score }}% => {{ grade }}</p>
             
                 <div class="quiz_numbers">

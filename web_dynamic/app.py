@@ -7,6 +7,7 @@ from uuid import uuid4
 from models import storage
 from models.attempt import Attempt
 from models.authorized import Authorized
+from models.category import Category
 from models.quiz import Quiz
 from models.thread import Thread
 from models.user import User
@@ -177,11 +178,15 @@ def correction(attempt_id):
         abort(404, description="Sorry, no such attempt was made")
 
     questions = attempt.quiz.questions
+    questions = []
+    for answer in attempt.answers:
+        questions.append(answer.question)
+
     answers = attempt.answers
     quiz = attempt.quiz
     time_hour = int(attempt.duration / 60)
     time_min = attempt.duration - (time_hour * 60)
-    percent_score = int((attempt.score / len(attempt.quiz.questions)) * 100)
+    percent_score = int((attempt.score / len(attempt.answers)) * 100)
     grade = get_grade(percent_score)
     return render_template('correction.html', answers=answers,
             questions=questions, quiz=quiz, time_min=time_min,
@@ -203,6 +208,15 @@ def quiz_history(user_id):
         if not attempt.quiz in quizzes:
             quizzes.append(attempt.quiz)
     return render_template('quiz_history.html', user=user, quizzes=quizzes)
+
+
+@app.route('/create_quiz/<user_id>', strict_slashes=False)
+def create_quiz(user_id):
+    """
+    Let user create a quiz
+    """
+    cats = storage.all(Category).values()
+    return render_template('create_quizzes.html', categories=cats)
 
 
 if __name__ == "__main__":

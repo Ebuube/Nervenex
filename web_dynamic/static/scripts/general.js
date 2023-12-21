@@ -62,7 +62,18 @@ $(function() {
 	});
 
 	$('#menu_create_quiz').click(function() {
-		window.location.href = 'http://localhost:5000/create_quiz';
+		let user = localStorage.getItem('user');
+		if (!user) {
+			Swal.fire({
+				icon: "error",
+				title: "You are logged out",
+				text: "Log in to create a quiz 😊"
+			});
+			return;
+		}
+		user = JSON.parse(user);
+
+		window.location.href = `http://localhost:5000/create_quiz/${user.id}`;
 	});
 
 	$('#menu_quiz_history').click(function() {

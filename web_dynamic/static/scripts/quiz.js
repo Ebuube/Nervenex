@@ -71,7 +71,7 @@ $(function () {
 		});
 	}
 
-	// Current item
+	// Current item -> Quiz number
 	function setCurrent() {
 		// alert(`${obj.attr('id')} is in view`);
 		var oldLink = document.getElementsByClassName('current')[0];
