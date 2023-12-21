@@ -58,34 +58,6 @@
         <!--CONTENTS-->
         <div class="container">
 
-            <!--SEARCH AND FILTER SECTION - TO BE PROVIDED SOON-->
-            <section class="filters">
-                <!--Options-->
-                <div class="quizzes">
-                    <h3>Categories</h3>
-                    <h4>Physiology, Histology ...</h4>
-
-                    <ul class="popover">
-			<!--
-                        <li class="button">Physiology</li>
-                        <li class="button">Histology</li>
-                        <li class="button">Gross Anatomy</li>
-                        <li class="button">Biochemistry</li>
-                        <li class="button">Philosophy</li>
-			-->
-		    {% for cat in quiz_cats|sort(attribute='name') %}
-		    	<li>
-				<input type="radio" id="{{ cat.id }}" name="categories" value="{{ cat.name }}"/>
-				<label for="{{ cat.id }}" class="button">{{ cat.name }}</label>
-			</li>
-		    {% endfor %}
-                    </ul>
-                </div>
-
-                <!--SEARCH BUTTON-->
-                <button class="button">Search</button>
-            </section>
-
         <section class="content">
             <h1>Choose a quiz to get started</h1>
 
