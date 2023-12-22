@@ -48,17 +48,17 @@ $(function() {
 	// Nervenex icon > Home
 	nervenex_icon = $('.header_logo div.button');
 	nervenex_icon.click(function () {
-		window.location.href = 'http://web-01.brainspark.tech.tech/nervenex/home';
+		window.location.href = 'http://web-01.brainspark.tech/nervenex/home';
 	});
 
 
 	// Menu -> navigation
 	$('#menu_home').click(function() {
-		window.location.href = 'http://web-01.brainspark.tech.tech/nervenex/home';
+		window.location.href = 'http://web-01.brainspark.tech/nervenex/home';
 	});
 
 	$('#menu_take_quiz').click(function() {
-		window.location.href = 'http://web-01.brainspark.tech.tech/nervenex/choose_quiz';
+		window.location.href = 'http://web-01.brainspark.tech/nervenex/choose_quiz';
 	});
 
 	$('#menu_create_quiz').click(function() {
@@ -73,7 +73,7 @@ $(function() {
 		}
 		user = JSON.parse(user);
 
-		window.location.href = `http://web-01.brainspark.tech.tech/nervenex/create_quiz/${user.id}`;
+		window.location.href = `http://web-01.brainspark.tech/nervenex/create_quiz/${user.id}`;
 	});
 
 	$('#menu_quiz_history').click(function() {
@@ -87,19 +87,19 @@ $(function() {
 			return;
 		}
 		user = JSON.parse(user);
-		window.location.href = `http://web-01.brainspark.tech.tech/nervenex/quiz_history/${user.id}`;
+		window.location.href = `http://web-01.brainspark.tech/nervenex/quiz_history/${user.id}`;
 	});
 
 	$('#menu_view_posts').click(function() {
-		window.location.href = 'http://web-01.brainspark.tech.tech/nervenex/view_posts';
+		window.location.href = 'http://web-01.brainspark.tech/nervenex/view_posts';
 	});
 
 	$('#menu_get_resources').click(function() {
-		window.location.href = 'http://web-01.brainspark.tech.tech/nervenex/get_resources';
+		window.location.href = 'http://web-01.brainspark.tech/nervenex/get_resources';
 	});
 
 	$('#menu_login').click(function() {
-		window.location.href = 'http://web-01.brainspark.tech.tech/nervenex/login';
+		window.location.href = 'http://web-01.brainspark.tech/nervenex/login';
 	});
 
 	$('#menu_logout').click(function() {
