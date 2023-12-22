@@ -59,7 +59,7 @@ $(function () {
       
         // Send data to API - Not working
         $.ajax({
-          url: 'https://www.brainspark.tech/nervenex/api/v1/resources',
+          url: 'http://www.brainspark.tech/nervenex/api/v1/resources',
           type: "POST",
           data : JSON.stringify({
             title: title,
