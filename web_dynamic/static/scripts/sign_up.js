@@ -29,7 +29,7 @@ $(function () {
 		};
 
 		$.ajax({
-			url: 'http://www.brainspark.tech/nervenex/api/v1/signup',
+			url: 'http://web-01.brainspark.tech.tech/nervenex/api/v1/signup',
 			type: 'POST',
 			dataType: 'json',
 			contentType: 'application/json',
