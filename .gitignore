@@ -1,3 +1,10 @@
+#  for private use
+5-app_server-nginx_config
+backup_file.sql
+config
+nervenex_config
+nervenex_load_balancer
+
 # JSON
 file.json
 

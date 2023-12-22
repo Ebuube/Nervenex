@@ -59,7 +59,7 @@ def age(date):
             return "1 day ago"
         else:
             return "{} days ago".format(diff.days)
-    elif diff.seconds == one_hour or int(diff.seconds / one_hour) == one_hour:
+    elif diff.seconds == one_hour or int(diff.seconds / one_hour) == 1:
         return "1 hour ago"
     elif diff.seconds > one_hour:
             return "{} hours ago".format(int(diff.seconds / one_hour))
