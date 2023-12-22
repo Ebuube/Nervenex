@@ -86,7 +86,7 @@ def home():
         if cat not in thread_cats:
             thread_cats.append(cat)
     return render_template('index.html', quiz_cats=quiz_cats,
-            thread_cats=thread_cats)
+                           thread_cats=thread_cats)
 
 
 @app.route('/login', strict_slashes=False)
@@ -125,7 +125,7 @@ def choose_quiz():
             quiz_cats.append(cat)
 
     return render_template('choose_quiz.html', quiz_cats=quiz_cats,
-            quizzes=quizzes)
+                           quizzes=quizzes)
 
 
 @app.route('/quiz/<quiz_id>', strict_slashes=False)
@@ -189,9 +189,9 @@ def correction(attempt_id):
     percent_score = int((attempt.score / len(attempt.answers)) * 100)
     grade = get_grade(percent_score)
     return render_template('correction.html', answers=answers,
-            questions=questions, quiz=quiz, time_min=time_min,
-            time_hour=time_hour, attempt=attempt, percent_score=percent_score,
-            grade=grade)
+                           questions=questions, quiz=quiz, time_min=time_min,
+                           time_hour=time_hour, attempt=attempt,
+                           percent_score=percent_score, grade=grade)
 
 
 @app.route('/quiz_history/<user_id>', strict_slashes=False)
@@ -199,13 +199,13 @@ def quiz_history(user_id):
     """
     See all the user's prvious performance
     """
-    user = storage.get(User, user_id);
+    user = storage.get(User, user_id)
     if not user or not Authorized.is_auth(user):
         abort(404, "Sorry, there is no such user")
 
     quizzes = []
     for attempt in user.attempts:
-        if not attempt.quiz in quizzes:
+        if attempt.quiz not in quizzes:
             quizzes.append(attempt.quiz)
     return render_template('quiz_history.html', user=user, quizzes=quizzes)
 

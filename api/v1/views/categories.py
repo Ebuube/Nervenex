@@ -49,8 +49,9 @@ def delete_category(category_id):
     storage.delete(category)
     storage.save()
 
-    return make_response(jsonify({'description': 'Category deleted successfully'}),
-                         200)
+    return make_response(
+            jsonify({'description': 'Category deleted successfully'}),
+            200)
 
 
 @app_views.route('/categories', methods=['POST'], strict_slashes=False)

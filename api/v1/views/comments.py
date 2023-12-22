@@ -67,8 +67,9 @@ def delete_comment(comment_id):
     storage.delete(comment)
     storage.save()
 
-    return make_response(jsonify({'description': 'Comment deleted successfully'}),
-                         200)
+    return make_response(
+            jsonify({'description': 'Comment deleted successfully'}),
+            200)
 
 
 @app_views.route('/posts/<post_id>/comments',

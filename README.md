@@ -2,9 +2,10 @@
 
 [![Generic badge](https://img.shields.io/badge/Maintained-Yes-green.svg)](https://github.com/Ebuube/Nervenex) [![Generic badge](https://img.shields.io/badge/Made%20with-Python-blue.svg)](https://www.python.org/) [![Generic badge](https://img.shields.io/badge/contributors-2-green.svg)](#)
 
-Unleas the inner genius in you using this web application.
+Unleash the inner genius in you using this web application.
 
 What does it do?
+---
 Nervenex permits users to take quizzes on different kind of topcics, ranging from science to arts and literature. Users can equally create quizzes for themselves and othres to sharpen their knowldege on different topics
 
 ### Who is it for?

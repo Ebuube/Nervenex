@@ -93,7 +93,7 @@ def signup():
     for user in existing_users:
         if user.email == data['email']:
             abort(401,
-            description="""This Email is already in use.\n\
+                  description="""This Email is already in use.\n\
 If you are the owner, try and login instead""")
 
     new_user = User(**data)

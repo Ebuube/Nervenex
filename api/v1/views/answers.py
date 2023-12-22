@@ -126,7 +126,6 @@ def submit(user_id, quiz_id):
         if item == 'ans_per_question' and not isinstance(data[item], dict):
             abort(400, description="Invalid answer format")
 
-
     # Register performance
     attempt = Attempt()
     attempt.user_id = user.id
