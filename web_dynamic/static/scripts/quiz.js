@@ -233,7 +233,7 @@ $(function () {
 		}
 
 		$.ajax({
-			url: `http://www.brainspark.tech/nervenex/api/v1/submit/${user.id}/quiz/${Quiz.id}`,
+			url: `http://web-01.brainspark.tech/nervenex/api/v1/submit/${user.id}/quiz/${Quiz.id}`,
 			type: 'POST',
 			dataType: 'json',
 			contentType: 'application/json',
@@ -241,7 +241,7 @@ $(function () {
 		})
 		.done(function (attempt) {
 			console.log(attempt);	// test
-			window.location.href = `http://www.brainspark.tech/nervenex/correction/${attempt.id}`;
+			window.location.href = `https://www.brainspark.tech/nervenex/correction/${attempt.id}`;
 		})
 		.fail(function (xhr, status, errorThrown) {
 			errorMsg(xhr.responseJSON.description, title="Submission failure");
