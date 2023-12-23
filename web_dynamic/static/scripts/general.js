@@ -91,7 +91,13 @@ $(function() {
 	});
 
 	$('#menu_view_posts').click(function() {
-		window.location.href = 'https://www.brainspark.tech/nervenex/view_posts';
+		// Not production ready
+		// window.location.href = 'https://www.brainspark.tech/nervenex/view_posts';
+		Swal.fire({
+			icon: 'info',
+			title: 'On the way! 🚀',
+			text: 'Watchout, this feature will be released soon'
+		});
 	});
 
 	$('#menu_get_resources').click(function() {
