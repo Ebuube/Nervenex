@@ -1,5 +1,5 @@
-![nervenex_presentation](https://github.com/Ebuube/Nervenex/assets/111176684/24462607-1a63-4edd-ad3e-71c17ee952c8)
-
+![nervenex_presentation](https://github.com/Ebuube/Nervenex/assets/111176684/62f00897-7e24-4241-9145-688838d63d6e)
+<br></br>
 # [Nervenex](https://www.brainspark.tech/nervenex)
 [![Generic badge](https://img.shields.io/badge/Maintained-Yes-green.svg)](https://github.com/Ebuube/Nervenex) [![Generic badge](https://img.shields.io/badge/Made%20with-Python-blue.svg)](https://www.python.org/) [![Generic badge](https://img.shields.io/badge/contributors-2-green.svg)](#)
 
@@ -38,10 +38,12 @@ For a better experience in learning, we have included a free community where a l
 
 ## AUTHORS
 *  [Edwin Aikins](https://github.com/arkoaikins)
-![Edwin Aikins](https://github.com/Ebuube/Nervenex/assets/111176684/b3968136-4f5e-4439-ae10-ff34c28d534f)
+![Edwin Aikins mini passport](https://github.com/Ebuube/Nervenex/assets/111176684/f20bd679-dcf5-47a9-8486-af7cf6ac0f75)
 
+<br></br>
+<br></br>
 *  [Onwuta Ebube Gideon](https://github.com/Ebuube)
-![Ebube matric passport](https://github.com/Ebuube/Nervenex/assets/111176684/128a1699-c6ca-4cb3-8e27-c7f089e6e3b3)
+![Ebube matric mini-passport](https://github.com/Ebuube/Nervenex/assets/111176684/f18bfbc9-3251-405b-8e52-4e635e395bde)
 
 
 ## Acknowledgements
