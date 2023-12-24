@@ -169,7 +169,7 @@ $(function () {
 			icon: "info",
 			title: "Processing result",
 			text: "Just hang in there, we are marking your scripts 😇",
-			timer: 120000,
+			timer: 360000,
 			allowOutsideClick: false,
 			didOpen: () => {
 				Swal.showLoading();

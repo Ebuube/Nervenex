@@ -40,6 +40,20 @@ $(function () {
 			return;
 		}
 
+		// Keep user busy
+		Swal.fire({
+			icon: "info",
+			title: "Logging in 🔄",
+			text: "Get ready for your learning journey...",
+			timer: 360000,
+			allowOutsideClick: false,
+			didOpen: () => {
+				Swal.showLoading();
+			},
+			willClose: () => {
+			}
+		});
+
 		const details = {'email': email, 'password': password};
 		$.ajax({
 			url: 'https://www.brainspark.tech/nervenex/api/v1/login',

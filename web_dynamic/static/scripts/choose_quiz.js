@@ -6,6 +6,20 @@ $(function () {
 		console.log('Fetching quiz');
 		const quiz_id = $(this).attr('data-id');
 
+		// Keep user busy
+		Swal.fire({
+			icon: "info",
+			title: "Hang in there 👨🏽‍🏫",
+			text: "Setting up quiz for you...",
+			timer: 360000,
+			allowOutsideClick: false,
+			didOpen: () => {
+				Swal.showLoading();
+			},
+			willClose: () => {
+			}
+		});
+
 		$.ajax({
 			url: `https://www.brainspark.tech/nervenex/api/v1/quizzes/${quiz_id}`,
 			type: 'GET',
@@ -13,19 +27,7 @@ $(function () {
 		})
 		.done(function (Quiz) {
 			localStorage.setItem('Quiz', JSON.stringify(Quiz));
-			// Message
-			Swal.fire({
-				title: "Hang in there 👨🏽‍🏫",
-				text: "Setting up quiz for you...",
-				icon: "info",
-				timer: 2000,
-				timerProgressBar: true,
-				showConfirmButton: false,
-				allowOutsideClick: false
-			});
-			setTimeout(() => {
-				window.location.href = `https://www.brainspark.tech/nervenex/quiz/${quiz_id}`;
-			}, 2000);
+			window.location.href = `https://www.brainspark.tech/nervenex/quiz/${quiz_id}`;
 		})
 		.fail(function (xhr, status, errorThrown) {
 			console.log('Quiz not found');

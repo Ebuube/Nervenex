@@ -167,8 +167,8 @@ $(function () {
 			icon: "info",
 			title: "Uploading quiz",
 			text: "Just hang in there, we are uploading your quiz 😇",
-			timer: 120000,
-			// allowOutsideClick: false,
+			timer: 360000,
+			allowOutsideClick: false,
 			didOpen: () => {
 				Swal.showLoading();
 			},

@@ -28,6 +28,20 @@ $(function () {
 			return;
 		};
 
+		// Keep user busy
+		Swal.fire({
+			icon: "info",
+			title: "Signing up 🔄",
+			text: "Get ready for your learning journey...",
+			timer: 360000,
+			allowOutsideClick: false,
+			didOpen: () => {
+				Swal.showLoading();
+			},
+			willClose: () => {
+			}
+		});
+
 		$.ajax({
 			url: 'https://www.brainspark.tech/nervenex/api/v1/signup',
 			type: 'POST',
