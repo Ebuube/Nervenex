@@ -1,9 +1,10 @@
-<img width="960" alt="quizs_sample_8" src="https://github.com/Ebuube/Nervenex/assets/111176684/e2a032d3-bf57-438f-b2da-610e937ece55"># Nervenex
+![nervenex_presentation](https://github.com/Ebuube/Nervenex/assets/111176684/24462607-1a63-4edd-ad3e-71c17ee952c8)
+# Nervenex
 
 [![Generic badge](https://img.shields.io/badge/Maintained-Yes-green.svg)](https://github.com/Ebuube/Nervenex) [![Generic badge](https://img.shields.io/badge/Made%20with-Python-blue.svg)](https://www.python.org/) [![Generic badge](https://img.shields.io/badge/contributors-2-green.svg)](#)
 
 
-![nervenex_presentation](https://github.com/Ebuube/Nervenex/assets/111176684/24462607-1a63-4edd-ad3e-71c17ee952c8)
+
 
 Unleash the inner genius in you using this web application.
 
