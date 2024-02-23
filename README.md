@@ -1,6 +1,6 @@
 ![nervenex_presentation](https://github.com/Ebuube/Nervenex/assets/111176684/62f00897-7e24-4241-9145-688838d63d6e)
 <br></br>
-# [Nervenex](https://www.brainspark.tech/nervenex)
+# [Nervenex](https://nervenex.mailchimpsites.com/)
 [![Generic badge](https://img.shields.io/badge/Maintained-Yes-green.svg)](https://github.com/Ebuube/Nervenex) [![Generic badge](https://img.shields.io/badge/Made%20with-Python-blue.svg)](https://www.python.org/) [![Generic badge](https://img.shields.io/badge/contributors-2-green.svg)](#)
 
 
