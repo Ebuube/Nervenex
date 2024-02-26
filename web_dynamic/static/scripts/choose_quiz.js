@@ -27,7 +27,7 @@ $(function () {
 		})
 		.done(function (Quiz) {
 			localStorage.setItem('Quiz', JSON.stringify(Quiz));
-			window.location.href = `http://nervenex/quiz/${quiz_id}`;
+			window.location.href = `http://localhost:5000/quiz/${quiz_id}`;
 		})
 		.fail(function (xhr, status, errorThrown) {
 			console.log('Quiz not found');

@@ -6,7 +6,7 @@ $(function () {
 	var clickedAttempt = false;
 	function viewHistory() {
 		clickedAttempt = true;
-		window.location.href = `http://nervenex/correction/${this.id}`;
+		window.location.href = `http://localhost:5000/correction/${this.id}`;
 	}
 
 	// bind function to attempts
@@ -44,7 +44,7 @@ $(function () {
 				allowOutsideClick: false
 			});
 			setTimeout(() => {
-				window.location.href = `http://nervenex/quiz/${quiz_id}`;
+				window.location.href = `http://localhost:5000/quiz/${quiz_id}`;
 			}, 2000);
 		})
 		.fail(function (xhr, status, errorThrown) {
