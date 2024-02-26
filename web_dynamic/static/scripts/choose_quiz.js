@@ -21,13 +21,13 @@ $(function () {
 		});
 
 		$.ajax({
-			url: `https://www.brainspark.tech/nervenex/api/v1/quizzes/${quiz_id}`,
+			url: `http://0.0.0.0:5001/api/v1/quizzes/${quiz_id}`,
 			type: 'GET',
 			dataType: 'json',
 		})
 		.done(function (Quiz) {
 			localStorage.setItem('Quiz', JSON.stringify(Quiz));
-			window.location.href = `https://www.brainspark.tech/nervenex/quiz/${quiz_id}`;
+			window.location.href = `http://nervenex/quiz/${quiz_id}`;
 		})
 		.fail(function (xhr, status, errorThrown) {
 			console.log('Quiz not found');

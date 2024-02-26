@@ -56,7 +56,7 @@ $(function () {
 
 		const details = {'email': email, 'password': password};
 		$.ajax({
-			url: 'https://www.brainspark.tech/nervenex/api/v1/login',
+			url: 'http://0.0.0.0:5001/api/v1/login',
 			type: 'POST',
 			dataType: 'json',
 			contentType: 'application/json',
@@ -101,6 +101,6 @@ $(function () {
 	});
 
 	$('#sign_up').click(function signUp() {
-		window.location.href = 'https://www.brainspark.tech/nervenex/signup';
+		window.location.href = 'http://nervenex/signup';
 	});
 });

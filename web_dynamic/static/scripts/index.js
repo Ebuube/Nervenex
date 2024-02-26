@@ -4,6 +4,6 @@ $(function() {
 
 
 	$('#start').click(function() {
-		window.location.href = 'https://www.brainspark.tech/nervenex/choose_quiz';
+		window.location.href = 'http://nervenex/choose_quiz';
 	});
 });

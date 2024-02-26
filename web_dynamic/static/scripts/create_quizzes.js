@@ -120,7 +120,7 @@ $(function () {
 		payload.duration = duration;
 		payload.is_active = true;
 		$.ajax({
-			url: 'https://www.brainspark.tech/nervenex/api/v1/quizzes',
+			url: 'http://0.0.0.0:5001/api/v1/quizzes',
 			type: 'POST',
 			dataType: 'json',
 			contentType: 'application/json',
@@ -186,7 +186,7 @@ $(function () {
 
 			// Creat new category
 			$.ajax({
-				url: 'https://www.brainspark.tech/nervenex/api/v1/categories',
+				url: 'http://0.0.0.0:5001/api/v1/categories',
 				type: 'POST',
 				dataType: 'json',
 				contentType: 'application/json',
@@ -260,7 +260,7 @@ $(function () {
 			console.log(`Out Answer: ${payload.correct_answer}`);	// test
 			payload.explanation = allQuestions[i].querySelector('.explanation').value;
 			$.ajax({
-				url: 'https://www.brainspark.tech/nervenex/api/v1/questions',
+				url: 'http://0.0.0.0:5001/api/v1/questions',
 				type: 'POST',
 				dataType: 'json',
 				contentType: 'application/json',
