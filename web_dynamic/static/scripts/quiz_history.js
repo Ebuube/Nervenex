@@ -27,7 +27,7 @@ $(function () {
 		const quiz_id = $(this).attr('data-id');
 
 		$.ajax({
-			url: `http://0.0.0.0:5001/api/v1/quizzes/${quiz_id}`,
+			url: `http://localhost:5001/api/v1/quizzes/${quiz_id}`,
 			type: 'GET',
 			dataType: 'json',
 		})

@@ -233,7 +233,7 @@ $(function () {
 		}
 
 		$.ajax({
-			url: `http://0.0.0.0:5001/api/v1/submit/${user.id}/quiz/${Quiz.id}`,
+			url: `http://localhost:5001/api/v1/submit/${user.id}/quiz/${Quiz.id}`,
 			type: 'POST',
 			dataType: 'json',
 			contentType: 'application/json',
