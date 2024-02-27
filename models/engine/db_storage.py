@@ -43,7 +43,6 @@ class DBStorage:
     def __init__(self):
         """
         Initialize storage instance
-        """
         if getenv("NERVENEX_ENV") == "test":
             # Use test database
             user = "nervenex_test"
@@ -61,6 +60,11 @@ class DBStorage:
 
         engine_url = "mysql+mysqldb://{}:{}@{}:{}/{}".format(
                       user, password, host, port, db)
+        """
+        if not getenv('DATABASE_URL'):
+            exit(1)
+
+        engine_url = getenv('DATABASE_URL')
         self.__engine = create_engine(engine_url, pool_pre_ping=True,
                                       echo=False)
 
