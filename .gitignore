@@ -3,6 +3,8 @@
 backup_file.sql
 config
 nervenex_config
+bin/
+lib64
 nervenex_load_balancer
 
 # JSON
