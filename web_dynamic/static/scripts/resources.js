@@ -59,7 +59,7 @@ $(function () {
       
         // Send data to API - Not working
         $.ajax({
-          url: 'http://localhost:5001/api/v1/resources',
+          url: 'https://nervenex-api.onrender.com/api/v1/resources',
           type: "POST",
           data : JSON.stringify({
             title: title,

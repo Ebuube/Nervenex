@@ -56,7 +56,7 @@ $(function () {
 
 		const details = {'email': email, 'password': password};
 		$.ajax({
-			url: 'http://localhost:5001/api/v1/login',
+			url: 'https://nervenex-api.onrender.com/api/v1/login',
 			type: 'POST',
 			dataType: 'json',
 			contentType: 'application/json',

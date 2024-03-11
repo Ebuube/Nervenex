@@ -8,7 +8,7 @@ $(function() {
 
 	// Show API status
 	$.ajax({
-		url: 'http://localhost:5001/api/v1/status',
+		url: 'https://nervenex-api.onrender.com/api/v1/status',
 		type: 'GET',
 		dataType: 'json'
 	})
