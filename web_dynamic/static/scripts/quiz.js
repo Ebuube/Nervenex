@@ -52,7 +52,7 @@ $(function () {
 			text: "Sorry, go to Menu >> Take a quiz."
 		}).then((result) => {
 			if (result.isConfirmed) {
-				window.location.href = "http://localhost:5000/choose_quiz";
+				window.location.href = "https://nervenex.onrender.com/choose_quiz";
 			}
 		});
 	} else {
@@ -241,7 +241,7 @@ $(function () {
 		})
 		.done(function (attempt) {
 			console.log(attempt);	// test
-			window.location.href = `http://localhost:5000/correction/${attempt.id}`;
+			window.location.href = `https://nervenex.onrender.com/correction/${attempt.id}`;
 		})
 		.fail(function (xhr, status, errorThrown) {
 			errorMsg(xhr.responseJSON.description, title="Submission failure");

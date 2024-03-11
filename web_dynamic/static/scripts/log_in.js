@@ -101,6 +101,6 @@ $(function () {
 	});
 
 	$('#sign_up').click(function signUp() {
-		window.location.href = 'http://localhost:5000/signup';
+		window.location.href = 'https://nervenex.onrender.com/signup';
 	});
 });

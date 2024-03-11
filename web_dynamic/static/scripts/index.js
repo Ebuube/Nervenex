@@ -4,6 +4,6 @@ $(function() {
 
 
 	$('#start').click(function() {
-		window.location.href = 'http://localhost:5000/choose_quiz';
+		window.location.href = 'https://nervenex.onrender.com/choose_quiz';
 	});
 });
