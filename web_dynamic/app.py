@@ -70,13 +70,6 @@ def age(date):
 
 
 @app.route('/', strict_slashes=False)
-def default():
-    """
-    Root url -> should access home
-    """
-    home()
-
-
 @app.route('/home', strict_slashes=False)
 def home():
     """
