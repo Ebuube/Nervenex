@@ -62,11 +62,19 @@ def age(date):
     elif diff.seconds == one_hour or int(diff.seconds / one_hour) == 1:
         return "1 hour ago"
     elif diff.seconds > one_hour:
-            return "{} hours ago".format(int(diff.seconds / one_hour))
+        return "{} hours ago".format(int(diff.seconds / one_hour))
     elif diff.seconds >= 2 * one_min:
         return "{} minutes ago".format(int(diff.seconds / one_min))
     else:
         return "just now"
+
+
+@app.route('/', strict_slashes=False)
+def default():
+    """
+    Root url -> should access home
+    """
+    home()
 
 
 @app.route('/home', strict_slashes=False)
