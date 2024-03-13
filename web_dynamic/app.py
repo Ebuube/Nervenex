@@ -11,7 +11,7 @@ from models.category import Category
 from models.quiz import Quiz
 from models.thread import Thread
 from models.user import User
-from flask import Flask, render_template, make_response, jsonify
+from flask import Flask, render_template, make_response, jsonify, redirect
 from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__)
@@ -73,21 +73,9 @@ def age(date):
 @app.route('/home', strict_slashes=False)
 def home():
     """
-    Return home page
+    Redirect to home page
     """
-    quiz_cats = []
-    for quiz in storage.all(Quiz).values():
-        cat = quiz.category
-        if cat not in quiz_cats:
-            quiz_cats.append(cat)
-
-    thread_cats = []
-    for thread in storage.all(Thread).values():
-        cat = thread.category
-        if cat not in thread_cats:
-            thread_cats.append(cat)
-    return render_template('index.html', quiz_cats=quiz_cats,
-                           thread_cats=thread_cats)
+    return redirect('https://nervenex.mailchimpsites.com/')
 
 
 @app.route('/login', strict_slashes=False)
