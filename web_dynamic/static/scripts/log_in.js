@@ -80,7 +80,8 @@ $(function () {
 				showConfirmButton: false,
 				allowOutsideClick: false
 			}).then((result) => {
-				history.back();
+			        // Link to take quizzes
+		                window.location.href = 'https://nervenex.onrender.com/choose_quiz';
 			});
 		})
 		.fail(function (xhr, status, errorThrown) {
