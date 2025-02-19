@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 Starts a Flask Web application to serve dynamic web page
+It needs to be run on its own server remotely
 """
 from datetime import datetime
 from uuid import uuid4
