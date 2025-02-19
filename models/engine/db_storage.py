@@ -41,31 +41,32 @@ class DBStorage:
     __session = None
 
     def __init__(self):
-        """
-        Initialize storage instance
-        if getenv("NERVENEX_ENV") == "test":
-            # Use test database
-            user = "nervenex_test"
-            password = "nervenex_test_pwd"
-            host = "localhost"
-            port = 3306
-            db = "nervenex_test_db"
+        # Initialize storage instance
+        if getenv("NERVENEX_DB_TYPE") == "remote":
+            if not getenv("DATABASE_URL"):
+                # This DATABASE_URL is for Postgres or Mysql database server
+                print("ERROR: Cannot reach DATABASE")
+                exit(1)
+            engine_url = getenv("DATABASE_URL")
         else:
-            # Use development database
-            user = "nervenex_dev"
-            password = "nervenex_dev_pwd"
-            host = "localhost"
-            port = 3306
-            db = "nervenex_dev_db"
+            if getenv("NERVENEX_ENV") == "test":
+                # Use test database
+                user = "nervenex_test"
+                password = "nervenex_test_pwd"
+                host = "localhost"
+                port = 3306
+                db = "nervenex_test_db"
+            else:
+                # Use development database
+                user = "nervenex_dev"
+                password = "nervenex_dev_pwd"
+                host = "localhost"
+                port = 3306
+                db = "nervenex_dev_db"
 
-        engine_url = "mysql+mysqldb://{}:{}@{}:{}/{}".format(
+            engine_url = "mysql+mysqldb://{}:{}@{}:{}/{}".format(
                       user, password, host, port, db)
-        """
-        if not getenv('DATABASE_URL'):
-            # This DATABASE_URL is url for Postqres or MySQL database server
-            exit(1)
 
-        engine_url = getenv('DATABASE_URL')
         self.__engine = create_engine(engine_url, pool_pre_ping=True,
                                       echo=False)
 
