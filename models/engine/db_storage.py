@@ -43,11 +43,11 @@ class DBStorage:
     def __init__(self):
         # Initialize storage instance
         if getenv("NERVENEX_DB_TYPE") == "remote":
-            if not getenv("DATABASE_URL"):
+            if not getenv("REMOTE_DATABASE_URL"):
                 # This DATABASE_URL is for Postgres or Mysql database server
                 print("ERROR: Cannot reach DATABASE")
                 exit(1)
-            engine_url = getenv("DATABASE_URL")
+            engine_url = getenv("REMOTE_DATABASE_URL")
         else:
             if getenv("NERVENEX_ENV") == "test":
                 # Use test database
