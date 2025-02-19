@@ -1,1 +1,1 @@
-web: guincorn --worker-class gevent run_dynamic:app
+web: gunicorn --worker-class gevent run_dynamic:app
