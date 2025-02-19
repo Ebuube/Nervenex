@@ -62,6 +62,7 @@ class DBStorage:
                       user, password, host, port, db)
         """
         if not getenv('DATABASE_URL'):
+            # This DATABASE_URL is url for Postqres or MySQL database server
             exit(1)
 
         engine_url = getenv('DATABASE_URL')
