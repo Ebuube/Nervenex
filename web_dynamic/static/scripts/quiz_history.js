@@ -6,7 +6,7 @@ $(function () {
 	var clickedAttempt = false;
 	function viewHistory() {
 		clickedAttempt = true;
-		window.location.href = `https://nervenex.onrender.com/correction/${this.id}`;
+		window.location.assign(`${WEB_BASE_URL}/correction/${this.id}`);
 	}
 
 	// bind function to attempts
@@ -27,7 +27,7 @@ $(function () {
 		const quiz_id = $(this).attr('data-id');
 
 		$.ajax({
-			url: `https://nervenex-api.onrender.com/api/v1/quizzes/${quiz_id}`,
+			url: `${API_BASE_URL}/quizzes/${quiz_id}`,
 			type: 'GET',
 			dataType: 'json',
 		})
@@ -44,7 +44,7 @@ $(function () {
 				allowOutsideClick: false
 			});
 			setTimeout(() => {
-				window.location.href = `https://nervenex.onrender.com/quiz/${quiz_id}`;
+				window.location.assign(`${WEB_BASE_URL}/quiz/${quiz_id}`);
 			}, 2000);
 		})
 		.fail(function (xhr, status, errorThrown) {
