@@ -56,7 +56,7 @@ $(function () {
 
 		const details = {'email': email, 'password': password};
 		$.ajax({
-			url: 'https://nervenex-api.onrender.com/api/v1/login',
+			url: `${API_BASE_URL}/login`,
 			type: 'POST',
 			dataType: 'json',
 			contentType: 'application/json',
@@ -81,7 +81,7 @@ $(function () {
 				allowOutsideClick: false
 			}).then((result) => {
 			        // Link to take quizzes
-		                window.location.href = 'https://nervenex.onrender.com/choose_quiz';
+		                window.location.assign(`WEB_BASE_URL/choose_quiz`);
 			});
 		})
 		.fail(function (xhr, status, errorThrown) {
@@ -102,6 +102,6 @@ $(function () {
 	});
 
 	$('#sign_up').click(function signUp() {
-		window.location.href = 'https://nervenex.onrender.com/signup';
+		window.location.assign(`${WEB_BASE_URL}/signup`);
 	});
 });
