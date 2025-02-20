@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
+{% extends "base.html" %}
+{% block head %}
         <meta charset="utf-9">
         <title>Nervenex</title>
 
@@ -18,9 +17,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="../static/scripts/general.js"></script>
 	<script src="../static/scripts/resources.js"></script>
-    </head>
+{% endblock %}
 
-    <body>
+{% block content %}
         <!--HEADER-->
         <header>
             <section class="navigation">
@@ -297,5 +296,4 @@
                 </span>
             </footer>
         </div>
-    </body>
-</html>
+{% endblock %}
