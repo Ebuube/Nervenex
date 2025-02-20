@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	{% block head %}
+	<!-- Child templates can add extra elements here -->
+	{% endblock %}
+        <!-- JavaScript: Set API_BASE_URL Globally -->
+    	<script>
+        	var API_BASE_URL = "{{ g.api_base_url }}";
+    	</script>
+    </head>
+    <body>
+        <!-- Main Content Block -->
+        {% block content %}
+	<!-- This will be replaced by content from child template -->
+        {% endblock %}
+    </body>
+</html>

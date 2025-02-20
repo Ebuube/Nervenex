@@ -2,6 +2,7 @@ flasgger==0.9.7.1
 Flask==3.0.0
 Flask_Cors==4.0.0
 Flask-JWT==0.3.2
+g
 pep8==1.7.1
 python-decouple==3.8
 SQLAlchemy==1.4.22

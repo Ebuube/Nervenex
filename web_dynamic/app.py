@@ -3,6 +3,7 @@
 Starts a Flask Web application to serve dynamic web page
 It needs to be run on its own server remotely
 """
+import os
 from datetime import datetime
 from uuid import uuid4
 from models import storage
@@ -12,11 +13,21 @@ from models.category import Category
 from models.quiz import Quiz
 from models.thread import Thread
 from models.user import User
-from flask import Flask, render_template, make_response, jsonify, redirect
+from flask import (Flask, render_template, make_response, jsonify,
+                   redirect, g)
 from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
+app.config['API_BASE_URL'] = os.getenv('API_BASE_URL')
+
+
+@app.before_request
+def before_request():
+    """
+    Make some resoures available in context
+    """
+    g.api_base_url = app.config['API_BASE_URL']
 
 
 @app.errorhandler(Exception)

@@ -21,13 +21,13 @@ $(function () {
 		});
 
 		$.ajax({
-			url: `https://nervenex-api.onrender.com/api/v1/quizzes/${quiz_id}`,
+			url: `${API_BASE_URL}/quizzes/${quiz_id}`,
 			type: 'GET',
 			dataType: 'json',
 		})
 		.done(function (Quiz) {
 			localStorage.setItem('Quiz', JSON.stringify(Quiz));
-			window.location.href = `https://nervenex.onrender.com/quiz/${quiz_id}`;
+			window.location.assign(`${WEB_BASE_URL}/quiz/${quiz_id}`);
 		})
 		.fail(function (xhr, status, errorThrown) {
 			console.log('Quiz not found');
