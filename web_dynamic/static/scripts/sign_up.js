@@ -43,7 +43,7 @@ $(function () {
 		});
 
 		$.ajax({
-			url: 'https://nervenex-api.onrender.com/api/v1/signup',
+			url: `${API_BASE_URL}/signup`,
 			type: 'POST',
 			dataType: 'json',
 			contentType: 'application/json',
