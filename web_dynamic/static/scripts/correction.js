@@ -14,7 +14,7 @@ $(function () {
 			text: "Sorry, go to Menu >> Take a quiz."
 		}).then((result) => {
 			if (result.isConfirmed) {
-				window.location.href = "https://nervenex.onrender.com/choose_quiz";
+				window.location.assign(`${WEB_BASE_URL}/choose_quiz`);
 			}
 		});
 	}
