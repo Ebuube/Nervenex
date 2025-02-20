@@ -20,6 +20,7 @@ from werkzeug.exceptions import HTTPException
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.config['API_BASE_URL'] = os.getenv('API_BASE_URL')
+app.config['WEB_BASE_URL'] = os.getenv('WEB_BASE_URL')
 
 
 @app.before_request
@@ -28,6 +29,7 @@ def before_request():
     Make some resoures available in context
     """
     g.api_base_url = app.config['API_BASE_URL']
+    g.web_base_url = app.config['WEB_BASE_URL']
 
 
 @app.errorhandler(Exception)
