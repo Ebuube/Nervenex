@@ -81,7 +81,7 @@ $(function () {
 				allowOutsideClick: false
 			}).then((result) => {
 			        // Link to take quizzes
-		                window.location.assign(`WEB_BASE_URL/choose_quiz`);
+		                window.location.assign(`${WEB_BASE_URL}/choose_quiz`);
 			});
 		})
 		.fail(function (xhr, status, errorThrown) {
