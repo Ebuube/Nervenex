@@ -66,7 +66,8 @@ $(function () {
 				showConfirmButton: false,
 				allowOutsideClick: false
 			}).then((result) => {
-				history.back();
+				// history.back();
+                                window.location.assign(`${WEB_BASE_URL}/choose_quiz`);
 			});
 
 		})
