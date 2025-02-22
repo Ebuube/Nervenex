@@ -8,7 +8,7 @@ $(function() {
 
 	// Show API status
 	$.ajax({
-		url: 'https://nervenex-api.onrender.com/api/v1/status',
+		url: `${API_BASE_URL}/status`,
 		type: 'GET',
 		dataType: 'json'
 	})
@@ -48,17 +48,17 @@ $(function() {
 	// Nervenex icon > Home
 	nervenex_icon = $('.header_logo div.button');
 	nervenex_icon.click(function () {
-		window.location.href = 'https://nervenex.onrender.com/home';
+		window.location.assign(`${WEB_BASE_URL}/home`);
 	});
 
 
 	// Menu -> navigation
 	$('#menu_home').click(function() {
-		window.location.href = 'https://nervenex.onrender.com/home';
+		window.location.assign(`${WEB_BASE_URL}/home`);
 	});
 
 	$('#menu_take_quiz').click(function() {
-		window.location.href = 'https://nervenex.onrender.com/choose_quiz';
+		window.location.assign(`${WEB_BASE_URL}/choose_quiz`);
 	});
 
 	$('#menu_create_quiz').click(function() {
@@ -73,7 +73,7 @@ $(function() {
 		}
 		user = JSON.parse(user);
 
-		window.location.href = `https://nervenex.onrender.com/create_quiz/${user.id}`;
+		window.location.assign(`${WEB_BASE_URL}/create_quiz/${user.id}`);
 	});
 
 	$('#menu_quiz_history').click(function() {
@@ -87,12 +87,12 @@ $(function() {
 			return;
 		}
 		user = JSON.parse(user);
-		window.location.href = `https://nervenex.onrender.com/quiz_history/${user.id}`;
+		window.location.assign(`${WEB_BASE_URL}/quiz_history/${user.id}`);
 	});
 
 	$('#menu_view_posts').click(function() {
 		// Not production ready
-		// window.location.href = 'https://nervenex.onrender.com/view_posts';
+		// window.location.assign(`${WEB_BASE_URL}/view_posts`);
 		Swal.fire({
 			icon: 'info',
 			title: 'On the way! 🚀',
@@ -101,11 +101,11 @@ $(function() {
 	});
 
 	$('#menu_get_resources').click(function() {
-		window.location.href = 'https://nervenex.onrender.com/get_resources';
+		window.location.assign(`${WEB_BASE_URL}/get_resources`);
 	});
 
 	$('#menu_login').click(function() {
-		window.location.href = 'https://nervenex.onrender.com/login';
+		window.location.assign(`${WEB_BASE_URL}/login`);
 	});
 
 	$('#menu_logout').click(function() {
@@ -141,26 +141,26 @@ $(function() {
 
 	// Footer -> navigation
 	$('#footer_about').click(function() {
-		window.location.href = 'https://nervenex.mailchimpsites.com/';
+		window.location.assign('https://nervenex.mailchimpsites.com/');
 	});
 
 	$('#footer_contact').click(function() {
-		window.location.href = 'https://nervenex.mailchimpsites.com/';
+		window.location.assign('https://nervenex.mailchimpsites.com/');
 	});
 
 	$('#footer_terms').click(function() {
-		window.location.href = 'https://nervenex.mailchimpsites.com/';
+		window.location.assign('https://nervenex.mailchimpsites.com/');
 	});
 
 	$('#footer_facebook').click(function() {
-		window.location.href = 'https://www.facebook.com/groups/354878470471404/';
+		window.location.assign('https://www.facebook.com/groups/354878470471404/');
 	});
 
 	$('#footer_github_ebube').click(function() {
-		window.location.href = 'https://github.com/Ebuube/';
+		window.location.assign('https://github.com/Ebuube/');
 	});
 
 	$('#footer_github_edwin').click(function() {
-		window.location.href = 'https://github.com/arkoaikins/';
+		window.location.assign('https://github.com/arkoaikins/');
 	});
 });
