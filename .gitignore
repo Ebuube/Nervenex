@@ -1,6 +1,7 @@
 #  for private use
 5-app_server-nginx_config
 backup_file.sql
+nervenex-db-postgresql-backup.sql
 config
 nervenex_config
 bin/
