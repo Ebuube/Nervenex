@@ -1,61 +1,17 @@
 {% extends "base.html" %}
 {% block head %}
-        <meta charset="utf-9">
-        <title>Nervenex</title>
+    {{ super() }}
+    <link rel="stylesheet" href="../static/styles/quiz_history.css">
+{% endblock %}
 
-        <!--Favicon-->
-        <link rel="icon" type="image/png" href="../static/images/icon.png">
-
-        <!--STYLING-->
-	<link rel="stylesheet" href="../static/styles/common.css">
-	<link rel="stylesheet" href="../static/styles/header.css">
-	<link rel="stylesheet" href="../static/styles/footer.css">
-	<link rel="stylesheet" href="../static/styles/quiz_history.css">
-
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script src="../static/scripts/general.js"></script>
-	<script src="../static/scripts/quiz_history.js"></script>
+{% block scripts %}
+    {{ super() }}
+    <script src="../static/scripts/quiz_history.js"></script>
 {% endblock %}
 
 {% block content %}
-        <!--HEADER-->
-        <header>
-            <section class="navigation">
-                <button class="button">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
- 
-                    <ul class="menu">
-                        <li id="menu_home">Home</li>
-                        <li id="menu_take_quiz">Take a quiz</li>
-                        <li id="menu_create_quiz">Create a quiz</li>
-			<li id="menu_quiz_history">Quiz history</li>
-			<li id="menu_view_posts" class="tooltip" disabled>View Posts<span class="tooltiptext">Comming soon</span></li>
-                        <li id="menu_get_resources">Get Resources</li>
-                        <li id="menu_login">Log in</li>
-			<li id="menu_logout">Log out</li>
-                    </ul>
-                </button>
-            </section>
-            <section class="header_logo">
-		    <div class="tooltip button">
-		    	<span class="tooltiptext">Return to home</span>
-		    </div>
-	    </section>
-          
-            <section class="tooltip user_detail">
-                <p id="username">Unidentified User</p>
-                <div id="api_status">U</div>
-		<span class="tooltiptext">Menu >> Login</span>
-            </section>
-        </header>
-
-
-        <!--CONTENTS-->
-        <div class="container">
-
+    <!--CONTENTS-->
+    <div class="container">
         <section class="content">
 	    <h1>Quiz history</h1>
 
@@ -92,25 +48,4 @@
 	    <p>Click on the menu >> Take a quiz to get started</p>
 	{% endif %}
         </section>
-
-        <!--FOOTER-->
-        <div class="pagefooter">
-            <footer>
-                <span class="info">
-                    <ul>
-                        <li id="footer_about" class="hyperlink">about</li>
-                        <li id="footer_contact" class="hyperlink">contact</li>
-                        <li id="footer_terms" class="hyperlink">terms of service</li>
-                    </ul>
-                </span>
-
-                <span class="social_media">
-                    <ul>
-                        <li id="footer_facebook" class="facebook button logo"><div></div></li>
-                        <li id="footer_github_edwin" class="github button logo"><div></div></li>
-                        <li id="footer_github_ebube" class="github button logo"><div></div></li>
-                    </ul>
-                </span>
-            </footer>
-        </div>
 {% endblock %}
