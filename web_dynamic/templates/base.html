@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<!-- Child templates can add extra elements here -->
+	    <!-- Child templates can add extra elements here -->
         <meta charset="utf-9">
         <title>Nervenex</title>
 
@@ -10,23 +10,22 @@
 
     {% block styles %}
         <!--STYLING-->
-	<link rel="stylesheet" href="../static/styles/common.css">
-	<link rel="stylesheet" href="../static/styles/header.css">
-	<link rel="stylesheet" href="../static/styles/footer.css">
+        <link rel="stylesheet" href="../static/styles/common.css">
+        <link rel="stylesheet" href="../static/styles/header.css">
+        <link rel="stylesheet" href="../static/styles/footer.css">
     {% endblock %}
 
     {% block scripts %}
-	<!--SCRIPTING-->
-        <!-- JavaScript: Set API_BASE_URL Globally -->
-    	<script>
-        	var API_BASE_URL = "{{ g.api_base_url }}";
-		var WEB_BASE_URL = "{{ g.web_base_url }}";
-    	</script>
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<script src="../static/scripts/general.js"></script>
+        <!--SCRIPTING-->
+        <script>
+            // JavaScript: Set API_BASE_URL Globally
+            var API_BASE_URL = "{{ g.api_base_url }}";
+            var WEB_BASE_URL = "{{ g.web_base_url }}";
+        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="../static/scripts/general.js"></script>
     {% endblock %}
-
     </head>
 
     <body>
@@ -37,36 +36,37 @@
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
- 
+
                     <ul class="menu">
                         <li id="menu_home">Home</li>
                         <li id="menu_take_quiz">Take a quiz</li>
                         <li id="menu_create_quiz">Create a quiz</li>
-			<li id="menu_quiz_history">Quiz history</li>
-			<li id="menu_view_posts" class="tooltip" disabled>View Posts<span class="tooltiptext">Comming soon</span></li>
+                        <li id="menu_quiz_history">Quiz history</li>
+                        <li id="menu_view_posts" class="tooltip" disabled>View Posts<span class="tooltiptext">Comming soon</span></li>
                         <li id="menu_get_resources">Get Resources</li>
                         <li id="menu_login">Log in</li>
-			<li id="menu_logout">Log out</li>
+                        <li id="menu_logout">Log out</li>
                     </ul>
                 </button>
             </section>
+
             <section class="header_logo">
-		    <div class="tooltip button">
-		    	<span class="tooltiptext">Return to home</span>
-		    </div>
-	    </section>
-          
+                <div class="tooltip button">
+                    <span class="tooltiptext">Return to home</span>
+                </div>
+	        </section>
+
             <section class="tooltip user_detail">
                 <p id="username">Unidentified User</p>
                 <div id="api_status">U</div>
-		<span class="tooltiptext">Menu >> Login</span>
+		        <span class="tooltiptext">Menu >> Login</span>
             </section>
         </header>
 
-        {% block content %}
-	<!--Main Content of the Page -->
-	<!-- This will be replaced by content from child template -->
-        {% endblock %}
+    {% block content %}
+	    <!--Main Content of the Page -->
+	    <!-- This will be replaced by content from child template -->
+    {% endblock %}
 
         <!--FOOTER-->
         <div class="pagefooter">
