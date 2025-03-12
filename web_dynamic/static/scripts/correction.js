@@ -1,23 +1,6 @@
 #!/usr/bin/node
-// Properties of the Quiz page
+// Properties of the Corrections page
 $(function () {
-
-	// Get quiz
-	var Quiz = JSON.parse(localStorage.getItem('Quiz'));
-
-	// console.log(Quiz);	// test
-	if (Quiz == null) {
-		console.log('Null quiz');	// test
-		Swal.fire({
-			title: "No quiz loaded 🥺",
-			icon: "error",
-			text: "Sorry, go to Menu >> Take a quiz."
-		}).then((result) => {
-			if (result.isConfirmed) {
-				window.location.assign(`${WEB_BASE_URL}/choose_quiz`);
-			}
-		});
-	}
 
 	// Current item
 	function setCurrent() {
