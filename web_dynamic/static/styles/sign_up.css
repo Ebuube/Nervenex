@@ -141,3 +141,9 @@
 .google {
     background-color: #f94444;
 }
+
+.login-btn {
+    color:white;
+    background-color:#FF0000;
+    border-radius:4px;
+}

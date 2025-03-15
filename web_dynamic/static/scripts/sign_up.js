@@ -79,6 +79,9 @@ $(function () {
 		});
 	};
 
+        $('#login_btn').click(function login() {
+          window.location.href = "/login";
+        });
 
 	$('#sign_up').click(function signUp() {
 		console.log('Processing sign up');
