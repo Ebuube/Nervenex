@@ -3,6 +3,7 @@
     {{ super() }}
     <link rel="stylesheet" href="../static/styles/filters.css">
     <link rel="stylesheet" href="../static/styles/quizzes.css">
+    <link rel="stylesheet" href="../static/styles/correction.css">
 {% endblock %}
 
 {% block scripts %}
@@ -25,12 +26,15 @@
 			<!--
                         <li class="attempted">1</li>
                         <li class="current">8</li>
+			Note: quiz_num is a classed used by a function in correction.js for implemting onClick event and action.
 			-->
 		    {% for answer in answers %}
 		    	{% if answer.value < 1 %}
-		    <li id="quiz_num.Question.{{ answer.question.id }}" class="quiz_num" href="Question.{{ answer.question.id }}">{{ loop.index }}</li>
+		    	<li id="quiz_num.Question.{{ answer.question.id }}" class="not-attempted quiz_num" href="Question.{{ answer.question.id }}">{{ loop.index }}</li>
+		    	{% elif answer.value != answer.question.correct_answer %}
+		    	<li id="quiz_num.Question.{{ answer.question.id }}" class="wrong quiz_num" href="Question.{{ answer.question.id }}">{{ loop.index }}</li>
 		    	{% else %}
-		    <li id="quiz_num.Question.{{ answer.question.id }}" class="attempted quiz_num" href="Question.{{ answer.question.id }}">{{ loop.index }}</li>
+		    	<li id="quiz_num.Question.{{ answer.question.id }}" class="correct quiz_num" href="Question.{{ answer.question.id }}">{{ loop.index }}</li>
 		    	{% endif %}
 		    {% endfor %}
                     </ul>

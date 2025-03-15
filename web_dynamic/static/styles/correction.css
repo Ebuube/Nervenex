@@ -1,0 +1,28 @@
+.quiz_numbers .correct {
+    border-color:rgb(231, 111, 13);
+    color:rgb(231, 111, 13);
+}
+
+.quiz_numbers .correct.quiz_num.current {
+    background-color:rgb(231, 111, 13);
+    color:white;
+}
+
+.quiz_numbers .wrong {
+    border-color:rgb(128, 0, 128);
+    color:rgb(128, 0, 128);
+}
+
+.quiz_numbers .wrong.quiz_num.current {
+    background-color:rgb(128, 0, 128);
+    color:white;
+}
+
+.quiz_numbers .not-attempted {
+    color:#484848;
+}
+
+.quiz_numbers .not-attempted.quiz_num.current {
+    background-color:#484848;
+    color:white;
+}
