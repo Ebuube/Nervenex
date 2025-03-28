@@ -14,13 +14,29 @@ from models.quiz import Quiz
 from models.thread import Thread
 from models.user import User
 from flask import (Flask, render_template, make_response, jsonify,
-                   redirect, g)
+                   redirect, g,)
+from flask_talisman import Talisman
 from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.config['API_BASE_URL'] = os.getenv('API_BASE_URL')
 app.config['WEB_BASE_URL'] = os.getenv('WEB_BASE_URL')
+csp = {
+    'default-src': '\'self\'',
+    'object-src': '\'none\'',
+    'script-src': '\'self\'',
+}
+Talisman(
+    app,
+    content_security_policy=csp,
+    force_https=True,  # Enforce HTTPS
+    strict_transport_security=True,  # Enable HSTS
+    frame_options="DENY",  # Prevent iframe embedding
+    session_cookie_secure=True,
+    session_cookie_http_only=True,
+    x_xss_protection=True,
+)
 
 
 @app.before_request
