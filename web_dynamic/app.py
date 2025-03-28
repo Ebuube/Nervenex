@@ -23,9 +23,13 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 app.config['API_BASE_URL'] = os.getenv('API_BASE_URL')
 app.config['WEB_BASE_URL'] = os.getenv('WEB_BASE_URL')
 csp = {
-    'default-src': '\'self\'',
-    'object-src': '\'none\'',
-    'script-src': '\'self\'',
+    'default-src': "'self'",
+    'object-src': "'none'",
+    'script-src': [
+                    "'self'",
+                    "https://code.jquery.com/jquery-3.2.1.min.js",
+                    "https://cdn.jsdelivr.net/npm/sweetalert2@11",
+                ],
 }
 Talisman(
     app,
