@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="../static/styles/error.css">
+{% endblock %}
+
+{% block content %}
+<div class="error-container">
+    <div class="error-content">
+        <div class="error-icon">
+            <img src="../static/images/icon.png" alt="Nervenex Logo" class="logo">
+        </div>
+        <div class="error-details">
+            <h1 class="error-code">500</h1>
+            <h2 class="error-title">Internal Server Error</h2>
+            <p class="error-message">
+                Something went wrong on our end. Our team of digital wizards is working hard to fix this issue. 
+                Meanwhile, why not challenge your brain with a quiz?
+            </p>
+            <div class="error-actions">
+                <a href="{{ url_for('index') }}" class="btn btn-primary">
+                    <i class="icon-home"></i>
+                    Go Back Home
+                </a>
+                <a href="javascript:history.back()" class="btn btn-secondary">
+                    <i class="icon-back"></i>
+                    Go Back
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="error-suggestions">
+        <h3>While we fix this:</h3>
+        <ul>
+            <li>Try refreshing the page in a few minutes</li>
+            <li>Check out our available quizzes</li>
+            <li>Browse our learning resources</li>
+            <li>Connect with our learning community</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

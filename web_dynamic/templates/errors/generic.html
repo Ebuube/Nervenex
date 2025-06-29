@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="../static/styles/error.css">
+{% endblock %}
+
+{% block content %}
+<div class="error-container">
+    <div class="error-content">
+        <div class="error-icon">
+            <img src="../static/images/icon.png" alt="Nervenex Logo" class="logo">
+        </div>
+        <div class="error-details">
+            <h1 class="error-code">{{ error_code or 'Error' }}</h1>
+            <h2 class="error-title">{{ error_title or 'Something went wrong' }}</h2>
+            <p class="error-message">
+                {{ error_message or 'We encountered an unexpected issue. Our team is working to resolve it.' }}
+            </p>
+            <div class="error-actions">
+                <a href="{{ url_for('index') }}" class="btn btn-primary">
+                    <i class="icon-home"></i>
+                    Go Back Home
+                </a>
+                <a href="javascript:history.back()" class="btn btn-secondary">
+                    <i class="icon-back"></i>
+                    Go Back
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="error-suggestions">
+        <h3>What you can do:</h3>
+        <ul>
+            <li>Try refreshing the page</li>
+            <li>Check your internet connection</li>
+            <li>Browse our available quizzes</li>
+            <li>Explore our learning resources</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

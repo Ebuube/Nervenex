@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="../static/styles/error.css">
+{% endblock %}
+
+{% block content %}
+<div class="error-container">
+    <div class="error-content">
+        <div class="error-icon">
+            <img src="../static/images/icon.png" alt="Nervenex Logo" class="logo">
+        </div>
+        <div class="error-details">
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Oops! Page Not Found</h2>
+            <p class="error-message">
+                The page you're looking for seems to have wandered off into the digital void. 
+                Don't worry, even the smartest minds sometimes take wrong turns!
+            </p>
+            <div class="error-actions">
+                <a href="{{ url_for('index') }}" class="btn btn-primary">
+                    <i class="icon-home"></i>
+                    Go Back Home
+                </a>
+                <a href="{{ url_for('resources') }}" class="btn btn-secondary">
+                    <i class="icon-book"></i>
+                    Browse Resources
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="error-suggestions">
+        <h3>What you can do:</h3>
+        <ul>
+            <li>Check the URL for typos</li>
+            <li>Use the navigation menu to find what you're looking for</li>
+            <li>Take a quiz to sharpen your mind while you're here</li>
+            <li>Explore our learning resources</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

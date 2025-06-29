@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="../static/styles/error.css">
+{% endblock %}
+
+{% block content %}
+<div class="error-container">
+    <div class="error-content">
+        <div class="error-icon">
+            <img src="../static/images/icon.png" alt="Nervenex Logo" class="logo">
+        </div>
+        <div class="error-details">
+            <h1 class="error-code">403</h1>
+            <h2 class="error-title">Access Forbidden</h2>
+            <p class="error-message">
+                You don't have permission to access this resource. 
+                Learning requires the right credentials - make sure you're logged in!
+            </p>
+            <div class="error-actions">
+                <a href="{{ url_for('index') }}" class="btn btn-primary">
+                    <i class="icon-home"></i>
+                    Go Back Home
+                </a>
+                <a href="{{ url_for('log_in') }}" class="btn btn-secondary">
+                    <i class="icon-login"></i>
+                    Log In
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="error-suggestions">
+        <h3>Try this:</h3>
+        <ul>
+            <li>Make sure you're logged in to your account</li>
+            <li>Check if you have the right permissions</li>
+            <li>Contact us if you think this is an error</li>
+            <li>Explore our public resources instead</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
