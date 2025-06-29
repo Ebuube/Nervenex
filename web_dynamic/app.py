@@ -14,7 +14,7 @@ from models.quiz import Quiz
 from models.thread import Thread
 from models.user import User
 from flask import (Flask, render_template, make_response, jsonify,
-                   redirect, g)
+                   redirect, g, request, abort)
 from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__)
@@ -32,20 +32,58 @@ def before_request():
     g.web_base_url = app.config['WEB_BASE_URL']
 
 
+@app.errorhandler(404)
+def not_found_error(error):
+    """
+    Handle 404 errors with a friendly page
+    """
+    return render_template('errors/404.html'), 404
+
+
+@app.errorhandler(500)
+def internal_error(error):
+    """
+    Handle 500 errors with a friendly page
+    """
+    return render_template('errors/500.html'), 500
+
+
+@app.errorhandler(403)
+def forbidden_error(error):
+    """
+    Handle 403 errors with a friendly page
+    """
+    return render_template('errors/403.html'), 403
+
+
 @app.errorhandler(Exception)
 def not_found(error):
     """
     Generic error handler
     """
     if isinstance(error, HTTPException):
-        # Specially handle HTTPExceptions
-        message = error.__dict__
-        message['status'] = error.code
-        return make_response(jsonify(message), error.code)
+        # For API requests, return JSON
+        if request.path.startswith('/api/'):
+            message = error.__dict__
+            message['status'] = error.code
+            return make_response(jsonify(message), error.code)
+        
+        # For web requests, render appropriate error page
+        if error.code == 404:
+            return render_template('errors/404.html'), 404
+        elif error.code == 500:
+            return render_template('errors/500.html'), 500
+        elif error.code == 403:
+            return render_template('errors/403.html'), 403
+        else:
+            return render_template('errors/generic.html', 
+                                 error_code=error.code,
+                                 error_title=error.name,
+                                 error_message=error.description), error.code
 
-    # Handle others errors
+    # Handle other errors
     print(error)
-    return make_response(jsonify({"500": "Insternal server error"}), 500)
+    return render_template('errors/500.html'), 500
 
 
 @app.teardown_appcontext
@@ -228,6 +266,26 @@ def resources():
     Render a list of the available resources
     """
     return render_template('resources.html')
+
+
+# Test routes for error pages (can be removed in production)
+@app.route('/test-404')
+def test_404():
+    """Test route to trigger 404 error"""
+    abort(404)
+
+
+@app.route('/test-500')
+def test_500():
+    """Test route to trigger 500 error"""
+    # Intentionally cause an error
+    raise Exception("This is a test 500 error")
+
+
+@app.route('/test-403')
+def test_403():
+    """Test route to trigger 403 error"""
+    abort(403)
 
 
 if __name__ == "__main__":

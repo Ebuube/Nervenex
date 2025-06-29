@@ -24,6 +24,30 @@ def close_db(error):
     storage.close()
 
 
+@app.errorhandler(404)
+def api_not_found(error):
+    """
+    Handle 404 errors for API
+    """
+    return make_response(jsonify({
+        "error": "Not Found",
+        "message": "The requested resource could not be found",
+        "status": 404
+    }), 404)
+
+
+@app.errorhandler(500)
+def api_internal_error(error):
+    """
+    Handle 500 errors for API
+    """
+    return make_response(jsonify({
+        "error": "Internal Server Error",
+        "message": "An internal server error occurred",
+        "status": 500
+    }), 500)
+
+
 @app.errorhandler(Exception)
 def not_found(error):
     """
@@ -31,13 +55,20 @@ def not_found(error):
     """
     if isinstance(error, HTTPException):
         # Specially handle HTTPExceptions
-        message = error.__dict__
-        message['status'] = error.code
+        message = {
+            "error": error.name,
+            "message": error.description or "An error occurred",
+            "status": error.code
+        }
         return make_response(jsonify(message), error.code)
 
-    # Handle others errors
+    # Handle other errors
     print(error)
-    return make_response(jsonify({"500": "Insternal server error"}), 500)
+    return make_response(jsonify({
+        "error": "Internal Server Error",
+        "message": "An internal server error occurred",
+        "status": 500
+    }), 500)
 
 app.config['SWAGGER'] = {
     'title': 'Nervenex Restful API',
